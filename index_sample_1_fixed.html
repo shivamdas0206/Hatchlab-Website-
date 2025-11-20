@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link href="images/logo.png" rel="icon">
+  <title>Hatchlab Innovations</title>
+
+  <!-- CSS LIBS -->
+  <link rel="stylesheet" href="https://www.hatchlabinnovations.com/assets/css/bootstrap.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- YOUR CSS -->
+  <link rel="stylesheet" href="style_sample_1.css">
+
+  <style>
+    .char {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(-100px) scale(0.3);
+    }
+
+    @keyframes bounceElastic {
+      0% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0.3);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translateY(10px) scale(1.1);
+      }
+
+      70% {
+        transform: translateY(-5px) scale(0.95);
+      }
+
+      85% {
+        transform: translateY(2px) scale(1.02);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(23, 22, 31, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .main-header>* {
+      flex: 1;
+    }
+
+    .header-nav {
+      text-align: center;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .header-logo img {
+      width: 60px;
+      height: auto;
+    }
+
+    .brand-name {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 60px;
+    }
+
+    .header-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .header-nav a:hover {
+      color: #fcd703;
+    }
+
+    .main {
+      padding-top: 120px;
+      left: 0;
+      width: 100%;
+      position: relative;
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .hero {
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 40px;
+    }
+
+    .word {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .word.yellow {
+      color: #fcd703;
+    }
+
+    .line {
+      display: block;
+    }
+
+    #particles-js {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .hero-sec {
+      height: 100vh;
+      width: 100%;
+      color: #fff;
+      display: flex;
+      position: relative;
+    }
+
+    body {
+      cursor: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Glow Cursor -->
+  <div class="glow-cursor"></div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-logo">
+      <a href="https://www.hatchlabinnovations.com/">
+        <img src="images/logo.png" alt="Logo" />
+      </a>
+      <span class="brand-name">HatchLabs Innovations</span>
+    </div>
+    <nav class="header-nav">
+      <a href="https://www.hatchlabinnovations.com/">About</a>
+      <a href="https://www.hatchlabinnovations.com/">Service</a>
+      <a href="https://www.hatchlabinnovations.com/career">Career</a>
+      <a href="https://www.hatchlabinnovations.com/contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero-sec home-section">
+    <div id="particles-js"></div>
+    <div class="main">
+      <div class="hero">
+        <h1 class="hero-title">
+          <div class="line">
+            <div class="word">
+              <div class="char">W</div>
+              <div class="char">h</div>
+              <div class="char">e</div>
+              <div class="char">r</div>
+              <div class="char">e</div>
+            </div>
+            <div class="word">
+              <div class="char">B</div>
+              <div class="char">i</div>
+              <div class="char">g</div>
+            </div>
+            <div class="word">
+              <div class="char">I</div>
+              <div class="char">d</div>
+              <div class="char">e</div>
+              <div class="char">a</div>
+              <div class="char">s</div>
+            </div>
+            <div class="word">
+              <div class="char">M</div>
+              <div class="char">e</div>
+              <div class="char">e</div>
+              <div class="char">t</div>
+            </div>
+          </div>
+          <div class="line">
+            <div class="word">
+              <div class="char">C</div>
+              <div class="char">o</div>
+              <div class="char">o</div>
+              <div class="char">l</div>
+            </div>
+            <div class="word yellow">
+              <div class="char">T</div>
+              <div class="char">e</div>
+              <div class="char">c</div>
+              <div class="char">h</div>
+            </div>
+            <div class="word">
+              <div class="char">&</div>
+            </div>
+            <div class="word">
+              <div class="char">P</div>
+              <div class="char">r</div>
+              <div class="char">o</div>
+            </div>
+            <div class="word yellow">
+              <div class="char">G</div>
+              <div class="char">u</div>
+              <div class="char">i</div>
+              <div class="char">d</div>
+              <div class="char">a</div>
+              <div class="char">n</div>
+              <div class="char">c</div>
+              <div class="char">e</div>
+              <div class="char">.</div>
+            </div>
+          </div>
+        </h1>
+        <p>A synergy only Hatchlab makes possible.</p>
+        <a class="contact-btn" href="https://www.hatchlabinnovations.com/contact">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-section home-section">
+    <h2>About Us</h2>
+    <p id="typewriter-text">
+
+      The pace of economic change has accelerated dramatically. Digitalisation, geopolitics, and demographic shifts are
+      reshaping industries, and both start-ups and established corporations must innovate to survive. Yet innovation
+      requires more than bright ideas; it demands structured execution, access to capital, strategic guidance, and
+      operational excellence.<br><br>
+      Hatchlab Innovations has been built as an integrated platform to address these needs through Enterprise Creation
+      as a Service (ECaaS). By combining a start-up studio, a diversified investment arm, and a modern consultancy under
+      one roof, Hatchlab enables entrepreneurs, executives, and investors to create, finance, and scale ventures with
+      confidence.
+      <a href="#" class="read-more">Read More</a>
+    </p>
+  </div>
+
+
+
+
+
+  <!-- MOU PART  -->
+  <section class="what-section">
+    <h2 class="what-heading">What We Do</h2>
+
+    <div class="what-cards-container">
+
+      <!-- CARD 1 -->
+      <div class="what-card">
+        <img src="images/what-we-do/udyog.png" class="what-card-img" alt="Hatchlab Inception">
+
+        <div class="card-overlay">
+          <img src="images/what-we-do/udyog-icon.png" class="card-icon" alt="Inception icon">
+          <h3>Hatchlab Inception</h3>
+          <p>
+            Hatchlab Inception empowers early-stage founders with ecosystem
+            support, mentorship, strategic guidance and an environment to innovate.
+          </p>
+          <button class="arrow-btn">➜</button>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="what-card">
+        <img src="images/what-we-do/investment-arm.png" class="what-card-img" alt="Hatchlab Ventures">
+
+        <div class="card-overlay">
+          <img src="images/what-we-do/investment-arm-icon.png" class="card-icon" alt="Ventures icon">
+          <h3>Hatchlab Ventures</h3>
+          <p>
+            Hatchlab Ventures fuels changemakers with purposeful capital,
+            co-building impactful, inclusive and enduring movements.
+          </p>
+          <button class="arrow-btn">➜</button>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="what-card">
+        <img src="images/what-we-do/business-consultancy.png" class="what-card-img" alt="Hatchlab One">
+
+        <div class="card-overlay">
+          <img src="images/what-we-do/business-consultancy-icon.png" class="card-icon" alt="Consultancy icon">
+          <h3>Hatchlab One</h3>
+          <p>
+            Hatchlab One supports businesses with strategy, design and
+            digital transformation for sustainable growth.
+          </p>
+          <button class="arrow-btn">➜</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- MOU Part -->
+
+
+
+
+
+  <!-- SOUMIK PART - OUR INITIATIVES-->
+  <div class="our-initiative home-section">
+    <div class="initiative-body">
+      <div class="initiative-container">
+        <div class="initiative-header">
+          <h2 class="initiative-title animate__animated fade-in-on-scroll custom-duration">Our Initiatives</h2>
+          <div class="initiative-nav">
+            <button class="initiative-prev" aria-label="Previous initiative">
+              <i class="bi bi-arrow-left-square"></i>
+            </button>
+            <button class="initiative-next" aria-label="Next initiative">
+              <i class="bi bi-arrow-right-square"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="owl-carousel owl-theme initiative-carousel">
+          <!-- ITEM 1 -->
+          <div class="initiative-item animate__animated fade-in-on-scroll custom-duration">
+            <div class="initiative-image">
+              <div class="d-flex flex-column justify-content-between h-100 initiative-images">
+                <div class="initiative-item-title">Techno India Manchester City Football School</div>
+                <div class="card-image fix-manchester">
+                  <img class="breathing-image" src="images/initiative/mancity_leftside.png" alt="TIMCFS left side">
+                </div>
+              </div>
+            </div>
+            <div class="initiative-text">
+              <div class="initiative-second-box">
+                <div class="initiative-image initiative-right-img">
+                  <img class="breathing-image" src="images/initiative/mancity_rightside.png" alt="TIMCFS right side">
+                </div>
+                <div class="initiative-content">
+                  TIMCFS is Hatchlab's game-changing sports incubation project in collab with Techno India Group and
+                  Manchester City. More than a school, it's a talent launchpad—blending world-class coaching, academic
+                  support, and a parent-friendly progress dashboard.
+                  <br>
+                  <div class="initiative-button">
+                    <a href="#" class="initiative-btn">Explore more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 2 - THOUGHTSHOP -->
+          <div class="initiative-item thoughtshop">
+            <div class="initiative-image">
+              <div class="d-flex flex-column h-100">
+                <div class="initiative-item-title">Thoughtshop</div>
+                <div>
+                  <img class="breathing-image" src="images/initiative/thoughtshop_leftside.png"
+                    alt="Thoughtshop left side">
+                </div>
+              </div>
+            </div>
+            <div class="initiative-text">
+              <div class="initiative-second-box">
+                <div class="initiative-image initiative-right-img">
+                  <img class="breathing-image" src="images/initiative/thoughtshop_rightside.png"
+                    alt="Thoughtshop right side">
+                </div>
+                <div class="initiative-content">
+                  Thoughtshop is the design and storytelling arm of Hatchlab—where raw ideas are refined into compelling
+                  brands with purpose, personality, and visual impact.
+                  For emerging startups, building a strong foundation goes beyond a logo—it's about having a clear
+                  identity, authentic storytelling, and a consistent social presence.
+                  <br>
+                  <div class="initiative-button">
+                    <a href="#" class="initiative-btn">Explore more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 3 -->
+          <div class="initiative-item">
+            <div class="initiative-image">
+              <div class="d-flex flex-column justify-content-between h-100">
+                <div class="initiative-item-title">The Retreat Darjeeling</div>
+                <div>
+                  <img class="breathing-image" src="images/initiative/retreat_leftside.png" alt="Retreat left side">
+                </div>
+              </div>
+            </div>
+            <div class="initiative-text">
+              <div class="initiative-second-box">
+                <div class="initiative-image initiative-right-img">
+                  <img class="breathing-image" src="images/initiative/retreat_rightside.png" alt="Retreat right side">
+                </div>
+                <div class="initiative-content">
+                  The Retreat Darjeeling is a boutique stay nestled in the Eastern Himalayas, offering stunning views
+                  and rich cultural experiences. Hatchlab partnered to reimagine the property as a living model of
+                  sustainable, community-driven hospitality.
+                  <br>
+                  <div class="initiative-button">
+                    <a href="#" class="initiative-btn">Explore more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- /.initiative-carousel -->
+      </div>
+    </div>
+  </div>
+  <!-- SOUMIK PART END -->
+
+
+
+
+
+
+  <!-- SHIVAM PART -->
+  <!-- Gallery with Infinite Linear Carousel -->
+  <section class="founder home-section">
+    <div class="gallery-section">
+      <h2 class="gallery-heading">Gallery</h2>
+
+      <div class="gallery-controls">
+        <button class="prev" aria-label="Previous">
+          <i class="bi bi-arrow-left-square"></i>
+        </button>
+        <button class="next" aria-label="Next">
+          <i class="bi bi-arrow-right-square"></i>
+        </button>
+      </div>
+
+      <div class="udyog-gallery-owl gallery">
+        <div class="gallery-card" data-index="1">
+          <img src="images/gallery/1.png" alt="Image 1" />
+          <div class="gallery-content">
+            <p>Lorem ipsum text…</p>
+            <span>8 Jan 2025</span>
+          </div>
+        </div>
+
+        <div class="gallery-card" data-index="2">
+          <img src="images/gallery/2.png" alt="Image 2" />
+          <div class="gallery-content">
+            <p>Lorem ipsum text…</p>
+            <span>9 Jan 2025</span>
+          </div>
+        </div>
+
+        <div class="gallery-card" data-index="3">
+          <img src="images/gallery/3.png" alt="Image 3" />
+          <div class="gallery-content">
+            <p>Lorem ipsum text…</p>
+            <span>10 Jan 2025</span>
+          </div>
+        </div>
+
+        <div class="gallery-card" data-index="4">
+          <img src="images/gallery/1.png" alt="Image 4" />
+          <div class="gallery-content">
+            <p>Lorem ipsum text…</p>
+            <span>11 Jan 2025</span>
+          </div>
+        </div>
+
+        <div class="gallery-card" data-index="5">
+          <img src="images/gallery/2.png" alt="Image 5" />
+          <div class="gallery-content">
+            <p>Lorem ipsum text…</p>
+            <span>12 Jan 2025</span>
+          </div>
+        </div>
+
+        <div class="gallery-card" data-index="6">
+          <img src="images/gallery/3.png" alt="Image 6" />
+          <div class="gallery-content">
+            <p>Lorem ipsum text…</p>
+            <span>13 Jan 2025</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- SHIVAM PART -->
+
+
+  <footer class="footer footer-section">
+    <div class="footer-column">
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Logo">
+      </div>
+      <p>© 2025 HatchLab Innovations Pvt. Ltd.<br><span style="text-align:center;">All rights reserved.</span></p>
+    </div>
+    <div class="footer-column">
+      <a href="https://www.hatchlabinnovations.com/career">Career</a>
+      <a href="https://www.hatchlabinnovations.com/contact">Contact</a>
+    </div>
+    <div class="footer-column">
+      <div class="footer-contact"><a href="tel:+918276057111">+91 8276057111</a></div>
+      <div class="footer-contact">
+        <a href="mailto:info@hatchlabinnovations.com">info@hatchlabinnovations.com</a>
+        <p><a href="mailto:admin@hatchlabinnovations.com">admin@hatchlabinnovations.com</a></p>
+      </div>
+    </div>
+    <div class="footer-column">
+      <form class="footer-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Contact Us</button>
+      </form>
+    </div>
+    <div id="particles-footer"></div>
+  </footer>
+
+  <!-- JS LIBS -->
+  <script src="https://www.hatchlabinnovations.com/assets/js/jquery-3.7.1.min.js"></script>
+  <script src="https://www.hatchlabinnovations.com/assets/js/bootstrap.bundle.min.js"></script>
+  <!-- IMPORTANT: only one jQuery, removed the second include -->
+  <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://www.hatchlabinnovations.com/assets/js/carousel.js"></script>
+  <script src="https://www.hatchlabinnovations.com/assets/js/asp.min.js"></script>
+  <script src="https://www.hatchlabinnovations.com/assets/js/aspTrigger.min.js"></script>
+  <script src="https://www.hatchlabinnovations.com/assets/js/aspeff.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <script src="https://www.hatchlabinnovations.com/assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://www.hatchlabinnovations.com/assets/js/particles.js"></script>
+  <script src="https://www.hatchlabinnovations.com/assets/js/app.js"></script>
+
+  <!-- INIT: OUR INITIATIVES OWL CAROUSEL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.jQuery && typeof jQuery.fn.owlCarousel === 'function') {
+        jQuery(function ($) {
+          var $carousel = $('.initiative-carousel');
+          if ($carousel.length) {
+            // Avoid double-init if any external script also touches this carousel
+            if (!$carousel.hasClass('owl-loaded')) {
+              $carousel.owlCarousel({
+                items: 1,
+                loop: true,
+                margin: 24,
+                nav: false,
+                dots: true,
+                autoplay: false,
+                smartSpeed: 600,
+                autoplayHoverPause: false,
+                responsive: { 0: { items: 1 }, 600: { items: 1 }, 1000: { items: 1 } }
+              });
+            }
+
+            // navigation
+            $('.initiative-prev').on('click', function (e) {
+              e.preventDefault();
+              $carousel.trigger('prev.owl.carousel');
+            });
+            $('.initiative-next').on('click', function (e) {
+              e.preventDefault();
+              $carousel.trigger('next.owl.carousel');
+            });
+          }
+        });
+      } else {
+        console.warn('jQuery or OwlCarousel not available for initiatives carousel.');
+      }
+    });
+  </script>
+
+  <!-- CONTINUOUS GALLERY CAROUSEL SCRIPT  -->
+  <script>
+    /*
+      Continuous infinite linear carousel — hover no longer pauses the animation.
+    */
+    (function () {
+      console.log('[continuous-carousel] init (no-pause-on-hover)');
+
+      const track = document.querySelector('.udyog-gallery-owl');
+      if (!track) { console.error('[continuous-carousel] .udyog-gallery-owl not found'); return; }
+      const container = track.closest('.gallery-section');
+      if (!container) { console.error('[continuous-carousel] parent .gallery-section not found'); return; }
+
+      const prevBtn = container.querySelector('.prev');
+      const nextBtn = container.querySelector('.next');
+
+      const cfg = {
+        speed: 110,
+        swipeThreshold: 40,
+      };
+
+      function waitForImages(nodeList, cb) {
+        const imgs = Array.from(nodeList.querySelectorAll('img'));
+        if (imgs.length === 0) return cb();
+        let loaded = 0;
+        imgs.forEach(img => {
+          if (img.complete) { if (++loaded === imgs.length) cb(); }
+          else {
+            img.addEventListener('load', () => { if (++loaded === imgs.length) cb(); });
+            img.addEventListener('error', () => { if (++loaded === imgs.length) cb(); });
+          }
+        });
+      }
+
+      function clearClones() {
+        track.querySelectorAll('.clone').forEach(n => n.remove());
+      }
+
+      function buildClones() {
+        clearClones();
+        const originals = Array.from(track.querySelectorAll('.gallery-card')).filter(n => !n.classList.contains('clone'));
+        if (originals.length === 0) return;
+        const appendFrag = document.createDocumentFragment();
+        originals.forEach(n => {
+          const c = n.cloneNode(true);
+          c.classList.add('clone');
+          appendFrag.appendChild(c);
+        });
+        track.appendChild(appendFrag);
+
+        const prependFrag = document.createDocumentFragment();
+        originals.forEach(n => {
+          const c = n.cloneNode(true);
+          c.classList.add('clone');
+          prependFrag.appendChild(c);
+        });
+        track.insertBefore(prependFrag, track.firstChild);
+      }
+
+      function getOriginalsTotalWidth() {
+        const nodes = Array.from(track.querySelectorAll('.gallery-card')).filter(n => !n.classList.contains('clone'));
+        if (nodes.length === 0) return 0;
+        const gap = computeGap();
+        const widths = nodes.map(n => Math.round(n.getBoundingClientRect().width));
+        const total = widths.reduce((a, b) => a + b, 0) + gap * (nodes.length - 1);
+        return total;
+      }
+
+      function computeGap() {
+        const items = track.querySelectorAll('.gallery-card');
+        if (items.length < 2) return 20;
+        const a = items[0].getBoundingClientRect();
+        const b = items[1].getBoundingClientRect();
+        return Math.max(0, Math.round(b.left - a.right));
+      }
+
+      let originalsTotalWidth = 0;
+      let translate = 0;
+      let lastTs = null;
+      let rafId = null;
+      let running = true;
+
+      function initLayout() {
+        buildClones();
+        originalsTotalWidth = getOriginalsTotalWidth();
+        if (originalsTotalWidth === 0) {
+          console.warn('[continuous-carousel] originalsTotalWidth is 0 — check .gallery-card presence.');
+        }
+        const firstOriginal = track.querySelector('.gallery-card:not(.clone)');
+        if (firstOriginal) {
+          const trackRect = track.getBoundingClientRect();
+          const itemRect = firstOriginal.getBoundingClientRect();
+          const delta = itemRect.left - trackRect.left;
+          translate = -delta;
+          applyTranslate(true);
+        } else {
+          translate = 0;
+          applyTranslate(true);
+        }
+      }
+
+      function applyTranslate(instant) {
+        if (instant) {
+          track.style.transition = 'none';
+          track.style.transform = `translateX(${translate}px)`;
+          requestAnimationFrame(() => { track.style.transition = ''; });
+        } else {
+          track.style.transform = `translateX(${translate}px)`;
+        }
+      }
+
+      function step(ts) {
+        if (!lastTs) lastTs = ts;
+        const dt = (ts - lastTs) / 1000;
+        lastTs = ts;
+
+        if (running) {
+          translate -= cfg.speed * dt;
+        }
+
+        if (originalsTotalWidth > 0) {
+          if (translate <= -originalsTotalWidth * 2) {
+            translate += originalsTotalWidth;
+          }
+          if (translate > 0) {
+            translate -= originalsTotalWidth;
+          }
+        }
+
+        applyTranslate(false);
+        rafId = requestAnimationFrame(step);
+      }
+
+      function start() {
+        if (rafId) return;
+        lastTs = null;
+        running = true;
+        rafId = requestAnimationFrame(step);
+      }
+
+      function shiftByCard(direction) {
+        const originalsNodes = Array.from(track.querySelectorAll('.gallery-card')).filter(n => !n.classList.contains('clone'));
+        if (originalsNodes.length === 0) return;
+        const card = originalsNodes[0];
+        const gap = computeGap();
+        const cardW = Math.round(card.getBoundingClientRect().width) + gap;
+        translate -= direction * cardW;
+
+        if (originalsTotalWidth > 0) {
+          while (translate <= -originalsTotalWidth * 2) translate += originalsTotalWidth;
+          while (translate > 0) translate -= originalsTotalWidth;
+        }
+        applyTranslate(false);
+      }
+
+      if (nextBtn) nextBtn.addEventListener('click', (e) => { e.preventDefault(); shiftByCard(1); });
+      if (prevBtn) prevBtn.addEventListener('click', (e) => { e.preventDefault(); shiftByCard(-1); });
+
+      (function enableSwipe() {
+        let sx = 0, dx = 0, touching = false, t0 = 0;
+        track.addEventListener('touchstart', e => { touching = true; sx = e.touches[0].clientX; dx = 0; t0 = Date.now(); }, { passive: true });
+        track.addEventListener('touchmove', e => { if (!touching) return; dx = e.touches[0].clientX - sx; }, { passive: true });
+        track.addEventListener('touchend', () => {
+          touching = false;
+          const dt = Date.now() - t0;
+          if (Math.abs(dx) > cfg.swipeThreshold && dt < 800) {
+            if (dx < 0) shiftByCard(1); else shiftByCard(-1);
+          }
+        }, { passive: true });
+      })();
+
+      waitForImages(track, () => {
+        initLayout();
+        start();
+        console.log('[continuous-carousel] started — originalsTotalWidth:', originalsTotalWidth);
+      });
+
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          initLayout();
+        }, 120);
+      });
+
+    })();
+  </script>
+
+  <!-- PARTICLES INIT -->
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80 },
+        "size": { "value": 3 },
+        "color": { "value": "#ffffff" },
+        "line_linked": { "enable": true, "color": "#ffffff" },
+        "move": { "enable": true, "speed": 2 }
+      }
+    });
+    particlesJS("particles-footer", {
+      "particles": {
+        "number": { "value": 80 },
+        "size": { "value": 3 },
+        "color": { "value": "#ffff00" },
+        "line_linked": { "enable": true, "color": "#ffff00" },
+        "move": { "enable": true, "speed": 2 }
+      }
+    });
+  </script>
+
+  <!-- Glow Cursor -->
+  <script>
+    const glowCursor = document.querySelector('.glow-cursor');
+    document.addEventListener('mousemove', (e) => {
+      glowCursor.style.left = e.clientX + 'px';
+      glowCursor.style.top = e.clientY + 'px';
+    });
+  </script>
+
+  <!-- Fade-in on scroll -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const faders = document.querySelectorAll(".fade-in-on-scroll");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate__fadeInUp");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      faders.forEach(fader => observer.observe(fader));
+    });
+  </script>
+
+  <!-- Hero text animation + magnetic button -->
+  <script>
+    const heroTitle = document.querySelector('.hero-title');
+    const heroChars = document.querySelectorAll('.hero-title .char');
+    const heroParagraph = document.querySelector('.hero p');
+    const contactBtn = document.querySelector('.contact-btn');
+
+    function animateChars() {
+      heroChars.forEach((char, index) => {
+        char.style.animation = 'none';
+        char.offsetHeight;
+        char.style.animation = `bounceElastic 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards`;
+        char.style.animationDelay = `${index * 0.08}s`;
+      });
+
+      const totalChars = heroChars.length;
+      const titleDuration = (totalChars * 0.08 + 0.8) * 1000;
+
+      setTimeout(() => {
+        heroParagraph.classList.remove('animate');
+        heroParagraph.offsetHeight;
+        heroParagraph.classList.add('animate');
+
+        setTimeout(() => {
+          contactBtn.classList.add('animate');
+        }, 600);
+      }, titleDuration);
+    }
+
+    if (contactBtn) {
+      contactBtn.addEventListener('mousemove', (e) => {
+        const rect = contactBtn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        contactBtn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.1)`;
+      });
+
+      contactBtn.addEventListener('mouseleave', () => {
+        contactBtn.style.transform = 'translate(0, 0) scale(1)';
+      });
+    }
+
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateChars();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (heroTitle) {
+      heroObserver.observe(heroTitle);
+    }
+  </script>
+
+  <!-- About text GSAP scrolling animation -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const aboutText = document.querySelector(".about-section p");
+      if (aboutText) {
+        const rawHTML = aboutText.innerHTML;
+        const aTagMatch = rawHTML.match(/<a [^>]+>.*?<\/a>/);
+        const aTag = aTagMatch ? aTagMatch[0] : "";
+        const cleanedText = rawHTML.replace(aTag, "##LINK##");
+        const words = cleanedText.split(/(\s+|<br><br>)/).map(word => {
+          if (word === "<br><br>" || word.trim() === "") return word;
+          return `<span class="about-word">${word}</span>`;
+        });
+        aboutText.innerHTML = words.join("").replace("##LINK##", aTag);
+        gsap.set(".about-word", { opacity: 0.2 });
+        gsap.to(".about-word", {
+          scrollTrigger: {
+            trigger: ".about-section",
+            start: "top 80%",
+            toggleActions: "play none none reset",
+          },
+          opacity: 1,
+          duration: 0.6,
+          ease: "power2.out",
+          stagger: 0.05
+        });
+      }
+    });
+  </script>
+
+
+  ...
+  </script>
+
+  <!-- Your Typewriter Script Added Here -->
+  <script>
+    const text = `
+The pace of economic change has accelerated dramatically. Digitalisation, geopolitics,
+and demographic shifts are reshaping industries, and both start-ups and established
+corporations must innovate to survive. Yet innovation requires more than bright ideas;
+it demands structured execution, access to capital, strategic guidance, and operational
+excellence.
+
+Hatchlab Innovations has been built as an integrated platform to address these needs
+through Enterprise Creation as a Service (ECaaS). By combining a start-up studio, a
+diversified investment arm, and a modern consultancy under one roof, Hatchlab enables
+entrepreneurs, executives, and investors to create, finance, and scale ventures with
+confidence.
+`;
+
+    let i = 0;
+    const speed = 30; // typing speed (lower = faster)
+
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typewriter-text").textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    typeWriter();
+  </script>
+
+</body>
+
+</html>
+
+
+</body>
+
+</html>

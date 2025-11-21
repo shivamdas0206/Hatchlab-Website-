@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #111118;
+}
+
+header {
+    width: 100%;
+    padding: 20px 40px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start; /* shift everything to the left */
+    align-items: center;
+    gap: 50px; /* space between logo and menu */
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* space between each item */
+    margin-left: 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f2ea00; /* Yellow hover effect */
+}
+
+/* Mobile Menu */
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #000;
+        width: 200px;
+        height: auto;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        display: none;
+    }
+
+    #menu-toggle:checked + .hamburger + .nav-links {
+        display: flex;
+    }
+}
+.middle-text {
+    margin-top: 150px;   /* push it down from navbar */
+    margin-left: 150px;   /* align like your style */
+    font-size: 40px;
+    font-weight: 700;
+    color: #f2ea00;
+}
+
+.what-we-do {
+    margin-top: 150px;   /* gap below 'Service at Hatchlab' */
+    padding: 40px 60px;
+    color: #ede9e9;
+    margin-left: 90px;
+}
+
+.what-we-do h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.what-we-do p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #d1d1d1;
+    max-width: 1200px;
+}
+.full-image-section {
+    width: 100%;
+    margin-top: 80px;
+     margin-bottom: 120px; /* space below paragraph */
+}
+
+.image-container {
+    width: 100%;
+    height: 500px; /* you can increase to 600–700px if you want */
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensures the image fills like your screenshot */
+    border-radius: 20px;
+}
+
+.image-container {
+    width: 80%;      /* compress sideways */
+    height: 500px;
+    margin: 0 auto;  /* keep centered */
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+/* OVERLAY BOX */
+.image-container {
+    position: relative; /* allow absolute overlay */
+}
+
+.overlay-boxone {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 48%;              /* increased from 40% → now much wider */
+    padding: 55px 60px;      /* more internal space */
+
+    background: rgba(0, 0, 0, 0.55);
+    border: 3px solid #d7ff2f; 
+    border-radius: 18px;
+
+    color: #fff;
+    line-height: 1.8;
+    font-size: 17px;
+    backdrop-filter: blur(8px);
+}
+.overlay-boxone h2 {
+    font-size: 20px;         /* bigger heading like screenshot */
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.overlay-boxone p {
+    font-size: 12px;
+    color: #e5e5e5;
+}
+
+
+
+
+.overlay-boxtwo {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 48%;              /* increased from 40% → now much wider */
+    padding: 55px 60px;      /* more internal space */
+
+    background: rgba(0, 0, 0, 0.55);
+    border: 3px solid #d7ff2f; 
+    border-radius: 18px;
+
+    color: #fff;
+    line-height: 1.8;
+    font-size: 17px;
+    backdrop-filter: blur(8px);
+}
+.overlay-boxtwo h2 {
+    font-size: 20px;         /* bigger heading like screenshot */
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.overlay-boxtwo p {
+    font-size: 12px;
+    color: #e5e5e5;
+}

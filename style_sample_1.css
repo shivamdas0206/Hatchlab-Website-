@@ -828,7 +828,7 @@ body{
 .about-section h2 {
     font-size: 1.6em;
     font-weight: 700;
-    color: white; /* Green heading color */
+    color: white; 
     margin-bottom: 15px;
     padding-bottom: 8px;
     border-bottom: 1px solid #333333; /* Lighter border for contrast */

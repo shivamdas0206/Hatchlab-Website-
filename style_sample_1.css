@@ -787,3 +787,139 @@ body {
         font-size: 18px;
     }
 }
+
+
+
+
+
+
+
+
+
+body{
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * --- Global & Mobile-First Styling (Default for small screens) ---
+ */
+.about-section {
+    /* FLUSH LEFT: Set margin to 0 for the left side */
+    margin: 20px 40px; 
+    
+    /* Fluid and Responsive Settings */
+    
+    padding: 20px 5%;
+    
+    /* --- DARK MODE STYLES --- */
+    background-color: #1a1a1a; /* Dark gray/black background */
+    color: #ffffff; /* White text for high contrast */
+    border-radius: 8px;
+    
+    
+    /* Typography */
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+}
+
+/* --- Heading Styling --- */
+.about-section h2 {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: white; /* Green heading color */
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #333333; /* Lighter border for contrast */
+    display: inline-block;
+}
+
+/* --- Paragraph Styling --- */
+.about-section p {
+    font-size: 1em;
+    margin-bottom: 12px;
+    text-align: left; /* Ensures flush left alignment */
+}
+
+/* --- Read More Styling (Yellow and Arrow) --- */
+.about-section .read-more {
+    display: inline-block;
+    margin-top: 5px;
+    font-weight: 700;
+    color: #ffc107; /* Yellow link color */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Add the arrow using the ::after pseudo-element */
+.about-section .read-more::after {
+    content: ' \2192'; /* Unicode for Right Arrow */
+    margin-left: 5px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.about-section .read-more:hover {
+    color: #ffe082; /* Lighter yellow on hover */
+    text-decoration: underline;
+}
+
+.about-section .read-more:hover::after {
+    transform: translateX(3px);
+}
+
+
+/*
+ * -----------------------------------------------------------------
+ * --- Media Query for Tablets (Medium Screens: 600px and up) ---
+ * -----------------------------------------------------------------
+ */
+@media (min-width: 600px) {
+    .about-section {
+        width: 85%;
+        padding: 25px;
+        line-height: 1.6;
+    }
+
+    .about-section h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        /* FIXED: Corrected border color code */
+        border-bottom: 3px solid #333333; 
+    }
+
+    .about-section p {
+        font-size: 1.05em;
+    }
+/* The block closes here */
+} 
+
+
+/*
+ * -----------------------------------------------------------------
+ * --- Media Query for Desktops (Large Screens: 900px and up) ---
+ * -----------------------------------------------------------------
+ */
+@media (min-width: 900px) {
+    .about-section {
+        max-width: 1000px;
+        width: auto; 
+        /* Maintain flush left alignment */
+        margin: 40px auto 40px 0; 
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(255, 255, 255, 0.15);
+    }
+    
+    .about-section h2 {
+        font-size: 2.2em;
+    }
+    
+    .about-section p {
+        font-size: 1.1em;
+        text-align: left; 
+    }
+}

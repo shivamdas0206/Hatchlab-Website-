@@ -1022,4 +1022,100 @@ section.what-section h2.what-heading {
 
 
 
+:root {
+  --elem-color-1: rgba(252,215,3,0.12);
+  --elem-color-2: rgba(255,255,255,0.04);
+  --particle-color: rgba(252,215,3,0.9);
+  --gallery-bg-z: 0;
+}
+
+/* background wrapper sits behind the gallery content */
+.gallery-section { position: relative; overflow: hidden; }
+.gallery-bg {
+  position: absolute;
+  inset: 0;
+  z-index: var(--gallery-bg-z);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* blurred gradient blobs (SVG shapes) */
+.gallery-blobs {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.9;
+  transform-origin: center;
+}
+
+.gallery-blobs .blob {
+  fill: var(--elem-color-1);
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  transform-origin: center;
+  transition: transform 0.3s linear;
+}
+
+.gallery-blobs .b2 { fill: var(--elem-color-2); opacity: 0.95; }
+
+/* gentle floating keyframes */
+@keyframes blobFloat1 { 0% { transform: translateY(0) scale(1); } 50% { transform: translateY(-18px) scale(1.03); } 100% { transform: translateY(0) scale(1); } }
+@keyframes blobFloat2 { 0% { transform: translateY(0) scale(1); } 50% { transform: translateY(14px) scale(0.98); } 100% { transform: translateY(0) scale(1); } }
+@keyframes blobFloat3 { 0% { transform: translateY(0) scale(1); } 50% { transform: translateY(-10px) scale(1.02); } 100% { transform: translateY(0) scale(1); } }
+
+.gallery-blobs .b1 { animation: blobFloat1 9s ease-in-out infinite; }
+.gallery-blobs .b2 { animation: blobFloat2 11s ease-in-out infinite; }
+.gallery-blobs .b3 { animation: blobFloat3 13s ease-in-out infinite; }
+
+/* particle dots container */
+.gallery-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* particle default style (each particle is absolutely positioned by JS) */
+.gallery-particles .particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--particle-color);
+  opacity: 0.9;
+  transform: translate3d(0,0,0);
+  will-change: transform, opacity;
+  box-shadow: 0 0 10px rgba(252,215,3,0.35), 0 0 18px rgba(252,215,3,0.12);
+}
+
+/* subtle motion on hover-free */
+@media (prefers-reduced-motion: no-preference) {
+  .gallery-particles .particle { animation: particleFloat 8s linear infinite; }
+  @keyframes particleFloat {
+    0% { transform: translateY(0) translateX(0); opacity: 0.9; }
+    50% { transform: translateY(-36px) translateX(14px); opacity: 0.6; }
+    100% { transform: translateY(0) translateX(0); opacity: 0.9; }
+  }
+}
+
+/* reduce size/opacity on smaller screens */
+@media (max-width: 900px) {
+  .gallery-blobs { opacity: 0.65; }
+  .gallery-particles .particle { width: 6px; height: 6px; opacity: 0.8; }
+}
+
+/* respect reduced motion user preference */
+@media (prefers-reduced-motion: reduce) {
+  .gallery-blobs .b1,
+  .gallery-blobs .b2,
+  .gallery-blobs .b3,
+  .gallery-particles .particle { animation: none !important; transition: none !important; }
+}
+
+
+
+
+
+
 

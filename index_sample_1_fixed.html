@@ -256,14 +256,20 @@
     </div>
   </div>
 
-<div class="about-section home-section">
-  <h2>About Us</h2>
-  <p>
-    The pace of economic change has accelerated dramatically. Digitalisation, geopolitics, and demographic shifts are reshaping industries, and both start-ups and established corporations must innovate to survive. Yet innovation requires more than bright ideas; it demands structured execution, access to capital, strategic guidance, and operational excellence.<br><br>
-    Hatchlab Innovations has been built as an integrated platform to address these needs through Enterprise Creation as a Service (ECaaS). By combining a start-up studio, a diversified investment arm, and a modern consultancy under one roof, Hatchlab enables entrepreneurs, executives, and investors to create, finance, and scale ventures with confidence.
-    <a href="#" class="read-more">Read More</a>
-  </p>
-</div>
+  <div class="about-section home-section">
+    <h2>About Us</h2>
+    <p>
+      The pace of economic change has accelerated dramatically. Digitalisation, geopolitics, and demographic shifts are
+      reshaping industries, and both start-ups and established corporations must innovate to survive. Yet innovation
+      requires more than bright ideas; it demands structured execution, access to capital, strategic guidance, and
+      operational excellence.<br><br>
+      Hatchlab Innovations has been built as an integrated platform to address these needs through Enterprise Creation
+      as a Service (ECaaS). By combining a start-up studio, a diversified investment arm, and a modern consultancy under
+      one roof, Hatchlab enables entrepreneurs, executives, and investors to create, finance, and scale ventures with
+      confidence.
+      <a href="#" class="read-more">Read More</a>
+    </p>
+  </div>
 
 
 
@@ -441,6 +447,24 @@
   <section class="founder home-section">
     <div class="gallery-section">
       <h2 class="gallery-heading">Gallery</h2>
+
+
+      <div class="gallery-bg" aria-hidden="true">
+        <svg class="gallery-blobs" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <filter id="blurFilter">
+              <feGaussianBlur stdDeviation="40" />
+            </filter>
+          </defs>
+          <g filter="url(#blurFilter)">
+            <ellipse class="blob b1" cx="200" cy="120" rx="260" ry="100" />
+            <ellipse class="blob b2" cx="950" cy="180" rx="220" ry="120" />
+            <ellipse class="blob b3" cx="600" cy="420" rx="320" ry="140" />
+          </g>
+        </svg>
+        <div class="gallery-particles"></div>
+      </div>
+
 
       <div class="gallery-controls">
         <button class="prev" aria-label="Previous">
@@ -776,6 +800,46 @@
 
     })();
   </script>
+
+
+<!-- GALLERY ANIMATION -->
+
+
+<script>
+(function(){
+  const container = document.querySelector('.gallery-section .gallery-particles');
+  if(!container) return;
+  const count = Math.min(18, Math.floor(window.innerWidth/80));
+  const colors = ['rgba(252,215,3,0.95)','rgba(255,255,255,0.06)'];
+  function createParticle(i){
+    const el = document.createElement('div');
+    el.className = 'particle';
+    el.style.left = Math.random()*100 + '%';
+    el.style.top = (20 + Math.random()*60) + '%';
+    const size = (Math.random()*6 + 4) * (window.innerWidth < 600 ? 0.8 : 1);
+    el.style.width = size + 'px';
+    el.style.height = size + 'px';
+    el.style.background = colors[Math.floor(Math.random()*colors.length)];
+    const delay = Math.random()*6;
+    el.style.animationDelay = delay + 's';
+    container.appendChild(el);
+  }
+  for(let i=0;i<count;i++) createParticle(i);
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const c = document.querySelector('.gallery-section .gallery-particles');
+      if(!c) return;
+      while(c.firstChild) c.removeChild(c.firstChild);
+      const newCount = Math.min(22, Math.floor(window.innerWidth/80));
+      for(let i=0;i<newCount;i++) createParticle(i);
+    },120);
+  });
+})();
+</script>
+
 
   <!-- PARTICLES INIT -->
   <script>

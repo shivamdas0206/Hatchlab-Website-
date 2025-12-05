@@ -1,0 +1,99 @@
+/* contactus.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+        background: #111118;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+        background: #111118;
+    padding: 10px 20px 10px 100px;
+    height: 60px;
+    gap: 40px;
+    ;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    margin-left: -80px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #FFD700;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;           /* centers on large screens */
+    padding: 80px 450px 50px 10px !important;  /* this pushes everything nicely to the left */
+    text-align: left;
+}
+h1 {
+    color: #ffc46b;
+    text-shadow: 0 0 12px rgba(255, 196, 107, 0.8);
+    font-size: 48px;
+    margin-bottom: 50px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+        color: #ffc46b;
+    text-shadow: 0 0 12px rgba(255, 196, 107, 0.8);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    color:white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-item::before {
+    content: "📞";
+    margin-right: 10px;
+}
+
+.email-item {
+    color:white;
+    font-size: 18px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.email-item::before {
+    content: "📧";
+    margin-right: 10px;
+}
+
+.email-item:hover {
+    color: #fff;
+}

@@ -68,18 +68,20 @@ header {
 }
 
 .middle-text {
-    margin-top: 150px;   /* push it down from navbar */
+    margin-top: 50px;   /* push it down from navbar */
     margin-left: 150px;   /* align like your style */
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 700;
-    color: #f2ea00;
+    color: #ffc46b;
+    text-shadow: 0 0 12px rgba(255, 196, 107, 0.8);
     text-align: left;
 }
 
 .what-we-do {
-    margin-top: 150px;   /* gap below 'Service at Hatchlab' */
+    margin-top: 0px;   /* gap below 'Service at Hatchlab' */
     padding: 40px 60px;
-    color: #ede9e9;
+    color: #ffc46b;
+    text-shadow: 0 0 12px rgba(255, 196, 107, 0.8);
     margin-left: 90px;
 }
 
@@ -137,6 +139,9 @@ header {
     font-size: 17px;
     backdrop-filter: blur(8px);
     z-index: 10;
+
+    max-height: 80%;
+    overflow-y: auto;
 }
 
 .overlay-boxone h2 {
@@ -172,6 +177,9 @@ header {
     font-size: 17px;
     backdrop-filter: blur(8px);
     z-index: 10;
+
+    max-height: 80%;
+    overflow-y: auto;
 }
 
 .overlay-boxtwo h2 {
@@ -219,6 +227,9 @@ header {
         width: 45%;
         padding: 40px 40px;
         font-size: 16px;
+
+        max-height: 80%;
+        overflow-y: auto;
     }
 
     .overlay-boxone h2,

@@ -685,7 +685,7 @@ text-align: center;
 }
 
 footer a {
-  color: #fcd703 !important;
+  color:white !important;
 }
 
 
@@ -1152,7 +1152,7 @@ section.what-section h2.what-heading {
   font-size: 15px;
 }
 
-.footer-column a:hover { color: #fcd703; }
+.footer-column a:hover { color: white; }
 
 .footer-column .footer-contact a {
   color: #ffffff;
@@ -1162,7 +1162,7 @@ section.what-section h2.what-heading {
   font-size: 15px;
 }
 
-.footer-column .footer-contact a:hover { color: #fcd703; }
+.footer-column .footer-contact a:hover { color: white; }
 
 .footer-column .footer-contact p {
   margin: 6px 0 0 0;
@@ -1266,7 +1266,7 @@ section.what-section h2.what-heading {
 
 /* Button hover effect */
 .footer-form button:hover {
-  background: #fcd703;
+  background: white;
   color: #000;
   box-shadow: 0 0 14px rgba(252,215,3,0.45);
   transform: translateY(-2px);

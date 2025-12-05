@@ -297,6 +297,8 @@ body{
         text-align: center;
         padding: 30px 20px;
         margin: auto;
+        margin-left: 10%;
+        margin-right: 20%;
     }
     
     .footer-left-content,
@@ -307,14 +309,17 @@ body{
         align-items: center; /* Center items for mobile */
         text-align: center;
         margin: auto;
+        margin-bottom: 10%;
     }
     
     .footer-right-content {
         align-items: center;
+        ;
     }
 
     .email-input {
         text-align: center;
+
     }
 }
 /* ----------------------------------------------------------------- */

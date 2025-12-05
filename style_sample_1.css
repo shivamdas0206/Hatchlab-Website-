@@ -585,15 +585,15 @@ a.initiative-btn { text-decoration: none; display: inline-block; }
 body {
 background-color: #000;
 color: #fff;
-margin: 0;
+margin: 10px;
 font-family: Arial, sans-serif;
 }
 
 .about-section {
 text-align: center;
 padding: 80px 20px;
-max-width: 900px;
-margin: auto;
+width: 80%;
+margin: 0 auto;
 }
 
 .about-section h2 {
@@ -609,6 +609,7 @@ font-size: 20px;
 line-height: 1.8;
 animation: blinkCursor 0.7s infinite;
 padding: 0 5px;
+
 }
 
 .read-more-btn {
@@ -662,9 +663,12 @@ padding-left: 6px;
 
 .about-section p {
 color: #ddd;
-line-height: 1.78;
-font-size: 16px;
+line-height: 1.58;
+font-size: 18px;
 margin-bottom: 18px;
+width: 155%;
+margin: 36px 8px;
+text-align: justify;
 }
 
 .about-section .read-more,
@@ -1405,3 +1409,75 @@ section.what-section h2.what-heading {
 .gallery-blobs {
   display: none !important;
 }
+/* =========================================
+   FINAL MOBILE HEADER FIX (SAFE)
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* ✅ Header layout */
+  .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 12px;
+    overflow-x: auto;   /* ✅ Horizontal scroll ENABLED */
+    overflow-y: hidden;
+    white-space: nowrap;
+    z-index: 1000;
+  }
+
+  /* ✅ Hide scrollbar but keep swipe */
+  .main-header::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ✅ Logo always visible */
+  .header-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-logo img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .brand-name {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  /* ✅ Navigation becomes horizontal scroll row */
+  .header-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+    margin-left: 30px;   /* ✅ Space before About */
+    flex-shrink: 0;
+  }
+
+  .header-nav a {
+    font-size: 15px;
+    white-space: nowrap;
+    padding: 6px 0;
+  }
+
+  /* ✅ Page scroll remains NORMAL */
+  body {
+    overflow-y: auto;
+  }
+
+  .main {
+    padding-top: 90px; /* ✅ Prevent header overlap */
+  }
+}
+

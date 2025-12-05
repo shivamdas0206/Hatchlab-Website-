@@ -343,12 +343,18 @@
           </div>
         </div>
 
+
         <div class="owl-carousel owl-theme initiative-carousel">
+
           <!-- ITEM 1 -->
           <div class="initiative-item animate__animated fade-in-on-scroll custom-duration">
+
             <div class="initiative-image">
+              <h2 class="initiative-item-title main-initiative-heading">
+                Techno India Manchester City Football School
+              </h2>
               <div class="d-flex flex-column justify-content-between h-100 initiative-images">
-                <div class="initiative-item-title">Techno India Manchester City Football School</div>
+
                 <div class="card-image fix-manchester">
                   <img class="breathing-image" src="images/initiative/mancity_leftside.png" alt="TIMCFS left side">
                 </div>
@@ -535,26 +541,37 @@
       <div class="footer-logo">
         <img src="images/logo.png" alt="Logo">
       </div>
-      <p>© 2025 HatchLab Innovations Pvt. Ltd.<br><span style="text-align:center;">All rights reserved.</span></p>
+      <p>© 2025 HatchLab Innovations Pvt. Ltd.<br>All rights reserved.</p>
     </div>
+
     <div class="footer-column">
-      <a href="https://www.hatchlabinnovations.com/career">Career</a>
-      <a href="https://www.hatchlabinnovations.com/contact">Contact</a>
+      <nav class="footer-links">
+        <a href="https://www.hatchlabinnovations.com/career">Career</a>
+        <a href="https://www.hatchlabinnovations.com/contact">Contact</a>
+      </nav>
     </div>
+
     <div class="footer-column">
-      <div class="footer-contact"><a href="tel:+918276057111">+91 8276057111</a></div>
       <div class="footer-contact">
+        <a href="tel:+918276057111">+91 8276057111</a>
         <a href="mailto:info@hatchlabinnovations.com">info@hatchlabinnovations.com</a>
         <p><a href="mailto:admin@hatchlabinnovations.com">admin@hatchlabinnovations.com</a></p>
       </div>
     </div>
+
     <div class="footer-column">
-      <form class="footer-form">
+      <form class="footer-form" action="#" method="post" onsubmit="return false;">
         <input type="email" placeholder="Enter your email" required>
         <button type="submit">Contact Us</button>
       </form>
     </div>
   </footer>
+
+
+
+
+
+
 
   <!-- JS LIBS -->
   <script src="https://www.hatchlabinnovations.com/assets/js/jquery-3.7.1.min.js"></script>
@@ -802,10 +819,67 @@
   </script>
 
 
-<!-- GALLERY ANIMATION -->
+
+  <!-- HEADING  -->
+  <script>
+    (function () {
+      // debounce helper
+      function debounce(fn, wait = 120) { let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); }; }
+
+      function pushRightColumnBelowTitle() {
+        document.querySelectorAll('.initiative-item').forEach(item => {
+          const title = item.querySelector('.initiative-item-title');
+          if (!title) return;
+
+          // measure title height incl. margins
+          const rect = title.getBoundingClientRect();
+          const st = getComputedStyle(title);
+          const mt = parseFloat(st.marginTop) || 0;
+          const mb = parseFloat(st.marginBottom) || 0;
+          const titleHeight = Math.ceil(rect.height + mt + mb);
+
+          // prefer the right column container(s)
+          const right = item.querySelector('.initiative-right') || item.querySelector('.initiative-text');
+          // smaller image wrapper inside right (if present) — we'll push this too for safety
+          const rightImage = item.querySelector('.initiative-right-img') || item.querySelector('.initiative-image');
+
+          // bigger breathing room — increase this number to push further
+          const extraGap = 36; // <-- increased gap (px)
+
+          const targetMargin = titleHeight + extraGap;
+
+          if (right) {
+            // only increase margin if it's less than what we need (prevents shrinking unexpectedly)
+            const cur = parseFloat(getComputedStyle(right).marginTop) || 0;
+            if (cur < targetMargin) right.style.marginTop = targetMargin + 'px';
+          }
+          if (rightImage && rightImage !== right) {
+            const cur2 = parseFloat(getComputedStyle(rightImage).marginTop) || 0;
+            if (cur2 < targetMargin) rightImage.style.marginTop = targetMargin + 'px';
+          }
+        });
+      }
+
+      // run initially and on resize (debounced)
+      window.addEventListener('load', pushRightColumnBelowTitle);
+      window.addEventListener('DOMContentLoaded', pushRightColumnBelowTitle);
+      window.addEventListener('resize', debounce(pushRightColumnBelowTitle, 120));
+    })();
+  </script>
 
 
-<script>
+
+
+
+
+
+
+
+
+  <!-- GALLERY ANIMATION -->
+
+
+  <script>
 (function(){
   const container = document.querySelector('.gallery-section .gallery-particles');
   if(!container) return;

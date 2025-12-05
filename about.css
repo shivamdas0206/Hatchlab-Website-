@@ -1,4 +1,3 @@
-Import all existing styles from about.css (Assuming this contains necessary base styles)
 @import url('about.css');
 
 body{
@@ -70,38 +69,34 @@ body{
 /* ----------- FIXED RESPONSIVE HEADER ----------- */
 .main-header {
     position: fixed;
-    top:25%;
+    top: 0;
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between; /* LEFT + RIGHT */
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background: rgba(23, 22, 31, 0.9);
+    padding: 12px 24px;
+    background: rgba(23, 22, 31, 0.95);
     backdrop-filter: blur(10px);
-    z-index: 0;
+    z-index: 999;
 }
 
-/* Logo + Brand name container */
 .header-logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    flex-shrink: 0; /* prevents stretching */
 }
 
 .header-logo img {
-    width: 45px;  /* reduced for mobiles */
-    height: small;
+    width: 45px;
 }
 
 .brand-name {
-    font-size: 16px;
-    white-space: nowrap;  /* keeps name in one line */
+    font-size: 18px;
     color: white;
 }
 
-/* Navbar Right Side */
+/* Navbar */
 .header-nav {
     display: flex;
     gap: 25px;
@@ -110,7 +105,7 @@ body{
 .header-nav a {
     color: white;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 16px;
     transition: 0.2s;
 }
 
@@ -118,24 +113,7 @@ body{
     color: #fcd703;
 }
 
-/* ---------------- MOBILE RESPONSIVE ---------------- */
-@media (max-width: 600px) {
-    .header-logo img {
-        width: 35px;
-    }
 
-    .brand-name {
-        font-size: 14px;
-    }
-
-    .header-nav {
-        gap: 15px;
-    }
-
-    .header-nav a {
-        font-size: 13px;
-    }
-}
 
 
 
@@ -172,7 +150,7 @@ body{
     background-color: #1a1a1a; /* Dark background matching the screenshot */
     padding: 60px 80px;
     display: flex;
-    justify-content: space-between;
+    
    /* Align columns to the top */
     color: #fff;
     font-size: 0.9em;
@@ -192,10 +170,10 @@ body{
 }
 
 .logo-box-footer {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     background-color: white;
-    border: 2px solid #ffff00;
+    border: 1px solid #ffff00;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,8 +182,8 @@ body{
 }
 
 .logo-box-footer img {
-    width: 30%;
-    height: 30%;
+    width: 90%;
+    height: 90%;
     object-fit: contain;
    
 }
@@ -221,13 +199,16 @@ body{
     flex-basis: 20%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+   margin-right: 60%;
+    margin-left: 30%;
+    margin-top: -4%;
 }
 
 .footer-center-links a {
     color: #fff;
     text-decoration: none;
-    margin-bottom: 5px;
+    margin-bottom: -50px;
     font-weight: bold;
     transition: color 0.3s;
 }
@@ -249,8 +230,12 @@ body{
 
 .contact-info {
     margin-bottom: 20px;
-    color: #fcd703; /* Yellow color for contact details */
+    color:white; /* Yellow color for contact details */
     font-weight: bold;
+    text-align: right;
+    margin-right: 30%;
+    margin-left: 36%;
+    margin-top: 7%;
 }
 
 .contact-item {
@@ -259,7 +244,7 @@ body{
 }
 
 .contact-item a {
-    color: #fcd703;
+    color: white;
     text-decoration: none;
 }
 
@@ -269,7 +254,7 @@ body{
     flex-direction: column;
     width: 100%;
     max-width: 300px;
-    margin-top: 15px;
+    margin-top: -8%;
 }
 
 .email-input {
@@ -289,7 +274,7 @@ body{
 }
 
 .contact-us-btn {
-    background: #fcd703;
+    background: white;
     color: #000;
     border: none;
     padding: 10px 20px;
@@ -380,32 +365,6 @@ body{
 
 
 
-/* -----------------------------------------------------------------
- * --- Media Query for Tablets (Medium Screens: 600px and up) ---
- * -----------------------------------------------------------------
- */
-@media (min-width: 500px) {
-    .about-section {
-        width: 65%;
-        padding: 25px;
-        line-height: 1.6;
-        
-    }
-
-    .about-section h2 {
-        font-size: 2em;
-        /* PUSH PARAGRAPH DOWN: Consistent spacing on medium screens */
-        margin-bottom: 50px; 
-        padding-bottom: 0;
-        /* REMOVE LINE: Overwrite the previous border if it was inherited or set elsewhere */
-        border-bottom: none; 
-    }
-
-    .about-section p {
-        font-size: 1.05em;
-    }
-
-} 
 
 
 /* -----------------------------------------------------------------

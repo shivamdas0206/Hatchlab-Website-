@@ -1405,3 +1405,75 @@ section.what-section h2.what-heading {
 .gallery-blobs {
   display: none !important;
 }
+/* =========================================
+   FINAL MOBILE HEADER FIX (SAFE)
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* ✅ Header layout */
+  .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 12px;
+    overflow-x: auto;   /* ✅ Horizontal scroll ENABLED */
+    overflow-y: hidden;
+    white-space: nowrap;
+    z-index: 1000;
+  }
+
+  /* ✅ Hide scrollbar but keep swipe */
+  .main-header::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ✅ Logo always visible */
+  .header-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-logo img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .brand-name {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  /* ✅ Navigation becomes horizontal scroll row */
+  .header-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+    margin-left: 30px;   /* ✅ Space before About */
+    flex-shrink: 0;
+  }
+
+  .header-nav a {
+    font-size: 15px;
+    white-space: nowrap;
+    padding: 6px 0;
+  }
+
+  /* ✅ Page scroll remains NORMAL */
+  body {
+    overflow-y: auto;
+  }
+
+  .main {
+    padding-top: 90px; /* ✅ Prevent header overlap */
+  }
+}
+

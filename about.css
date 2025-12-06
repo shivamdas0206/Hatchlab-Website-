@@ -289,39 +289,7 @@ body{
     background: #ffe04d;
 }
 
-/* --- Responsive Adjustments for Smaller Screens --- */
-@media (max-width: 768px) {
-    .footer-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 30px 20px;
-        margin: auto;
-        margin-left: 10%;
-        margin-right: 20%;
-    }
-    
-    .footer-left-content,
-    .footer-center-links,
-    .footer-right-content {
-        flex-basis: 100%;
-        margin-bottom: 30px;
-        align-items: center; /* Center items for mobile */
-        text-align: center;
-        margin: auto;
-        margin-bottom: 10%;
-    }
-    
-    .footer-right-content {
-        align-items: center;
-        ;
-    }
 
-    .email-input {
-        text-align: center;
-
-    }
-}
 /* ----------------------------------------------------------------- */
 /* --- Global & Mobile-First Styling (Default for small screens) --- */
 /* ----------------------------------------------------------------- */
@@ -415,6 +383,7 @@ body{
         font-size: 15px;
     }
 }
+<<<<<<< HEAD
 /* Footer styling */
 .footer-section {
     background: #0b0b0b;
@@ -554,3 +523,88 @@ body{
     font-size: 20px;
     text-decoration: underline;
 }
+=======
+
+
+/* ------------------------------------------ */
+/* MOBILE OPTIMIZATION */
+/* ------------------------------------------ */
+@media (max-width: 768px) {
+
+
+    .footer-section {
+        padding: 30px 20px;
+        flex-direction: column;
+        text-align: center;
+        margin: 10px auto;      /* Center the footer horizontally */
+        max-width: 400px;    /* Optional: limit width for better readability */
+        gap: 40px;           /* Add space between footer sections */
+    }
+
+    .footer-left-content,
+    .footer-center-links,
+    .footer-right-content {
+        flex-basis: 100%;
+        margin: 10px 25px 30px 0;  /* uniform bottom spacing */
+        text-align: center;
+    }
+     .footer-left-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* centers logo and text horizontally */
+    margin-bottom: 30px;
+    text-align: center;     /* centers multi-line text */
+  }
+
+    .logo-box-footer {
+    margin-bottom: 15px;
+  }
+    /* Remove negative margin which causes overlap */
+    .contact-info {
+        margin: 10px 45px 20px 45px;
+        text-align: center;
+    }
+
+    .main-header {
+        padding: 8px 10px;
+        flex-direction: column;      /* stack vertically */
+        align-items: center;         /* center everything horizontally */
+        gap: 10px;
+    }
+
+    .header-logo {
+        align-self: flex-start;      /* push logo to the left */
+        display: flex;
+        gap: 8px;
+        
+    }
+
+    .header-logo img {
+        width: 35px;
+        margin-top: 10px;                 /* smaller logo */
+    }
+
+    .brand-name {
+        font-size: 16px;
+    }
+
+    .header-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;     /* center menu */
+        gap: 8px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .header-nav a {
+        font-size: 14px;
+        padding: 6px 18px;
+        white-space: nowrap;
+    }
+}
+
+
+    
+>>>>>>> c14c9010fb22b8f549cf4b08e374da4760f01552

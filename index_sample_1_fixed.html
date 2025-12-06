@@ -536,37 +536,59 @@
   <!-- SHIVAM PART -->
 
 
-  <footer class="footer footer-section">
-    <div class="footer-column">
-      <div class="footer-logo">
-        <img src="images/logo.png" alt="Logo">
-      </div>
-      <p>© 2025 HatchLab Innovations Pvt. Ltd.<br>All rights reserved.</p>
-    </div>
+<footer class="footer-section">
+        <!-- Main horizontal row -->
+        <div class="footer-content">
+            <!-- Column 1: Logo + Copyright -->
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="HatchLab Logo">
+                </div>
+                <p class="footer-meta">© 2025 HatchLab Innovations Pvt. Ltd.<br>All rights reserved.</p>
+            </div>
 
-    <div class="footer-column">
-      <nav class="footer-links">
-        <a href="https://www.hatchlabinnovations.com/career">Career</a>
-        <a href="https://www.hatchlabinnovations.com/contact">Contact</a>
-      </nav>
-    </div>
+            <!-- Column 2: Links -->
+            <div class="footer-column">
+                <nav class="footer-links">
+                    <a href="https://www.hatchlabinnovations.com/career">Career</a>
+                    <a href="https://www.hatchlabinnovations.com/contact">Contact</a>
+                </nav>
+            </div>
 
-    <div class="footer-column">
-      <div class="footer-contact">
-        <a href="tel:+918276057111">+91 8276057111</a>
-        <a href="mailto:info@hatchlabinnovations.com">info@hatchlabinnovations.com</a>
-        <p><a href="mailto:admin@hatchlabinnovations.com">admin@hatchlabinnovations.com</a></p>
-      </div>
-    </div>
+            <!-- Column 3: Contact Info -->
+            <div class="footer-column">
+                <div class="footer-contact">
+                    <a href="tel:+918276057111">+91 8276057111</a>
+                    <a href="mailto:info@hatchlabinnovations.com">info@hatchlabinnovations.com</a>
+                    <a href="mailto:admin@hatchlabinnovations.com">admin@hatchlabinnovations.com</a>
+                </div>
+            </div>
 
-    <div class="footer-column">
-      <form class="footer-form" action="#" method="post" onsubmit="return false;">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Contact Us</button>
-      </form>
-    </div>
-  </footer>
+            <!-- Column 4: Email Form -->
+            <div class="footer-column">
+                <form class="footer-form" action="#" onsubmit="return false;">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Contact Us</button>
+                </form>
+            </div>
+        </div>
 
+        <!-- Social icons – vertical & centered below the text -->
+        <div class="footer-social">
+            <p>Connect with us through -</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/hatchlab-innovations/posts/?feedView=all" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/hatchlabinnovations.official/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/people/Hatchlab-Innovations/61558095073459/" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
 
 
@@ -592,43 +614,54 @@
   <script src="https://www.hatchlabinnovations.com/assets/js/app.js"></script>
 
   <!-- INIT: OUR INITIATIVES OWL CAROUSEL -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      if (window.jQuery && typeof jQuery.fn.owlCarousel === 'function') {
-        jQuery(function ($) {
-          var $carousel = $('.initiative-carousel');
-          if ($carousel.length) {
-            // Avoid double-init if any external script also touches this carousel
-            if (!$carousel.hasClass('owl-loaded')) {
-              $carousel.owlCarousel({
-                items: 1,
-                loop: true,
-                margin: 24,
-                nav: false,
-                dots: true,
-                autoplay: false,
-                smartSpeed: 600,
-                autoplayHoverPause: false,
-                responsive: { 0: { items: 1 }, 600: { items: 1 }, 1000: { items: 1 } }
-              });
-            }
-
-            // navigation
-            $('.initiative-prev').on('click', function (e) {
-              e.preventDefault();
-              $carousel.trigger('prev.owl.carousel');
-            });
-            $('.initiative-next').on('click', function (e) {
-              e.preventDefault();
-              $carousel.trigger('next.owl.carousel');
-            });
+  <!-- INIT: OUR INITIATIVES OWL CAROUSEL - WITH 5 SECOND AUTOPLAY -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.jQuery && typeof jQuery.fn.owlCarousel === 'function') {
+      jQuery(function ($) {
+        var $carousel = $('.initiative-carousel');
+        if ($carousel.length) {
+          // Destroy if already initialized (prevents duplicates)
+          if ($carousel.hasClass('owl-loaded')) {
+            $carousel.trigger('destroy.owl.carousel');
+            $carousel.removeClass('owl-loaded owl-drag');
           }
-        });
-      } else {
-        console.warn('jQuery or OwlCarousel not available for initiatives carousel.');
-      }
-    });
-  </script>
+
+          $carousel.owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 24,
+            nav: false,
+            dots: true,
+            autoplay: true,                  // Enable autoplay
+            autoplayTimeout: 5000,           // 5 seconds = 5000ms
+            autoplayHoverPause: true,        // Pause when user hovers (optional but recommended)
+            smartSpeed: 800,                 // Smooth transition
+            animateOut: 'fadeOut',           // Optional: nice fade effect
+            animateIn: 'fadeIn',             // Optional: nice fade effect
+            responsive: {
+              0: { items: 1 },
+              600: { items: 1 },
+              1000: { items: 1 }
+            }
+          });
+
+          // Manual navigation buttons
+          $('.initiative-prev').on('click', function (e) {
+            e.preventDefault();
+            $carousel.trigger('prev.owl.carousel', [600]);
+          });
+          $('.initiative-next').on('click', function (e) {
+            e.preventDefault();
+            $carousel.trigger('next.owl.carousel', [600]);
+          });
+        }
+      });
+    } else {
+      console.warn('jQuery or OwlCarousel not available for initiatives carousel.');
+    }
+  });
+</script>
 
   <!-- CONTINUOUS GALLERY CAROUSEL SCRIPT  -->
   <script>

@@ -27,6 +27,45 @@ body {
   color: #fff;
 }
 
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #0f0f16;
+    padding: 50px 20px 5px 100px;
+    height: 60px;
+    gap: 40px;
+    ;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    margin-left: -80px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #FFD700;
+}
+
+
 /* ✅ Main Content */
 .content {
   width: 100%;

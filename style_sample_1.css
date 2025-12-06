@@ -1689,3 +1689,178 @@ section.what-section h2.what-heading {
     font-size: 20px;
     text-decoration: underline;
 }
+
+
+
+/* === GALLERY HEADER ALIGNMENT (CSS-only) === */
+.gallery-section {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 40px 40px 40px 40px;      /* side padding + space above cards */
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: auto 1fr;   /* left: heading, right: arrows */
+  grid-template-rows: auto auto;     /* row 1: header, row 2: cards */
+  align-items: center;               /* vertically align heading + arrows */
+}
+
+/* heading on the left of row 1 */
+.gallery-heading {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+/* arrows on the right of row 1 */
+.gallery-controls {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  display: flex !important;
+  gap: 16px;
+  margin: 0 !important;
+}
+
+/* cards take full width on row 2 */
+.udyog-gallery-owl {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin-top: 24px;
+}
+
+/* mobile: stack heading, arrows, then cards */
+@media (max-width: 768px) {
+  .gallery-section {
+    display: block;
+    padding: 24px 16px 24px 16px;
+  }
+
+  .gallery-heading {
+    text-align: center !important;
+    margin-bottom: 12px !important;
+  }
+
+  .gallery-controls {
+    justify-content: center !important;
+    margin-bottom: 16px !important;
+  }
+}
+
+
+
+/* === GALLERY HEADER ALIGNMENT FIX (CSS-only) === */
+
+.gallery-section {
+  position: relative; /* ensure arrows use this as reference */
+}
+
+/* Heading on the left */
+.gallery-heading {
+  margin: 0 !important;
+  padding: 40px 0 0 40px !important;  /* same top inset we use for arrows */
+  text-align: left !important;
+}
+
+/* Arrows on the right, same height as heading */
+.gallery-controls {
+  position: absolute !important;
+  top: 40px !important;       /* same as heading's top padding */
+  right: 40px !important;     /* inside the screen, no overflow */
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+/* Mobile: stack arrows under the heading and center them */
+@media (max-width: 768px) {
+  .gallery-heading {
+    padding: 32px 0 0 0 !important;
+    text-align: center !important;
+  }
+
+  .gallery-controls {
+    position: static !important;
+    margin-top: 12px !important;
+    justify-content: center !important;
+  }
+}
+
+
+/* === MOBILE GALLERY HEADER ALIGNMENT FIX === */
+@media (max-width: 768px) {
+
+  /* give the gallery section some inner padding again */
+  .founder .gallery-section {
+    position: relative !important;
+    padding: 32px 16px 0 !important;
+  }
+
+  /* Gallery title on its own line, left aligned */
+  .founder .gallery-heading {
+    display: block !important;
+    margin: 0 0 16px 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+  }
+
+  /* Arrows sit on the same height as the title, inside the screen */
+  .founder .gallery-controls {
+    position: absolute !important;
+    top: 32px !important;   /* same vertical level as heading */
+    right: 16px !important; /* inside the viewport edge */
+    margin: 0 !important;
+    display: flex !important;
+    gap: 12px !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
+  /* push the carousel down so it starts below title + arrows */
+  .founder .udyog-gallery-owl {
+    margin-top: 40px !important;
+  }
+}
+
+/* === MATCH GALLERY HEADER POSITION TO INITIATIVES HEADER ON MOBILE === */
+@media (max-width: 768px) {
+
+  /* Apply same left padding as initiatives section */
+  .gallery-section {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Heading styles to match initiatives */
+  .gallery-heading {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    font-size: 28px !important; /* same as initiatives mobile */
+  }
+
+  /* Arrows: same horizontal alignment as initiatives */
+  .gallery-controls {
+    position: absolute !important;
+    top: 0 !important;
+    right: 14px !important; /* match initiatives padding-right */
+    display: flex !important;
+    gap: 12px !important;
+    align-items: center !important;
+  }
+
+  /* Push the carousel under the header row */
+  .udyog-gallery-owl {
+    margin-top: 60px !important;
+  }
+}
+
+
+
+

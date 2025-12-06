@@ -1161,9 +1161,10 @@ section.what-section h2.what-heading {
 .footer-column .footer-contact a {
   color: #ffffff;
   display: block;
-  margin: 6px 0;
+  margin: 8px 6px;
   text-decoration: none;
   font-size: 15px;
+
 }
 
 .footer-column .footer-contact a:hover { color: white; }

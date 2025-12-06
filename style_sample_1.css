@@ -1409,78 +1409,6 @@ section.what-section h2.what-heading {
 .gallery-blobs {
   display: none !important;
 }
-/* =========================================
-   FINAL MOBILE HEADER FIX (SAFE)
-   ========================================= */
-
-@media (max-width: 768px) {
-
-  /* ✅ Header layout */
-  .main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px 12px;
-    overflow-x: auto;   /* ✅ Horizontal scroll ENABLED */
-    overflow-y: hidden;
-    white-space: nowrap;
-    z-index: 1000;
-  }
-
-  /* ✅ Hide scrollbar but keep swipe */
-  .main-header::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* ✅ Logo always visible */
-  .header-logo {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .header-logo img {
-    height: 38px;
-    width: auto;
-    object-fit: contain;
-    display: block;
-  }
-
-  .brand-name {
-    font-size: 14px;
-    white-space: nowrap;
-  }
-
-  /* ✅ Navigation becomes horizontal scroll row */
-  .header-nav {
-    display: flex;
-    flex-direction: row;
-    gap: 22px;
-    margin-left: 30px;   /* ✅ Space before About */
-    flex-shrink: 0;
-  }
-
-  .header-nav a {
-    font-size: 15px;
-    white-space: nowrap;
-    padding: 6px 0;
-  }
-
-  /* ✅ Page scroll remains NORMAL */
-  body {
-    overflow-y: auto;
-  }
-
-  .main {
-    padding-top: 90px; /* ✅ Prevent header overlap */
-  }
-}
-
 
 
 
@@ -1549,6 +1477,81 @@ section.what-section h2.what-heading {
   display: block;
 }
 
+@media (max-width: 768px) {
+
+  /* === FORCE FULL HORIZONTAL SCROLL HEADER === */
+  .main-header {
+    all: unset !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 24px !important;
+
+    padding: 12px 16px !important;
+    background: #000 !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+
+    z-index: 99999 !important;
+    box-sizing: border-box !important;
+  }
+
+  .main-header::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* === LOGO FULLY VISIBLE LEFT === */
+  .header-logo {
+    all: unset !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .header-logo img {
+    height: 38px !important;
+    width: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
+
+  .brand-name {
+    font-size: 14px !important;
+    white-space: nowrap !important;
+  }
+
+  /* === NAV SCROLLS FULLY TO RIGHT === */
+  .header-nav {
+    all: unset !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 26px !important;
+    flex-shrink: 0 !important;
+    padding-right: 30px !important;
+  }
+
+  .header-nav a {
+    font-size: 15px !important;
+    white-space: nowrap !important;
+  }
+
+  /* === PREVENT PAGE LOCK === */
+  body {
+    overflow-y: auto !important;
+  }
+
+  .main {
+    padding-top: 90px !important;
+  }
+}
 
 
 

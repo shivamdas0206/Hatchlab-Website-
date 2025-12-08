@@ -72,16 +72,15 @@ header {
     margin-left: 150px;   /* align like your style */
     font-size: 50px;
     font-weight: 700;
-    color: #ffc46b;
-    text-shadow: 0 0 12px rgba(255, 196, 107, 0.8);
+    color:#fcd703;
+   
     text-align: left;
 }
 
 .what-we-do {
     margin-top: 0px;   /* gap below 'Service at Hatchlab' */
     padding: 40px 60px;
-    color: #ffc46b;
-    text-shadow: 0 0 12px rgba(255, 196, 107, 0.8);
+     color:#fcd703;
     margin-left: 90px;
 }
 
@@ -480,7 +479,7 @@ header {
 }
 
 .footer-form input:focus {
-    border-color: #ffd700;
+    border-color: #ffd703;
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
     outline: none;
 }
@@ -536,8 +535,7 @@ header {
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
 .footer-social p{
-    color: #ffc46b;
-    text-shadow: 0 0 12px rgba(255, 196, 107, 0.8);
+    color: #ffd703;
     font-size: 20px;
     text-decoration: underline;
 }

@@ -215,7 +215,7 @@ overflow: visible;
 }
 
 section.what-section h2.what-heading {
-color: #ffffff;
+color: #fcd703;
 font-family: Helvetica, Arial, sans-serif;
 font-size: 36px;
 margin: 0 auto 40px;
@@ -223,7 +223,7 @@ text-align: center;
 max-width: 1100px;
 position: relative;
 z-index: 50;
-text-shadow: 0 0 8px rgba(255, 196, 107, 0.7);
+
 }
 
 section.what-section > .what-cards-container {
@@ -373,10 +373,9 @@ gap: 16px;
 .initiative-title {
 font-size: 36px;
 font-weight: 700;
-background: linear-gradient(90deg, #ffe29f, #ffc46b);
+
 background-clip: text;
-color: transparent;
-text-shadow: 0 0 8px rgba(255, 196, 107, 0.7);
+color: #fcd703;
 }
 
 /* initiative nav buttons (merged with gallery hover behaviour) */
@@ -423,8 +422,8 @@ color: #fcd703;
 .initiative-content,
 .initiative-content p,
 .initiative-content > * {
-color: #fff !important;
-font-weight: 700 !important;
+color: white !important;
+font-weight: 700!important;
 }
 
 /* Explore more button — yellow text, yellow border by default; hover becomes yellow bg + black text */
@@ -458,6 +457,7 @@ display: flex;
 gap: 28px;
 align-items: stretch;
 transition: 0.3s ease;
+
 }
 
 .initiative-item:hover { transform: translateY(-6px); box-shadow: 0 14px 40px rgba(252, 215, 3, 0.25); }
@@ -471,7 +471,7 @@ justify-content: space-between;
 
 .initiative-item-title {
 font-size: 22px;
-color: #fcefa2;
+color: #fcd703;
 margin-bottom: 15px;
 backdrop-filter: blur(6px);
 font-weight: 700;
@@ -562,7 +562,8 @@ border-color: rgba(255, 215, 0, 0.4);
 }
 }
 
-.thoughtshop { justify-content: flex-start !important; }
+.thoughtshop { justify-content: flex-start !important;
+ }
 .thoughtshop img { height: 260px; object-fit: cover; }
 
 a.initiative-btn { text-decoration: none; display: inline-block; }
@@ -640,8 +641,7 @@ font-size: 36px !important;
 font-weight: 700 !important;
 background: linear-gradient(90deg, #ffe29f, #ffc46b) !important;
 background-clip: text !important;
--webkit-text-fill-color: transparent !important;
-text-shadow: 0 0 8px rgba(255, 196, 107, 0.7) !important;
+color: white;
 }
 
 /* Patch: position About Us section to the left (matches uploaded image) background box removed */
@@ -651,13 +651,14 @@ max-width: clamp(360px, 55%, 900px);
 margin: 80px 0 80px 40px;
 position: relative;
 text-align: left;
-color: #e9e9e9;
+color:  white;
 }
 
 .about-section h2 {
 margin-top: 0;
 margin-bottom: 18px;
 padding-left: 6px;
+color:#fcd703;
 }
 
 .about-section p {
@@ -715,6 +716,8 @@ footer input[type="email"] {
     margin: 0 !important;
     padding: 0 !important;
     background-clip: text;
+    color: #fcd703
+    
    
   }
 
@@ -843,6 +846,7 @@ footer input[type="email"] {
 @media (max-width: 375px) {
   .initiative-title {
     font-size: 40px !important;
+    
   }
   .about-section {
     margin-top: 150px !important;
@@ -900,12 +904,7 @@ section.what-section h2.what-heading {
   max-width: 1100px;
   margin-left: 40px !important;
   text-align: left !important;
-}
-section.what-section h2.what-heading {
-  width: 100%;
-  max-width: 1100px;
-  margin-left: 40px !important;
-  text-align: left !important;
+  color: #fcd703;
 }
 
 @media (max-width: 900px) {
@@ -934,6 +933,7 @@ section.what-section h2.what-heading {
   margin: 0 !important;
   text-align: left !important;
   flex: 0 1 auto !important;
+  color: #fcd703;
 }
 
 .gallery-controls {
@@ -963,6 +963,7 @@ section.what-section h2.what-heading {
 
   .gallery-heading {
     text-align: center !important;
+    
   }
 
   .gallery-controls {
@@ -985,7 +986,7 @@ section.what-section h2.what-heading {
 .initiative-btn {
   color: #fcd703 !important;
   border-color: #fcd703 !important;
-  background: transparent !important;
+  
 }
 
 .initiative-btn:hover {
@@ -997,10 +998,9 @@ section.what-section h2.what-heading {
 .initiative-item-title {
   font-size: 28px !important;
   font-weight: 700 !important;
-  background: linear-gradient(90deg, #ffe29f, #ffc46b) !important;
+ 
   background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  text-shadow: 0 0 8px rgba(255, 196, 107, 0.7) !important;
+  color: #fcd703;
 }
 
 .initiative-image img,
@@ -1321,6 +1321,7 @@ section.what-section h2.what-heading {
 .initiative-second-box {
   display: flex !important;
   align-items: center !important;
+  
 }
 
 .initiative-image {
@@ -1356,15 +1357,11 @@ section.what-section h2.what-heading {
   margin: 0 !important;
   pointer-events: auto !important;
   -webkit-font-smoothing: antialiased !important;
+  color: #fcd703;
 }
 
-/* If the heading had glow/shadow, keep it visible by allowing overflow on ancestor */
-.our-initiative,
-.our-initiative .initiative-container,
-.our-initiative .initiative-body,
-.initiative-item {
-  overflow: visible !important;
-}
+
+
 
 /* make sure the right column content sits below the title (safety) */
 .initiative-text,
@@ -1400,6 +1397,7 @@ section.what-section h2.what-heading {
   -webkit-transform: none !important;
   filter: none !important;
   will-change: auto !important;
+  color: #fcd703;
 }
 
 
@@ -1416,7 +1414,7 @@ section.what-section h2.what-heading {
 /* REMOVE the dark card/box behind the entire gallery section */
 .gallery-section {
   background: transparent !important;
-  box-shadow: none !important;
+ 
   border-radius: 0 !important;
   padding: 0 !important;
 }
@@ -1452,6 +1450,7 @@ section.what-section h2.what-heading {
   margin-left: -50vw; /* full-bleed trick WITHOUT moving inner content */
   margin-right: -50vw;
   background: transparent !important;
+  
 }
 
 /* The gallery-section should also take full width but KEEP its inner layout same */
@@ -1673,7 +1672,7 @@ section.what-section h2.what-heading {
     background: #111;
     margin: 0 8px;
     font-size: 20px;
-    color: #ffd700;
+    color: #ffd703;
     border: 1px solid #333;
     transition: 0.3s;
     text-decoration: none;
@@ -1685,8 +1684,7 @@ section.what-section h2.what-heading {
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
 .footer-social p{
-    color: #ffc46b;
-    text-shadow: 0 0 12px rgba(255, 196, 107, 0.8);
+    color: #fcd703;
     font-size: 20px;
     text-decoration: underline;
 }
@@ -1765,6 +1763,7 @@ section.what-section h2.what-heading {
   margin: 0 !important;
   padding: 40px 0 0 40px !important;  /* same top inset we use for arrows */
   text-align: left !important;
+  color: #fcd703;
 }
 
 /* Arrows on the right, same height as heading */

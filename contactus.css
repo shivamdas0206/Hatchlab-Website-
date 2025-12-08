@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-        background: #111118;
+    background: #111118;
     padding: 10px 20px 10px 100px;
     height: 60px;
     gap: 40px;
@@ -41,7 +41,7 @@ body {
 }
 
 .nav-links li a:hover {
-    color: #FFD700;
+    color: #fcd703;
 }
 
 .container {
@@ -51,8 +51,8 @@ body {
     text-align: left;
 }
 h1 {
-    color: #ffc46b;
-    text-shadow: 0 0 12px rgba(255, 196, 107, 0.8);
+    color: #fcd703;
+   
     font-size: 48px;
     margin-bottom: 50px;
 }
@@ -62,8 +62,8 @@ h1 {
 }
 
 .section h2 {
-        color: #ffc46b;
-    text-shadow: 0 0 12px rgba(255, 196, 107, 0.8);
+    color: #ffd703;
+    
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -226,13 +226,13 @@ h1 {
 }
 
 .social-icons a:hover {
-    background: #ffd700;
+    background: #ffd703;
     color: #000;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
 .footer-social p{
-    color: #ffc46b;
-    text-shadow: 0 0 12px rgba(255, 196, 107, 0.8);
+    color: #ffd703;
+   
     font-size: 20px;
     text-decoration: underline;
 }

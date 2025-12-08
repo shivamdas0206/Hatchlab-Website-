@@ -1918,6 +1918,15 @@ section.what-section h2.what-heading {
     margin-top: 140px !important; /* pushes it below the contact button */
   }
 }
+/* MAKE ALL SECTION HEADINGS SAME SIZE ON MOBILE */
+@media (max-width: 600px) {
+    .about-section h2,
+    section.what-section h2.what-heading,
+    .gallery-heading,
+    .initiative-title {
+        font-size: 36px !important;
+    }
+}
 
 
 

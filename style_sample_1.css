@@ -1861,6 +1861,59 @@ section.what-section h2.what-heading {
     margin-top: 60px !important;
   }
 }
+/* --- FIX ABOUT SECTION FOR MOBILE --- */
+@media (max-width: 768px) {
+
+  .about-section {
+    width: 100% !important;
+    margin: 20px auto !important;
+    padding: 40px 20px !important;
+    text-align: center !important;
+    max-width: 100% !important;
+  }
+
+  .about-section h2 {
+    font-size: 28px !important;
+    padding-left: 0 !important;
+    text-align: center !important;
+  }
+
+  .about-section p {
+    width: 100% !important;
+    margin: 20px auto !important;
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+    text-align: center !important;
+  }
+
+  .read-more-btn {
+    margin-top: 20px !important;
+    font-size: 16px !important;
+    padding: 10px 24px !important;
+  }
+}
+
+/* Extra small devices fix */
+@media (max-width: 480px) {
+
+  .about-section {
+    padding: 32px 16px !important;
+  }
+
+  .about-section h2 {
+    font-size: 24px !important;
+  }
+
+  .about-section p {
+    font-size: 15px !important;
+  }
+}
+/* FIX ABOUT-US OVERLAP ON MOBILE */
+@media (max-width: 480px) {
+  .about-section {
+    margin-top: 140px !important; /* pushes it below the contact button */
+  }
+}
 
 
 

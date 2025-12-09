@@ -779,10 +779,10 @@
       function applyTranslate(instant) {
         if (instant) {
           track.style.transition = 'none';
-          track.style.transform = translateX(${translate}px);
+          track.style.transform = `translateX(${translate}px)`;
           requestAnimationFrame(() => { track.style.transition = ''; });
         } else {
-          track.style.transform = translateX(${translate}px);
+          track.style.transform = `translateX(${translate}px)`;
         }
       }
 
@@ -1274,7 +1274,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const cleanedText = rawHTML.replace(aTag, "##LINK##");
         const words = cleanedText.split(/(\s+|<br><br>)/).map(word => {
           if (word === "<br><br>" || word.trim() === "") return word;
-          return <span class="about-word">${word}</span>;
+          return `<span class="about-word">${word}</span>`;
         });
         aboutText.innerHTML = words.join("").replace("##LINK##", aTag);
         gsap.set(".about-word", { opacity: 0.2 });

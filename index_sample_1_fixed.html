@@ -1160,8 +1160,8 @@ document.addEventListener("DOMContentLoaded", () => {
       heroChars.forEach((char, index) => {
         char.style.animation = 'none';
         char.offsetHeight;
-        char.style.animation = bounceElastic 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-        char.style.animationDelay = ${index * 0.08}s;
+        char.style.animation = `bounceElastic 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards` ;
+        char.style.animationDelay = `${index * 0.08}s`;
       });
 
       const totalChars = heroChars.length;
@@ -1183,7 +1183,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const rect = contactBtn.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-        contactBtn.style.transform = translate(${x * 0.1}px, ${y * 0.1}px) scale(1.1);
+        contactBtn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.1)`;
       });
 
       contactBtn.addEventListener('mouseleave', () => {

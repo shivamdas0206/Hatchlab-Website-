@@ -1041,6 +1041,63 @@
     }
   </script>
 
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Safety: if GSAP or ScrollTrigger is missing, don't hide anything
+    if (!window.gsap || !window.ScrollTrigger) {
+      console.warn("GSAP / ScrollTrigger not found – scroll animations skipped.");
+      return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // All major sections EXCEPT the header
+    const sections = gsap.utils.toArray([
+      ".hero-sec",        // hero
+      ".about-section",   // about us
+      ".what-section",    // what we do
+      ".our-initiative",  // initiatives
+      ".founder",         // gallery section wrapper
+      "footer"            // footer
+    ]);
+
+    sections.forEach((sec, i) => {
+      gsap.from(sec, {
+        autoAlpha: 0,     // opacity 0 -> 1
+        y: 80,            // stronger upward movement (more prominent)
+        duration: 2.0,    // slower, more dramatic fade
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sec,
+          start: "top 80%",      // when section top hits 80% of viewport
+          end: "top 40%",
+          toggleActions: "play none none reverse" // fade back out when scrolling up
+        }
+      });
+    });
+
+    // Extra: animate individual gallery cards too (more punch)
+    gsap.utils.toArray(".gallery-card").forEach((card) => {
+      gsap.from(card, {
+        autoAlpha: 0,
+        y: 60,
+        duration: 1.6,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 90%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
   <!-- About text GSAP scrolling animation -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {

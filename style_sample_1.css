@@ -1926,3 +1926,265 @@ section.what-section h2.what-heading {
 
 
 
+
+/* FOOTER GRADIENT BLOBS (FIXED + SMOOTH + NON-GLITCHY) */
+.footer-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* blob wrapper */
+.footer-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* each blob */
+.footer-gradient > div {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);                      /* important! blob look */
+  opacity: 0.9;
+  animation: footerBlobMove 14s ease-in-out infinite;
+  mix-blend-mode: screen;                  /* makes colors blend smoothly */
+}
+
+/* === Blob colors + improved positioning === */
+.footer-gradient > div:nth-child(1) {
+  width: 90%;
+  height: 90%;
+  background: #0f0f0f6a;
+  top: -10%;
+  left: -20%;
+  animation-delay: -2s;                    /* negative = starts immediately */
+}
+
+.footer-gradient > div:nth-child(2) {
+  width: 85%;
+  height: 85%;
+  background: #121212;
+  top: -25%;
+  right: -20%;
+  animation-delay: -4s;
+}
+
+.footer-gradient > div:nth-child(3) {
+  width: 75%;
+  height: 75%;
+  background: #423f08;
+  bottom: -20%;
+  right: -15%;
+  animation-delay: -6s;
+}
+
+.footer-gradient > div:nth-child(4) {
+  width: 70%;
+  height: 70%;
+  background: #32323262;
+  bottom: -25%;
+  left: -10%;
+  animation-delay: -8s;
+}
+
+/* subtle global softening */
+.footer-gradient::after {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  background: rgba(0,0,0,0);               /* needed for backdrop filter */
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  z-index: 0;
+}
+
+/* footer content must stay above blobs */
+.footer-content,
+.footer-social {
+  position: relative;
+  z-index: 5;
+}
+
+/* FIXED ANIMATION (smooth, loop, no jump) */
+@keyframes footerBlobMove {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(50px, -40px) scale(1.20);
+  }
+  66% {
+    transform: translate(-40px, 30px) scale(1.12);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+
+
+
+/* === GSAP GALLERY SLIDER OVERRIDES === */
+
+/* ==== GSAP 3D CIRCULAR GALLERY SLIDER ==== */
+
+/* slider container */
+.udyog-gallery-owl {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 80px auto 40px auto;
+  height: 360px;                  /* visible window */
+  perspective: 1400px;            /* depth */
+  transform-style: preserve-3d;
+}
+
+/* every gallery card becomes a 3D panel */
+.udyog-gallery-owl .gallery-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  height: 320px;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.65);
+  background: #020015;           /* subtle dark bg behind images */
+  opacity: 0;                    /* GSAP will fade them in */
+  pointer-events: none;          /* only the active one will capture clicks */
+}
+
+/* the active (middle) slide gets clicks enabled */
+.udyog-gallery-owl .gallery-card.is-active {
+  pointer-events: auto;
+}
+
+/* image fills the panel */
+.udyog-gallery-owl .gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* optional: text bar at bottom (if you want to keep it) */
+.udyog-gallery-owl .gallery-card .gallery-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 16px;
+  font-size: 13px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* keep arrows above the cards */
+.gallery-controls button {
+  z-index: 10;
+}
+
+/* smaller layout for mobile – flatten it a bit */
+@media (max-width: 768px) {
+  .udyog-gallery-owl {
+    height: 300px;
+    max-width: 100%;
+    margin-top: 40px;
+  }
+/* ==== FINAL GALLERY 3D SLIDER LAYOUT (FULL WIDTH, NO CROPPING) ==== */
+
+/* slider container */
+.udyog-gallery-owl {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 80px auto 40px auto;
+  height: min(70vh, 520px);      /* uses most of vertical space */
+  perspective: 1600px;
+  transform-style: preserve-3d;
+}
+
+/* each card = 3D panel */
+.udyog-gallery-owl .gallery-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(70vw, 780px);       /* big centre card, takes most of the screen */
+  aspect-ratio: 16 / 9;          /* keep nice proportion without cropping */
+  height: auto;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+
+  border-radius: 24px;
+  overflow: hidden;
+  background: #020015;
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.65);
+  opacity: 0;                    /* GSAP fades them in */
+  pointer-events: none;          /* only active slide clickable */
+}
+
+/* only the current (middle) card can be interacted with */
+.udyog-gallery-owl .gallery-card.is-active {
+  pointer-events: auto;
+}
+
+/* image fills card without cropping and inherits all 4 rounded corners */
+.udyog-gallery-owl .gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;           /* ✅ no cropping, keep original ratio */
+  object-position: center center;
+  display: block;
+  border-radius: inherit;        /* ✅ all four corners rounded */
+}
+
+/* keep bottom content overlay but inside rounded corners */
+.udyog-gallery-owl .gallery-card .gallery-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 16px;
+  font-size: 13px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* arrows stay on top */
+.gallery-controls button {
+  z-index: 10;
+}
+
+/* mobile tweaks */
+@media (max-width: 768px) {
+  .udyog-gallery-owl {
+    height: min(65vh, 420px);
+    margin-top: 40px;
+  }
+
+  .udyog-gallery-owl .gallery-card {
+    width: min(90vw, 420px);
+    border-radius: 20px;
+  }
+}
+
+
+}

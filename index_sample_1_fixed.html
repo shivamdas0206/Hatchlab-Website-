@@ -451,7 +451,13 @@
   <!-- SHIVAM PART -->
   <!-- Gallery with Infinite Linear Carousel -->
   <section class="founder home-section">
+    
     <div class="gallery-section">
+      <div class="bg-dots layer1"></div>
+    <div class="bg-dots layer2"></div>
+    <div class="bg-dots layer3"></div>
+    <div class="bg-dots layer4"></div>
+      
       <h2 class="gallery-heading">Gallery</h2>
 
 
@@ -538,6 +544,12 @@
 
 <footer class="footer-section">
         <!-- Main horizontal row -->
+           <div class="footer-gradient">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
         <div class="footer-content">
             <!-- Column 1: Logo + Copyright -->
             <div class="footer-column">
@@ -664,7 +676,7 @@
 </script>
 
   <!-- CONTINUOUS GALLERY CAROUSEL SCRIPT  -->
-  <script>
+  <!-- <script>
     /*
       Continuous infinite linear carousel — hover no longer pauses the animation.
     */
@@ -767,10 +779,10 @@
       function applyTranslate(instant) {
         if (instant) {
           track.style.transition = 'none';
-          track.style.transform = `translateX(${translate}px)`;
+          track.style.transform = translateX(${translate}px);
           requestAnimationFrame(() => { track.style.transition = ''; });
         } else {
-          track.style.transform = `translateX(${translate}px)`;
+          track.style.transform = translateX(${translate}px);
         }
       }
 
@@ -849,7 +861,158 @@
       });
 
     })();
-  </script>
+  </script> -->
+
+
+
+
+
+
+<!-- <script>
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('.udyog-gallery-owl');
+    if (!container) return;
+
+    const slides = gsap.utils.toArray('.udyog-gallery-owl .gallery-card');
+    if (!slides.length) return;
+
+    let current = 0;
+
+    function layoutSlides(animate) {
+      const total = slides.length;
+
+      slides.forEach((slide, i) => {
+        // position around the center
+        let rel = i - current;
+        if (rel > total / 2) rel -= total;
+        if (rel < -total / 2) rel += total;
+
+        const angle = rel * -18;                  // how much to curve
+        const x = rel * 220;                      // horizontal spacing
+        const z = -Math.abs(rel) * 180;           // depth
+        const scale = rel === 0 ? 1 : 0.8;        // center is bigger
+        const opacity = rel === 0 ? 1 : 0.45;     // side slides dimmer
+
+        const vars = {
+          x: x,
+          z: z,
+          rotationY: angle,
+          scale: scale,
+          opacity: opacity,
+          zIndex: 100 - Math.abs(rel),
+          ease: 'power3.out',
+          duration: animate ? 0.8 : 0
+        };
+
+        gsap.to(slide, vars);
+      });
+    }
+
+    // initial layout
+    layoutSlides(false);
+
+    // arrow buttons
+    const nextBtn = document.querySelector('.gallery-controls .next');
+    const prevBtn = document.querySelector('.gallery-controls .prev');
+
+    function go(dir) {
+      current = (current + dir + slides.length) % slides.length;
+      layoutSlides(true);
+    }
+
+    nextBtn && nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      go(1);
+    });
+
+    prevBtn && prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      go(-1);
+    });
+
+    // autoplay every 4s, pause on hover
+    let autoRotate = gsap.delayedCall(4, function repeat() {
+      go(1);
+      autoRotate.restart(true);
+    });
+
+    [container, nextBtn, prevBtn].forEach(el => {
+      if (!el) return;
+      el.addEventListener('mouseenter', () => autoRotate.pause());
+      el.addEventListener('mouseleave', () => autoRotate.resume());
+    });
+  });
+</script> -->
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // use your existing gallery cards as 3D panels
+  const panels = gsap.utils.toArray(".udyog-gallery-owl .gallery-card");
+  if (!panels.length) return;
+
+  const total = panels.length;
+  let current = Math.floor(total / 2);
+
+
+  // center panels and set base style once
+  gsap.set(panels, {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    xPercent: -50,
+    yPercent: -50,
+    transformOrigin: "center center",
+    transformStyle: "preserve-3d"
+  });
+
+  function layout(instant = false) {
+    panels.forEach((panel, i) => {
+      const offset = i - current;             // distance from active slide
+      const x = offset * 260;                 // horizontal spacing
+      const z = -Math.abs(offset) * 160;      // push back side slides
+      const rotY = offset * -14;              // angle cards
+      const scale = i === current ? 1 : 0.8;  // center bigger
+      const opacity = i === current ? 1 : 0.35;
+
+      gsap.to(panel, {
+        duration: instant ? 0 : 0.7,
+        x,
+        z,
+        rotateY: rotY,
+        scale,
+        opacity,
+        ease: "power3.inOut"
+      });
+    });
+  }
+
+  // first layout
+  layout(true);
+
+  // hook to your existing arrows
+  const nextBtn = document.querySelector(".gallery-controls .next");
+  const prevBtn = document.querySelector(".gallery-controls .prev");
+
+  function goTo(idxDelta) {
+    current = (current + idxDelta + total) % total;
+    layout(false);
+  }
+
+  if (nextBtn) nextBtn.addEventListener("click", () => goTo(1));
+  if (prevBtn) prevBtn.addEventListener("click", () => goTo(-1));
+});
+
+
+
+
+</script>
+
+
+
+
+
 
 
 
@@ -997,8 +1160,8 @@
       heroChars.forEach((char, index) => {
         char.style.animation = 'none';
         char.offsetHeight;
-        char.style.animation = `bounceElastic 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards`;
-        char.style.animationDelay = `${index * 0.08}s`;
+        char.style.animation = bounceElastic 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        char.style.animationDelay = ${index * 0.08}s;
       });
 
       const totalChars = heroChars.length;
@@ -1020,7 +1183,7 @@
         const rect = contactBtn.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-        contactBtn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.1)`;
+        contactBtn.style.transform = translate(${x * 0.1}px, ${y * 0.1}px) scale(1.1);
       });
 
       contactBtn.addEventListener('mouseleave', () => {
@@ -1111,7 +1274,7 @@
         const cleanedText = rawHTML.replace(aTag, "##LINK##");
         const words = cleanedText.split(/(\s+|<br><br>)/).map(word => {
           if (word === "<br><br>" || word.trim() === "") return word;
-          return `<span class="about-word">${word}</span>`;
+          return <span class="about-word">${word}</span>;
         });
         aboutText.innerHTML = words.join("").replace("##LINK##", aTag);
         gsap.set(".about-word", { opacity: 0.2 });

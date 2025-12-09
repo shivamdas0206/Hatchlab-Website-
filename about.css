@@ -578,3 +578,32 @@ body{
     font-size: 20px;
     text-decoration: underline;
 }
+/* ============================
+   GOLD GRADIENT UNDERLINE
+   (Consistent with other pages)
+   ============================ */
+
+/* About section headings */
+.about-section h2 {
+    position: relative;
+    width: fit-content;
+    padding-bottom: 14px;
+}
+
+/* Underline effect */
+.about-section h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 70%;
+    height: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffd703,
+        transparent
+    );
+    opacity: 0.85;
+}

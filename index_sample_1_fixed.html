@@ -1052,27 +1052,23 @@
   </script> -->
 
 
-
-
-
-<script>
+<!-- <script>
 document.addEventListener("DOMContentLoaded", () => {
   if (!window.gsap) return;
 
+  // All the gallery cards
   const panels = gsap.utils.toArray(".udyog-gallery-owl .gallery-card");
   if (!panels.length) return;
 
   const total = panels.length;
-  let current = total / 2;        // can be fractional → allows smooth movement
-  const speed = 0.12;             // smaller = slower, bigger = faster
 
-  // base 3D setup – same feel as now
-  gsap.set(".udyog-gallery-owl", {
-    perspective: 1600,
-    transformStyle: "preserve-3d",
-    position: "relative"
-  });
+  // Start from the middle card
+  let current = Math.floor(total / 2);
 
+  // Controls the animation speed (higher = slower)
+  const STEP_DURATION = 2.2; // seconds per slide movement
+
+  // Base positioning for all panels
   gsap.set(panels, {
     position: "absolute",
     top: "50%",
@@ -1083,75 +1079,145 @@ document.addEventListener("DOMContentLoaded", () => {
     transformStyle: "preserve-3d"
   });
 
-  function layout() {
+  function layout(instant = false) {
     panels.forEach((panel, i) => {
-      // relative position from the "current" (can be fractional)
-      let offset = i - current;
+      const offset = i - current;             // distance from active slide
+      const x = offset * 260;                 // horizontal spacing
+      const z = -Math.abs(offset) * 160;      // depth
+      const rotY = offset * -14;              // angle cards
+      const scale = i === current ? 1 : 0.8;  // center bigger
 
-      // wrap around so cards smoothly go in a circle
-      if (offset > total / 2)  offset -= total;
-      if (offset < -total / 2) offset += total;
-
-      const x      = offset * 260;                       // horizontal spacing
-      const z      = -Math.abs(offset) * 160;            // depth
-      const rotY   = offset * -14;                       // card tilt
-      const scale  = 1 - Math.min(Math.abs(offset) * 0.15, 0.35);
-      const opac   = 1 - Math.min(Math.abs(offset) * 0.25, 0.6);
-      const zIndex = 100 - Math.round(Math.abs(offset) * 10);
-
-      gsap.set(panel, {
-        x: x,
-        z: z,
-        rotationY: rotY,
-        scale: scale,
-        opacity: opac,
-        zIndex: zIndex
+      gsap.to(panel, {
+        duration: instant ? 0 : STEP_DURATION,
+        x,
+        z,
+        rotateY: rotY,
+        scale,
+        opacity: 1,
+        ease: "power3.inOut"
       });
     });
   }
 
-  // initial layout
-  layout();
+  // First layout (no animation)
+  layout(true);
 
-  // 🔁 continuous, infinite rotation (no gaps)
-  gsap.ticker.add((delta) => {
-    current += speed * delta;   // move a little every frame
-
-    // wrap "current" so it never grows forever
-    if (current >= total) current -= total;
-    if (current < 0)      current += total;
-
-    layout();
-  });
-
-  // ⬅️➡️ arrows still work – they just nudge the current index
   const nextBtn = document.querySelector(".gallery-controls .next");
   const prevBtn = document.querySelector(".gallery-controls .prev");
 
-  function nudge(dir) {
-    current += dir;     // ticker + layout() will handle smooth positioning
+  function goTo(delta) {
+    current = (current + delta + total) % total;
+    layout(false);
   }
 
-  if (nextBtn) {
-    nextBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      nudge(1);
+  // Manual arrows still work
+  if (nextBtn) nextBtn.addEventListener("click", () => goTo(1));
+  if (prevBtn) prevBtn.addEventListener("click", () => goTo(-1));
+
+  // 🔁 Continuous, infinite auto-rotation
+  function autoLoop() {
+    goTo(1); // move to next slide
+    gsap.delayedCall(STEP_DURATION, autoLoop); // schedule next move right after this one
+  }
+
+  // Small initial delay so page settles
+  gsap.delayedCall(0.8, autoLoop);
+});
+</script> -->
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  if (!window.gsap) return;
+
+  // All the gallery cards
+  const panels = gsap.utils.toArray(".udyog-gallery-owl .gallery-card");
+  if (!panels.length) return;
+
+  const total = panels.length;
+
+  // Start from the middle card
+  let current = Math.floor(total / 2);
+
+  // Controls the animation speed (same as before)
+  const STEP_DURATION = 2.2; // seconds per slide movement
+
+  // Base positioning for all panels
+  gsap.set(panels, {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    xPercent: -50,
+    yPercent: -50,
+    transformOrigin: "center center",
+    transformStyle: "preserve-3d"
+  });
+
+  function layout(instant = false) {
+    const half = total / 2;
+
+    panels.forEach((panel, i) => {
+      // raw distance from current
+      let offset = i - current;
+
+      // ✅ wrap offset so we never "jump" (fixes gap)
+      if (offset > half) offset -= total;
+      if (offset < -half) offset += total;
+
+      const x     = offset * 260;              // horizontal spacing
+      const z     = -Math.abs(offset) * 160;   // depth
+      const rotY  = offset * -14;              // angle cards
+      const scale = (offset === 0) ? 1 : 0.8;  // center bigger
+
+      // ✅ smooth fade on extreme left/right
+      const opacity = 1 - Math.min(Math.abs(offset) * 0.35, 0.9);
+
+      gsap.to(panel, {
+        duration: instant ? 0 : STEP_DURATION,
+        x,
+        z,
+        rotateY: rotY,
+        scale,
+        opacity,
+        zIndex: 100 - Math.abs(offset),
+        ease: "power3.inOut"
+      });
     });
   }
 
-  if (prevBtn) {
-    prevBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      nudge(-1);
-    });
+  // First layout (no animation)
+  layout(true);
+
+  const nextBtn = document.querySelector(".gallery-controls .next");
+  const prevBtn = document.querySelector(".gallery-controls .prev");
+
+  function goTo(delta) {
+    // circular index with wrap
+    current = (current + delta + total) % total;
+    layout(false);
   }
+
+  // Manual arrows
+  if (nextBtn) nextBtn.addEventListener("click", () => goTo(1));
+  if (prevBtn) prevBtn.addEventListener("click", () => goTo(-1));
+
+  // 🔁 Continuous, infinite auto-rotation (no jump, no gap)
+  function autoLoop() {
+    goTo(1); // move to next slide
+    gsap.delayedCall(STEP_DURATION, autoLoop); // schedule next move
+  }
+
+  // Small initial delay so page settles
+  gsap.delayedCall(0.8, autoLoop);
 });
 </script>
 
 
 
 
-
+  
 
 
 

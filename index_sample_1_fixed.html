@@ -988,7 +988,7 @@
 </script> -->
 
 
-  <script>
+  <!-- <script>
     document.addEventListener("DOMContentLoaded", () => {
       // use your existing gallery cards as 3D panels
       const panels = gsap.utils.toArray(".udyog-gallery-owl .gallery-card");
@@ -1049,7 +1049,107 @@
 
 
 
-  </script>
+  </script> -->
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  if (!window.gsap) return;
+
+  const panels = gsap.utils.toArray(".udyog-gallery-owl .gallery-card");
+  if (!panels.length) return;
+
+  const total = panels.length;
+  let current = total / 2;        // can be fractional → allows smooth movement
+  const speed = 0.12;             // smaller = slower, bigger = faster
+
+  // base 3D setup – same feel as now
+  gsap.set(".udyog-gallery-owl", {
+    perspective: 1600,
+    transformStyle: "preserve-3d",
+    position: "relative"
+  });
+
+  gsap.set(panels, {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    xPercent: -50,
+    yPercent: -50,
+    transformOrigin: "center center",
+    transformStyle: "preserve-3d"
+  });
+
+  function layout() {
+    panels.forEach((panel, i) => {
+      // relative position from the "current" (can be fractional)
+      let offset = i - current;
+
+      // wrap around so cards smoothly go in a circle
+      if (offset > total / 2)  offset -= total;
+      if (offset < -total / 2) offset += total;
+
+      const x      = offset * 260;                       // horizontal spacing
+      const z      = -Math.abs(offset) * 160;            // depth
+      const rotY   = offset * -14;                       // card tilt
+      const scale  = 1 - Math.min(Math.abs(offset) * 0.15, 0.35);
+      const opac   = 1 - Math.min(Math.abs(offset) * 0.25, 0.6);
+      const zIndex = 100 - Math.round(Math.abs(offset) * 10);
+
+      gsap.set(panel, {
+        x: x,
+        z: z,
+        rotationY: rotY,
+        scale: scale,
+        opacity: opac,
+        zIndex: zIndex
+      });
+    });
+  }
+
+  // initial layout
+  layout();
+
+  // 🔁 continuous, infinite rotation (no gaps)
+  gsap.ticker.add((delta) => {
+    current += speed * delta;   // move a little every frame
+
+    // wrap "current" so it never grows forever
+    if (current >= total) current -= total;
+    if (current < 0)      current += total;
+
+    layout();
+  });
+
+  // ⬅️➡️ arrows still work – they just nudge the current index
+  const nextBtn = document.querySelector(".gallery-controls .next");
+  const prevBtn = document.querySelector(".gallery-controls .prev");
+
+  function nudge(dir) {
+    current += dir;     // ticker + layout() will handle smooth positioning
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      nudge(1);
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      nudge(-1);
+    });
+  }
+});
+</script>
+
+
+
 
 
 

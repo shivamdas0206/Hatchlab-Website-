@@ -2190,3 +2190,144 @@ section.what-section h2.what-heading {
 }
 
 
+/* ================= HEX BACKGROUND ONLY FOR GALLERY ================= */
+
+.founder {
+  position: relative;
+  background: #000;          /* base behind everything */
+}
+
+.gallery-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* wrapper that sits behind heading + slider */
+.gallery-hex-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* ensure gallery content stays on top of hex background */
+.gallery-heading,
+.gallery-controls,
+.udyog-gallery-owl {
+  position: relative;
+  z-index: 2;
+}
+
+/* container that Infectagons will fill with hexagons */
+#gallery-hex {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* ---- HEXAGON STYLE (converted from your LESS to pure CSS) ---- */
+
+:root {
+  --hex-size: 100px;
+  --hex-margin: 10px;
+  --hex-start: #111;          /* normal hex color */
+  --hex-highlight: #444;      /* “infected” hex color */
+  --hex-anim-in: 150ms;
+  --hex-anim-out: 650ms;
+  --hex-root3: 1.73205080757;
+  --hex-width: calc(var(--hex-size) / var(--hex-root3));
+}
+
+.hexagon {
+  position: relative;
+  width: var(--hex-width);
+  height: var(--hex-size);
+  margin: var(--hex-margin)
+          calc(var(--hex-width) / 4 + var(--hex-margin) / 2 - 1px);
+  background-color: var(--hex-start);
+  transition: all var(--hex-anim-out) ease-in-out;
+}
+
+.hexagon::before,
+.hexagon::after {
+  content: "";
+  position: absolute;
+  border-top: calc(var(--hex-size) / 2) solid transparent;
+  border-bottom: calc(var(--hex-size) / 2) solid transparent;
+  transition: all var(--hex-anim-out) ease-in-out;
+}
+
+/* right side triangle */
+.hexagon::before {
+  left: 100%;
+  border-left: calc(var(--hex-width) / 2) solid var(--hex-start);
+}
+
+/* left side triangle */
+.hexagon::after {
+  right: 100%;
+  border-right: calc(var(--hex-width) / 2) solid var(--hex-start);
+}
+
+/* quicker transitions when active / hovered */
+.hexagon.highlight,
+.hexagon:hover {
+  transition: all var(--hex-anim-in) ease-in-out;
+}
+
+.hexagon.highlight::before,
+.hexagon.highlight::after,
+.hexagon:hover::before,
+.hexagon:hover::after {
+  transition: all var(--hex-anim-in) ease-in-out;
+}
+
+/* hover state – slight brighten */
+.hexagon:hover {
+  cursor: pointer;
+  background-color: #262626;
+}
+
+.hexagon:hover::before {
+  border-left-color: #262626;
+}
+
+.hexagon:hover::after {
+  border-right-color: #262626;
+}
+
+/* “infected” state from JS */
+.hexagon.highlight {
+  background-color: var(--hex-highlight);
+}
+
+.hexagon.highlight::before {
+  border-left-color: var(--hex-highlight);
+}
+
+.hexagon.highlight::after {
+  border-right-color: var(--hex-highlight);
+}
+
+/* column of hexagons */
+.col {
+  position: relative;
+  display: inline-block;
+  top: calc(-1 * var(--hex-margin));
+  left: calc(-1 * var(--hex-size) / 2);
+}
+
+/* every even column is shifted vertically for honeycomb layout */
+.col:nth-of-type(even) {
+  top: calc(-0.5 * var(--hex-size) - 1.5 * var(--hex-margin));
+}
+
+/* small screens: slightly shrink hex size so it fits */
+@media (max-width: 768px) {
+  :root {
+    --hex-size: 70px;
+  }
+}

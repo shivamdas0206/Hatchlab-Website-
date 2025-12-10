@@ -12,17 +12,13 @@
 <body>
       <header>
         <nav class="navbar">
-            <div class="logo">
-                <a href="index_sample_1_fixed.html" target="_blank">
-                    <img src="images/logo.png" alt="Hatchlab Logo">
-                </a>
-            </div>
 
             <ul class="nav-links">
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Service</a></li>
                 <li><a href="careers_page.html">Career</a></li>
                 <li><a href="contactus.html">Contact</a></li>
+                 <button id="connectBtn" class="connect-button">Support</button>
             </ul>
         </nav>
     </header>
@@ -115,6 +111,109 @@
             </div>
         </div>
     </footer>
+
+
+
+
+       
+  <!-- Left Sidebar -->
+<aside class="left-sidebar">
+    
+    <!-- Logo -->
+    <div class="sidebar-logo">
+        <a href="index_sample_1_fixed.html"> 
+        <img src="images/logo.png" alt="HatchLab Logo">
+        </a>
+    </div>
+
+    <!-- Vertical Text -->
+    <div class="sidebar-text">Hatchlab Innovations</div>
+
+    <!-- Social Icons -->
+    <div class="sidebar-social">
+       <a href="https://www.linkedin.com/company/hatchlab-innovations/posts/?feedView=all" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/hatchlabinnovations.official/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/people/Hatchlab-Innovations/61558095073459/" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+</aside>
+
+
+
+
+
+<!-- MODAL -->
+<div id="connectModal" class="custom-modal">
+  <div class="custom-modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Connect With Us</h3>
+
+    <form id="connectForm">
+      <label>Full Name</label>
+      <input type="text" required>
+
+      <label>Email</label>
+      <input type="email" required>
+
+       <label>Contact No</label>
+      <input type="number" required>
+
+      <label>Need support for</label>
+      <textarea rows="3" required></textarea>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+<script>
+    // Modal Logic
+    const modal = document.getElementById("connectModal");
+    const btn = document.getElementById("connectBtn");
+    const closeBtn = document.querySelector(".close-modal");
+
+    btn.onclick = () => modal.style.display = "flex";
+    closeBtn.onclick = () => modal.style.display = "none";
+    
+    window.onclick = (e) => { 
+        if (e.target === modal) modal.style.display = "none"; 
+    }
+
+    document.getElementById("connectForm").onsubmit = (e) => {
+        e.preventDefault();
+        alert("Thank you! We will contact you soon.");
+        modal.style.display = "none";
+    };
+
+    // Glowy Cursor Logic
+    const cursor = document.querySelector('.glow-cursor');
+    
+    document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    
+    const inputs = document.querySelectorAll('input, textarea, button, .close-modal');
+    inputs.forEach(input => {
+        input.addEventListener('mouseenter', () => {
+            cursor.style.width = '20px';
+            cursor.style.height = '20px';
+            cursor.style.backgroundColor = 'rgba(255, 215, 0, 0.1)';
+        });
+        input.addEventListener('mouseleave', () => {
+            cursor.style.width = '20px';
+            cursor.style.height = '20px';
+            cursor.style.backgroundColor = 'transparent';
+        });
+    });
+</script>
 
 
 </body>

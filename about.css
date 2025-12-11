@@ -68,7 +68,9 @@ body{
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  overflow: hidden;
+  overflow: visible;
+  width: 100vw;
+  left: 0;
 }
 
 /* each blob */
@@ -92,20 +94,22 @@ body{
 }
 
 .header-gradient > div:nth-child(2) {
-  width: 85%;
-  height: 85%;
+  width: 50%;
+  height: 50%;
   background: #121212;
   top: -25%;
-  right: -20%;
+  left: 40%;
   animation-delay: -4s;
 }
 .header-gradient > div:nth-child(3) {
-  width: 75%;
-  height: 75%;
+  width: 120%;
+  height: 150%;
   background: #eae142;
-  bottom: -20%;
-  right: -15%;
-  animation-delay: -6s;
+  top: -30%;
+  left: 40%;
+  animation: none; /* static for tint effect */
+  opacity: 0.4;
+  filter: blur(30px);
 }
 
 .header-gradient > div:nth-child(4) {
@@ -156,6 +160,10 @@ body{
     margin: 0;
     padding: 0;
     gap: 20px;
+    background: rgba(17, 17, 24, 0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(20px);
 }
 
 .nav-links li a {
@@ -166,7 +174,21 @@ body{
 }
 
 .nav-links li a:hover {
-    color: #FFD700;
+    color: #fcd703;
+}
+
+.connect-button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin-left: auto;
+}
+
+.connect-button:hover {
+    color: #fcd703;
 }
 
 
@@ -1064,4 +1086,86 @@ body {
     width: 100% !important;
     left: 0 !important;
   }
+}
+/* ------------------------------------------------------ */
+/* FINAL NAVBAR FIX – OVERRIDES ALL PREVIOUS STYLES       */
+/* Add at END of CSS                                       */
+/* ------------------------------------------------------ */
+
+.main-header,
+.navbar,
+.header-nav {
+    height: 60px !important;
+    padding: 0 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 32px !important;
+    background: rgba(23,22,31,0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* NAV LINKS */
+.nav-links li a,
+.header-nav a {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    padding: 0 !important;
+}
+
+.nav-links li a:hover,
+.header-nav a:hover {
+    color: #ffd703 !important;
+}
+
+/* ------------------------------------------------------ */
+/* MAKE SUPPORT LOOK LIKE NORMAL NAVBAR LINK              */
+/* ------------------------------------------------------ */
+
+#connectBtn {
+    all: unset !important;           /* remove all button styling */
+    display: inline-block !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+
+    /* Match navbar item spacing */
+    padding: 0 !important;
+    margin: 0 !important;
+
+    /* for alignment with other links */
+    line-height: 1 !important;
+}
+
+#connectBtn:hover {
+    color: #ffd703 !important;      /* same hover as other links */
+}
+
+/* ------------------------------------------------------ */
+/* MOBILE SPACING FIX                                     */
+/* ------------------------------------------------------ */
+
+@media (max-width: 768px) {
+    .navbar,
+    .main-header,
+    .header-nav {
+        height: auto !important;
+        padding: 12px 20px !important;
+        gap: 20px !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+    }
+
+    .nav-links li a,
+    .header-nav a {
+        font-size: 12px !important;
+    }
+
+    #connectBtn {
+        padding: 8px 20px !important;
+        font-size: 14px !important;
+    }
 }

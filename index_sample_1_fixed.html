@@ -34,60 +34,68 @@
 
   <!-- YOUR CSS -->
   <link rel="stylesheet" href="style_sample_1.css">
+  <link rel="stylesheet" href="team-gallery.css">
+  <!-- Google Font: Lora -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    .char {
-      display: inline-block;
-      opacity: 0;
-      transform: translateY(-100px) scale(0.3);
-    }
-
-    @keyframes bounceElastic {
+    @keyframes dropAndBounce {
       0% {
         opacity: 0;
-        transform: translateY(-100px) scale(0.3);
+        transform: translateY(-100px);
       }
-
-      50% {
+      60% {
         opacity: 1;
-        transform: translateY(10px) scale(1.1);
+        transform: translateY(10px);
       }
-
-      70% {
-        transform: translateY(-5px) scale(0.95);
+      80% {
+        transform: translateY(-5px);
       }
-
-      85% {
-        transform: translateY(2px) scale(1.02);
-      }
-
       100% {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
       }
     }
+
+    @keyframes continuousBounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .word {
+      opacity: 0;
+      animation: dropAndBounce 0.8s ease-out forwards;
+    }
+
+    .word.bouncing {
+      animation: continuousBounce 2s ease-in-out infinite;
+      opacity: 1;
+    }
+
+    .word:nth-child(1) { animation-delay: 0s; }
+    .word:nth-child(2) { animation-delay: 0.1s; }
+    .word:nth-child(3) { animation-delay: 0.2s; }
+    .word:nth-child(4) { animation-delay: 0.3s; }
+    .word:nth-child(5) { animation-delay: 0.4s; }
 
     .main-header {
       position: fixed;
-      padding-left: 90px;
       top: 0;
       left: 0;
       width: 100%;
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 20px 60px;
-      background: rgba(23, 22, 31, 0.9);
+      padding: 20px 40px;
+      background: rgba(23, 22, 31, 0.95);
       backdrop-filter: blur(10px);
       z-index: 1000;
-    }
-
-    .main-header>* {
-      flex: 1;
-    }
-
-    .header-nav {
-      text-align: center;
+      border-bottom: 2px solid #fcd703;
     }
 
     .header-logo {
@@ -97,35 +105,135 @@
     }
 
     .header-logo img {
-      width: 60px;
+      width: 50px;
       height: auto;
     }
 
     .brand-name {
       color: #fff;
-      font-size: 18px;
-      font-weight: 500;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
     .header-nav {
       display: flex;
-      gap: 60px;
+      gap: 35px;
+      align-items: center;
+      margin-left: auto;
+      margin-right: 60px;
     }
 
     .header-nav a {
       color: #fff;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 16px;
       transition: 0.3s;
+      font-weight: 500;
     }
 
     .header-nav a:hover {
       color: #fcd703;
     }
 
+    .connect-button {
+      padding: 8px 20px;
+      background: transparent;
+      border: 2px solid #fcd703;
+      color: #fcd703;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .connect-button:hover {
+      background: #fcd703;
+      color: #000;
+    }
+
+    .get-in-touch-btn {
+      padding: 12px 24px;
+      background: #fff;
+      border: none;
+      color: #000;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(252, 215, 3, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .get-in-touch-btn:hover {
+      background: #fcd703;
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(252, 215, 3, 0.8), 0 0 60px rgba(252, 215, 3, 0.6);
+    }
+
+    .contact-modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-modal-content {
+      background: rgba(23, 22, 31, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 10px;
+      border: 2px solid #fcd703;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .contact-modal-content h3 {
+      color: #fcd703;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    .contact-info-item {
+      margin: 20px 0;
+    }
+
+    .contact-info-item a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .contact-info-item a:hover {
+      color: #fcd703;
+    }
+
+    .close-contact-modal {
+      color: #fff;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      line-height: 20px;
+    }
+
+    .close-contact-modal:hover {
+      color: #fcd703;
+    }
+
     .main {
-      padding-top: 120px;
-      padding-left: 90px;
+      padding-top: 180px;
       left: 0;
       width: 100%;
       position: relative;
@@ -143,6 +251,21 @@
     .hero h1 {
       font-size: 4rem;
       margin-bottom: 40px;
+    }
+
+    .hero p {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      font-size: 24px;
+      color: #fcd703;
+      padding: 30px 0;
+      text-transform: uppercase;
+    }
+
+    .hero p.animate {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .word {
@@ -177,6 +300,11 @@
 
     body {
       cursor: none;
+      font-family: 'Lora', serif;
+    }
+
+    * {
+      font-family: 'Lora', serif;
     }
   </style>
 </head>
@@ -186,18 +314,16 @@
   <div class="glow-cursor"></div>
   <!-- Header -->
   <header class="main-header">
-    
-     
+    <div class="header-logo">
+      <img src="images/logo.png" alt="Hatchlab Logo">
+      <span class="brand-name">Hatchlab Innovations</span>
     </div>
     <nav class="header-nav">
-       <div class="header-gradient">
-        <div></div><div></div><div></div><div></div>
-    </div>
       <a href="about.html">About</a>
       <a href="services.html">Service</a>
       <a href="careers_page.html">Career</a>
       <a href="contactus.html">Contact</a>
-      <button id="connectBtn" class="connect-button">Support</button>
+      <button class="get-in-touch-btn" id="getInTouchBtn">Get In Touch</button>
     </nav>
   </header>
 
@@ -207,64 +333,17 @@
       <div class="hero">
         <h1 class="hero-title">
           <div class="line">
-            <div class="word">
-              <div class="char">W</div>
-              <div class="char">h</div>
-              <div class="char">e</div>
-              <div class="char">r</div>
-              <div class="char">e</div>
-            </div>
-            <div class="word">
-              <div class="char">B</div>
-              <div class="char">i</div>
-              <div class="char">g</div>
-            </div>
-            <div class="word">
-              <div class="char">I</div>
-              <div class="char">d</div>
-              <div class="char">e</div>
-              <div class="char">a</div>
-              <div class="char">s</div>
-            </div>
-            <div class="word">
-              <div class="char">M</div>
-              <div class="char">e</div>
-              <div class="char">e</div>
-              <div class="char">t</div>
-            </div>
+            <span class="word">Where</span>
+            <span class="word">Big</span>
+            <span class="word">Ideas</span>
+            <span class="word">Meet</span>
           </div>
           <div class="line">
-            <div class="word">
-              <div class="char">C</div>
-              <div class="char">o</div>
-              <div class="char">o</div>
-              <div class="char">l</div>
-            </div>
-            <div class="word yellow">
-              <div class="char">T</div>
-              <div class="char">e</div>
-              <div class="char">c</div>
-              <div class="char">h</div>
-            </div>
-            <div class="word">
-              <div class="char">&</div>
-            </div>
-            <div class="word">
-              <div class="char">P</div>
-              <div class="char">r</div>
-              <div class="char">o</div>
-            </div>
-            <div class="word yellow">
-              <div class="char">G</div>
-              <div class="char">u</div>
-              <div class="char">i</div>
-              <div class="char">d</div>
-              <div class="char">a</div>
-              <div class="char">n</div>
-              <div class="char">c</div>
-              <div class="char">e</div>
-              <div class="char">.</div>
-            </div>
+            <span class="word">Cool</span>
+            <span class="word yellow">Tech</span>
+            <span class="word">&</span>
+            <span class="word">Pro</span>
+            <span class="word yellow">Guidance.</span>
           </div>
         </h1>
         <p>A synergy only Hatchlab makes possible.</p>
@@ -272,6 +351,9 @@
       </div>
     </div>
   </div>
+
+
+
   <!--SMRITILATA PART-->
   <div class="about-section home-section">
     <h2>About Us</h2>
@@ -284,37 +366,12 @@
       as a Service (ECaaS). By combining a start-up studio, a diversified investment arm, and a modern consultancy under
       one roof, Hatchlab enables entrepreneurs, executives, and investors to create, finance, and scale ventures with
       confidence.
-      <a href="#" class="read-more">Read More</a>
+      <a href="about.html" class="read-more">Read More</a>
     </p>
   </div>
 
 
-  <!-- Left Sidebar -->
-<aside class="left-sidebar">
-    
-    <!-- Logo -->
-    <div class="sidebar-logo">
-        <a href="index_sample_1_fixed.html"> 
-        <img src="images/logo.png" alt="HatchLab Logo">
-        </a>
-    </div>
 
-    <!-- Vertical Text -->
-    <div class="sidebar-text">Hatchlab Innovations</div>
-
-    <!-- Social Icons -->
-    <div class="sidebar-social">
-       <a href="https://www.linkedin.com/company/hatchlab-innovations/posts/?feedView=all" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://www.instagram.com/hatchlabinnovations.official/" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/people/Hatchlab-Innovations/61558095073459/" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-            </div>
-</aside>
 
 
   <!-- MOU PART  -->
@@ -486,104 +543,32 @@
   </div>
   <!-- SOUMIK PART END -->
 
-
-
-
-
-
-  <!-- SHIVAM PART -->
-  <!-- Gallery with Infinite Linear Carousel -->
-  <section class="founder home-section">
-    
-
-    <div class="gallery-section">
-         <div class="gallery-hex-bg">
-      <div id="gallery-hex"></div>
+  <!-- TEAM GALLERY SECTION -->
+  <section class="team-gallery">
+    <h2 class="team-gallery-title">Gallery</h2>
+    <div class="team-gallery-nav">
+      <button class="team-prev" aria-label="Previous">
+        <i class="bi bi-arrow-left-square"></i>
+      </button>
+      <button class="team-next" aria-label="Next">
+        <i class="bi bi-arrow-right-square"></i>
+      </button>
     </div>
-    
-      <h2 class="gallery-heading">Gallery</h2>
-
-
-      <div class="gallery-bg" aria-hidden="true">
-        <svg class="gallery-blobs" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <filter id="blurFilter">
-              <feGaussianBlur stdDeviation="40" />
-            </filter>
-          </defs>
-          <g filter="url(#blurFilter)">
-            <ellipse class="blob b1" cx="200" cy="120" rx="260" ry="100" />
-            <ellipse class="blob b2" cx="950" cy="180" rx="220" ry="120" />
-            <ellipse class="blob b3" cx="600" cy="420" rx="320" ry="140" />
-          </g>
-        </svg>
-        <div class="gallery-particles"></div>
-      </div>
-
-
-      <div class="gallery-controls">
-        <button class="prev" aria-label="Previous">
-          <i class="bi bi-arrow-left-square"></i>
-        </button>
-        <button class="next" aria-label="Next">
-          <i class="bi bi-arrow-right-square"></i>
-        </button>
-      </div>
-
-      <div class="udyog-gallery-owl gallery">
-        <div class="gallery-card" data-index="1">
-          <img src="images/gallery/1.png" alt="Image 1" />
-          <div class="gallery-content">
-            <p>Lorem ipsum text…</p>
-            <span>8 Jan 2025</span>
-          </div>
-        </div>
-
-        <div class="gallery-card" data-index="2">
-          <img src="images/gallery/2.png" alt="Image 2" />
-          <div class="gallery-content">
-            <p>Lorem ipsum text…</p>
-            <span>9 Jan 2025</span>
-          </div>
-        </div>
-
-        <div class="gallery-card" data-index="3">
-          <img src="images/gallery/3.png" alt="Image 3" />
-          <div class="gallery-content">
-            <p>Lorem ipsum text…</p>
-            <span>10 Jan 2025</span>
-          </div>
-        </div>
-
-        <div class="gallery-card" data-index="4">
-          <img src="images/gallery/1.png" alt="Image 4" />
-          <div class="gallery-content">
-            <p>Lorem ipsum text…</p>
-            <span>11 Jan 2025</span>
-          </div>
-        </div>
-
-        <div class="gallery-card" data-index="5">
-          <img src="images/gallery/2.png" alt="Image 5" />
-          <div class="gallery-content">
-            <p>Lorem ipsum text…</p>
-            <span>12 Jan 2025</span>
-          </div>
-        </div>
-
-        <div class="gallery-card" data-index="6">
-          <img src="images/gallery/3.png" alt="Image 6" />
-          <div class="gallery-content">
-            <p>Lorem ipsum text…</p>
-            <span>13 Jan 2025</span>
-          </div>
-        </div>
-
-      </div>
+    <div class="team-gallery-track">
+      <div class="team-member-card"><img src="images/gallery/gallery-1.jfif" alt="Team 1"></div>
+      <div class="team-member-card"><img src="images/gallery/gallery-2.jfif" alt="Team 2"></div>
+      <div class="team-member-card"><img src="images/gallery/gallery-3.jfif" alt="Team 3"></div>
+      <div class="team-member-card"><img src="images/gallery/gallery-4.jfif" alt="Team 4"></div>
+      <div class="team-member-card"><img src="images/gallery/gallery-5.jfif" alt="Team 5"></div>
+      <div class="team-member-card"><img src="images/gallery/gallery-6.jfif" alt="Team 6"></div>
+      <div class="team-member-card"><img src="images/gallery/gallery-1.jfif" alt="Team 1"></div>
+      <div class="team-member-card"><img src="images/gallery/gallery-2.jfif" alt="Team 2"></div>
+      <div class="team-member-card"><img src="images/gallery/gallery-3.jfif" alt="Team 3"></div>
+      <div class="team-member-card"><img src="images/gallery/gallery-4.jfif" alt="Team 4"></div>
+      <div class="team-member-card"><img src="images/gallery/gallery-5.jfif" alt="Team 5"></div>
+      <div class="team-member-card"><img src="images/gallery/gallery-6.jfif" alt="Team 6"></div>
     </div>
   </section>
-  <!-- SHIVAM PART -->
-
 
   <footer class="footer-section">
     <!-- Main horizontal row -->
@@ -647,10 +632,19 @@
     </div>
   </footer>
 
-
-
-
-
+  <!-- Get In Touch Modal -->
+  <div id="contactModal" class="contact-modal">
+    <div class="contact-modal-content">
+      <span class="close-contact-modal">&times;</span>
+      <h3>Get In Touch</h3>
+      <div class="contact-info-item">
+        <a href="tel:+918276057111">📞 +91 8276057111</a>
+      </div>
+      <div class="contact-info-item">
+        <a href="mailto:info@hatchlabinnovations.com">📧 info@hatchlabinnovations.com</a>
+      </div>
+    </div>
+  </div>
 
   <!-- JS LIBS -->
   <script src="https://www.hatchlabinnovations.com/assets/js/jquery-3.7.1.min.js"></script>
@@ -1131,91 +1125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  if (!window.gsap) return;
 
-  // All the gallery cards
-  const panels = gsap.utils.toArray(".udyog-gallery-owl .gallery-card");
-  if (!panels.length) return;
-
-  const total = panels.length;
-
-  // Start from the middle card
-  let current = Math.floor(total / 2);
-
-  // Controls the animation speed (same as before)
-  const STEP_DURATION = 2.2; // seconds per slide movement
-
-  // Base positioning for all panels
-  gsap.set(panels, {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    xPercent: -50,
-    yPercent: -50,
-    transformOrigin: "center center",
-    transformStyle: "preserve-3d"
-  });
-
-  function layout(instant = false) {
-    const half = total / 2;
-
-    panels.forEach((panel, i) => {
-      // raw distance from current
-      let offset = i - current;
-
-      // ✅ wrap offset so we never "jump" (fixes gap)
-      if (offset > half) offset -= total;
-      if (offset < -half) offset += total;
-
-      const x     = offset * 260;              // horizontal spacing
-      const z     = -Math.abs(offset) * 160;   // depth
-      const rotY  = offset * -14;              // angle cards
-      const scale = (offset === 0) ? 1 : 0.8;  // center bigger
-
-      // ✅ smooth fade on extreme left/right
-      const opacity = 1 - Math.min(Math.abs(offset) * 0.35, 0.9);
-
-      gsap.to(panel, {
-        duration: instant ? 0 : STEP_DURATION,
-        x,
-        z,
-        rotateY: rotY,
-        scale,
-        opacity,
-        zIndex: 100 - Math.abs(offset),
-        ease: "power3.inOut"
-      });
-    });
-  }
-
-  // First layout (no animation)
-  layout(true);
-
-  const nextBtn = document.querySelector(".gallery-controls .next");
-  const prevBtn = document.querySelector(".gallery-controls .prev");
-
-  function goTo(delta) {
-    // circular index with wrap
-    current = (current + delta + total) % total;
-    layout(false);
-  }
-
-  // Manual arrows
-  if (nextBtn) nextBtn.addEventListener("click", () => goTo(1));
-  if (prevBtn) prevBtn.addEventListener("click", () => goTo(-1));
-
-  // 🔁 Continuous, infinite auto-rotation (no jump, no gap)
-  function autoLoop() {
-    goTo(1); // move to next slide
-    gsap.delayedCall(STEP_DURATION, autoLoop); // schedule next move
-  }
-
-  // Small initial delay so page settles
-  gsap.delayedCall(0.8, autoLoop);
-});
-</script>
 
 
 
@@ -1559,11 +1469,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <!-- Hero text animation + magnetic button -->
   <script>
-    const heroTitle = document.querySelector('.hero-title');
-    const heroChars = document.querySelectorAll('.hero-title .char');
     const heroParagraph = document.querySelector('.hero p');
     const contactBtn = document.querySelector('.contact-btn');
+    const words = document.querySelectorAll('.hero-title .word');
 
+<<<<<<< HEAD
     function animateChars() {
       heroChars.forEach((char, index) => {
         char.style.animation = 'none';
@@ -1582,17 +1492,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const totalChars = heroChars.length;
       const titleDuration = (totalChars * 0.08 + 0.8) * 1000;
+=======
+    // Start continuous bounce after drop animation completes
+    setTimeout(() => {
+      words.forEach(word => word.classList.add('bouncing'));
+    }, 1200);
+>>>>>>> 1dc0fa5 (Home page changes)
 
+    setTimeout(() => {
+      if (heroParagraph) heroParagraph.classList.add('animate');
       setTimeout(() => {
-        heroParagraph.classList.remove('animate');
-        heroParagraph.offsetHeight;
-        heroParagraph.classList.add('animate');
-
-        setTimeout(() => {
-          contactBtn.classList.add('animate');
-        }, 600);
-      }, titleDuration);
-    }
+        if (contactBtn) contactBtn.classList.add('animate');
+      }, 600);
+    }, 500);
 
     if (contactBtn) {
       contactBtn.addEventListener('mousemove', (e) => {
@@ -1606,71 +1518,12 @@ document.addEventListener("DOMContentLoaded", () => {
         contactBtn.style.transform = 'translate(0, 0) scale(1)';
       });
     }
-
-    const heroObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateChars();
-        }
-      });
-    }, { threshold: 0.5 });
-
-    if (heroTitle) {
-      heroObserver.observe(heroTitle);
-    }
   </script>
 
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Safety: if GSAP or ScrollTrigger is missing, don't hide anything
-      if (!window.gsap || !window.ScrollTrigger) {
-        console.warn("GSAP / ScrollTrigger not found – scroll animations skipped.");
-        return;
-      }
-
-      gsap.registerPlugin(ScrollTrigger);
-
-      // All major sections EXCEPT the header
-      const sections = gsap.utils.toArray([
-        ".hero-sec",        // hero
-        ".about-section",   // about us
-        ".what-section",    // what we do
-        ".our-initiative",  // initiatives
-        ".founder",         // gallery section wrapper
-        "footer"            // footer
-      ]);
-
-      sections.forEach((sec, i) => {
-        gsap.from(sec, {
-          autoAlpha: 0,     // opacity 0 -> 1
-          y: 80,            // stronger upward movement (more prominent)
-          duration: 2.0,    // slower, more dramatic fade
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sec,
-            start: "top 80%",      // when section top hits 80% of viewport
-            end: "top 40%",
-            toggleActions: "play none none reverse" // fade back out when scrolling up
-          }
-        });
-      });
-
-      // Extra: animate individual gallery cards too (more punch)
-      gsap.utils.toArray(".gallery-card").forEach((card) => {
-        gsap.from(card, {
-          autoAlpha: 0,
-          y: 60,
-          duration: 1.6,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 90%",
-            toggleActions: "play none none reverse"
-          }
-        });
-      });
-    });
+    // GSAP scroll animations disabled - sections now visible by default
+    console.log('GSAP scroll animations disabled');
   </script>
 
 
@@ -1751,11 +1604,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("connectBtn");
     const closeBtn = document.querySelector(".close-modal");
 
-    btn.onclick = () => modal.style.display = "flex";
-    closeBtn.onclick = () => modal.style.display = "none";
+    if (btn) btn.onclick = () => modal.style.display = "flex";
+    if (closeBtn) closeBtn.onclick = () => modal.style.display = "none";
     
     window.onclick = (e) => { 
         if (e.target === modal) modal.style.display = "none"; 
+    }
+
+    // Get In Touch Modal
+    const contactModal = document.getElementById("contactModal");
+    const getInTouchBtn = document.getElementById("getInTouchBtn");
+    const closeContactBtn = document.querySelector(".close-contact-modal");
+
+    if (getInTouchBtn) getInTouchBtn.onclick = () => contactModal.style.display = "flex";
+    if (closeContactBtn) closeContactBtn.onclick = () => contactModal.style.display = "none";
+    
+    window.onclick = (e) => { 
+        if (e.target === contactModal) contactModal.style.display = "none";
     }
 
     document.getElementById("connectForm").onsubmit = (e) => {
@@ -1763,6 +1628,11 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Thank you! We will contact you soon.");
         modal.style.display = "none";
     };
+
+    // Arrow buttons link to services page
+    document.querySelectorAll('.arrow-btn').forEach(btn => {
+        btn.onclick = () => window.location.href = 'services.html';
+    });
 
     // Glowy Cursor Logic
     const cursor = document.querySelector('.glow-cursor');
@@ -1773,7 +1643,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     
-    const inputs = document.querySelectorAll('input, textarea, button, .close-modal');
+    const inputs = document.querySelectorAll('input, textarea, button, .close-modal, .close-contact-modal');
     inputs.forEach(input => {
         input.addEventListener('mouseenter', () => {
             cursor.style.width = '20px';
@@ -1787,6 +1657,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 </script>
+
+
+
 
 </body>
 

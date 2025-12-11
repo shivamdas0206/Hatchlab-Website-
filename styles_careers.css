@@ -1174,3 +1174,24 @@ body {
     left: 0 !important;
   }
 }
+/* ===============================
+   ✅ NAVBAR SUPPORT BUTTON ALIGN FIX
+   =============================== */
+.navbar #connectBtn {
+    all: unset;                     /* reset default button styles */
+    display: flex;                  /* treat like a flex item */
+    align-items: center;            /* vertically center */
+    justify-content: center;        /* horizontal center */
+    color: #fff;                    /* match links */
+    font-size: 18px;                /* match links */
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    height: 100%;                   /* fill navbar height for perfect centering */
+}
+
+.navbar #connectBtn:hover {
+    color: #FFD700;
+}

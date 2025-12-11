@@ -7,25 +7,45 @@
   <link rel="stylesheet" href="styles_careers.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <!-- PARTICLES.JS CDN -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <style>
+    /* Full-page background particles container */
+    #particles-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;       /* Behind everything */
+      pointer-events: none;
+    }
+  </style>
+
 </head>
 
 <body>
-      <header>
-        <nav class="navbar">
-<div class="header-gradient">
-        <div></div><div></div><div></div><div></div>
-    </div>
-            <ul class="nav-links">
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Service</a></li>
-                <li><a href="careers_page.html">Career</a></li>
-                <li><a href="contactus.html">Contact</a></li>
-                 <button id="connectBtn" class="connect-button">Support</button>
-            </ul>
-        </nav>
-    </header>
 
-  <div class="content">
+<!-- Background Particles -->
+<div id="particles-bg"></div>
+
+<header>
+    <nav class="navbar">
+        <div class="header-gradient">
+            <div></div><div></div><div></div><div></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Service</a></li>
+            <li><a href="careers_page.html">Career</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+            <button id="connectBtn" class="connect-button">Support</button>
+        </ul>
+    </nav>
+</header>
+
+<div class="content">
     <h1>Careers at Hatchlab</h1>
 
     <h2>Internships at Hatchlab</h2>
@@ -52,102 +72,67 @@
         hrd@hatchlabinnovations.com
       </a>
     </div>
-  </div>
-  <footer class="footer-section">
-  <!-- Yellow gradient blobs -->
+</div>
+
+<footer class="footer-section">
     <div class="footer-gradient">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div></div><div></div><div></div><div></div>
     </div>
-        <!-- Main horizontal row -->
-        <div class="footer-content">
-            <!-- Column 1: Logo + Copyright -->
-            <div class="footer-column">
-                <div class="footer-logo">
-                    <img src="images/logo.png" alt="HatchLab Logo">
-                </div>
-                <p class="footer-meta">© 2025 HatchLab Innovations Pvt. Ltd.<br>All rights reserved.</p>
-            </div>
 
-            <!-- Column 2: Links -->
-            <div class="footer-column">
-                <nav class="footer-links">
-                    <a href="https://www.hatchlabinnovations.com/career">Career</a>
-                    <a href="https://www.hatchlabinnovations.com/contact">Contact</a>
-                </nav>
+    <div class="footer-content">
+        <div class="footer-column">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="HatchLab Logo">
             </div>
+            <p class="footer-meta">© 2025 HatchLab Innovations Pvt. Ltd.<br>All rights reserved.</p>
+        </div>
 
-            <!-- Column 3: Contact Info -->
-            <div class="footer-column">
-                <div class="footer-contact">
-                    <a href="tel:+918276057111">+91 8276057111</a>
-                    <a href="mailto:info@hatchlabinnovations.com">info@hatchlabinnovations.com</a>
-                    <a href="mailto:admin@hatchlabinnovations.com">admin@hatchlabinnovations.com</a>
-                </div>
-            </div>
+        <div class="footer-column">
+            <nav class="footer-links">
+                <a href="https://www.hatchlabinnovations.com/career">Career</a>
+                <a href="https://www.hatchlabinnovations.com/contact">Contact</a>
+            </nav>
+        </div>
 
-            <!-- Column 4: Email Form -->
-            <div class="footer-column">
-                <form class="footer-form" action="#" onsubmit="return false;">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Contact Us</button>
-                </form>
+        <div class="footer-column">
+            <div class="footer-contact">
+                <a href="tel:+918276057111">+91 8276057111</a>
+                <a href="mailto:info@hatchlabinnovations.com">info@hatchlabinnovations.com</a>
+                <a href="mailto:admin@hatchlabinnovations.com">admin@hatchlabinnovations.com</a>
             </div>
         </div>
 
-        <!-- Social icons – vertical & centered below the text -->
-        <div class="footer-social">
-            <p>Connect with us through -</p>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/company/hatchlab-innovations/posts/?feedView=all" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://www.instagram.com/hatchlabinnovations.official/" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/people/Hatchlab-Innovations/61558095073459/" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-            </div>
+        <div class="footer-column">
+            <form class="footer-form" onsubmit="return false;">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Contact Us</button>
+            </form>
         </div>
-    </footer>
+    </div>
 
+    <div class="footer-social">
+        <p>Connect with us through -</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/company/hatchlab-innovations/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/hatchlabinnovations.official/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/people/Hatchlab-Innovations/61558095073459/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+</footer>
 
-
-
-       
-  <!-- Left Sidebar -->
+<!-- LEFT SIDEBAR -->
 <aside class="left-sidebar">
-    
-    <!-- Logo -->
     <div class="sidebar-logo">
-        <a href="index_sample_1_fixed.html"> 
-        <img src="images/logo.png" alt="HatchLab Logo">
-        </a>
+        <a href="index_sample_1_fixed.html"><img src="images/logo.png" alt="HatchLab Logo"></a>
     </div>
-
-    <!-- Vertical Text -->
     <div class="sidebar-text">Hatchlab Innovations</div>
 
-    <!-- Social Icons -->
     <div class="sidebar-social">
-       <a href="https://www.linkedin.com/company/hatchlab-innovations/posts/?feedView=all" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://www.instagram.com/hatchlabinnovations.official/" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/people/Hatchlab-Innovations/61558095073459/" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-            </div>
+        <a href="https://www.linkedin.com/company/hatchlab-innovations/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/hatchlabinnovations.official/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/people/Hatchlab-Innovations/61558095073459/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
 </aside>
-
-
-
-
 
 <!-- MODAL -->
 <div id="connectModal" class="custom-modal">
@@ -162,7 +147,7 @@
       <label>Email</label>
       <input type="email" required>
 
-       <label>Contact No</label>
+      <label>Contact No</label>
       <input type="number" required>
 
       <label>Need support for</label>
@@ -173,50 +158,27 @@
   </div>
 </div>
 
-
 <script>
-    // Modal Logic
-    const modal = document.getElementById("connectModal");
-    const btn = document.getElementById("connectBtn");
-    const closeBtn = document.querySelector(".close-modal");
+// Modal Logic
+const modal = document.getElementById("connectModal");
+const btn = document.getElementById("connectBtn");
+const closeBtn = document.querySelector(".close-modal");
 
-    btn.onclick = () => modal.style.display = "flex";
-    closeBtn.onclick = () => modal.style.display = "none";
-    
-    window.onclick = (e) => { 
-        if (e.target === modal) modal.style.display = "none"; 
-    }
+btn.onclick = () => modal.style.display = "flex";
+closeBtn.onclick = () => modal.style.display = "none";
+window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
 
-    document.getElementById("connectForm").onsubmit = (e) => {
-        e.preventDefault();
-        alert("Thank you! We will contact you soon.");
-        modal.style.display = "none";
-    };
-
-    // Glowy Cursor Logic
-    const cursor = document.querySelector('.glow-cursor');
-    
-    document.addEventListener('mousemove', e => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
-
-    
-    const inputs = document.querySelectorAll('input, textarea, button, .close-modal');
-    inputs.forEach(input => {
-        input.addEventListener('mouseenter', () => {
-            cursor.style.width = '20px';
-            cursor.style.height = '20px';
-            cursor.style.backgroundColor = 'rgba(255, 215, 0, 0.1)';
-        });
-        input.addEventListener('mouseleave', () => {
-            cursor.style.width = '20px';
-            cursor.style.height = '20px';
-            cursor.style.backgroundColor = 'transparent';
-        });
-    });
+// Particles.js Background
+particlesJS("particles-bg", {
+  "particles": {
+    "number": { "value": 45 },      /* MORE PARTICLES */
+    "size": { "value": 2 },
+    "color": { "value": "#ffffff" },
+    "line_linked": { "enable": true, "color": "#ffffff" },
+    "move": { "enable": true, "speed": 1.5 }
+  }
+});
 </script>
-
 
 </body>
 </html>

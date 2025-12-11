@@ -32,81 +32,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 />
     <link rel="stylesheet" href="about.css">
-    <style>
-    
-    .main-header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        display: flex;
-        justify-content:flex-start;
-        align-items: center;
-        padding: 10px 20px 10px 100px;
-        background: rgba(23, 22, 31, 0.9);
-        backdrop-filter: blur(10px);
-        z-index: 1000;
-
-    }
-     
-
-    .header-nav {
-        text-align: left;
-    }
-    .header-log{
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-    
-
-    .header-nav {
-        display: flex;
-        gap: 40px;
-       
-
-    }
-    .header-nav a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
-        transition: 0.3s;
-    }
-    .header-nav a:hover {
-        color: #fcd703;
-    }
-    .main {
-        /* Increased padding-top to push content down */
-        padding-top: 20px;
-        left: 0;
-        width: 100%;
-       
-        position: relative;
-        z-index: 0;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        /* Set a significant min-height to ensure scrolling to footer */
-        min-height: 26vh; 
-      
-    }
- 
-
-    
-    .line {
-        display: block;
-    }
-
-    #particles-js {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-    }
-
    
-    </style>
 </head>
 
 <body>
@@ -115,7 +41,9 @@
         <a href="about.html">About</a>
     </nav>
     <header class="main-header">
-        
+         <div class="header-gradient">
+        <div></div><div></div><div></div><div></div>
+    </div>
         <nav class="header-nav">
             <a href="index_sample_1_fixed.html">About</a>
             <a href="services.html">Service</a>
@@ -134,14 +62,20 @@
             </div>
         </div>
     </div>
-
-<div class="about-section home-section">
+  <div class="about-section home-section">
     <h2>About Us</h2>
     <p>
-        The pace of economic change has accelerated dramatically. Digitalisation, geopolitics, and demographic shifts are reshaping industries, and both start-ups and established corporations must innovate to survive. Yet innovation requires more than bright ideas; it demands structured execution, access to capital, strategic guidance, and operational excellence.<br><br>
-        Hatchlab Innovations has been built as an integrated platform to address these needs through Enterprise Creation as a Service (ECaaS). By combining a start-up studio, a diversified investment arm, and a modern consultancy under one roof, Hatchlab enables entrepreneurs, executives, and investors to create, finance, and scale ventures with confidence.
+      The pace of economic change has accelerated dramatically. Digitalisation, geopolitics, and demographic shifts are
+      reshaping industries, and both start-ups and established corporations must innovate to survive. Yet innovation
+      requires more than bright ideas; it demands structured execution, access to capital, strategic guidance, and
+      operational excellence.<br><br>
+      Hatchlab Innovations has been built as an integrated platform to address these needs through Enterprise Creation
+      as a Service (ECaaS). By combining a start-up studio, a diversified investment arm, and a modern consultancy under
+      one roof, Hatchlab enables entrepreneurs, executives, and investors to create, finance, and scale ventures with
+      confidence.
+     
     </p>
-</div>
+  </div>
 
 <footer class="footer-section">
   <!-- Yellow gradient blobs -->
@@ -369,6 +303,38 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 </script>
+<!-- About text GSAP scrolling animation -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const aboutText = document.querySelector(".about-section p");
+      if (aboutText) {
+        const rawHTML = aboutText.innerHTML;
+        const aTagMatch = rawHTML.match(/<a [^>]+>.*?<\/a>/);
+        const aTag = aTagMatch ? aTagMatch[0] : "";
+        const cleanedText = rawHTML.replace(aTag, "##LINK##");
+        const words = cleanedText.split(/(\s+|<br><br>)/).map(word => {
+          if (word === "<br><br>" || word.trim() === "") return word;
+          return `<span class="about-word">${word}</span>`;
+        });
+        aboutText.innerHTML = words.join("").replace("##LINK##", aTag);
+        gsap.set(".about-word", { opacity: 0.2 });
+        gsap.to(".about-word", {
+          scrollTrigger: {
+            trigger: ".about-section",
+            start: "top 80%",
+            toggleActions: "play none none reset",
+          },
+          opacity: 1,
+          duration: 0.6,
+          ease: "power2.out",
+          stagger: 0.05
+        });
+      }
+    });
+  </script>
+
 
 </body>
 </html>

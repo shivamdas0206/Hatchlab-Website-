@@ -971,3 +971,85 @@ body {
     left: 0 !important;
   }
 }
+/* ------------------------------------------------------ */
+/* FINAL NAVBAR FIX – OVERRIDES ALL PREVIOUS STYLES       */
+/* Add at END of CSS                                       */
+/* ------------------------------------------------------ */
+
+.main-header,
+.navbar,
+.header-nav {
+    height: 60px !important;
+    padding: 0 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 32px !important;
+    background: rgba(23,22,31,0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* NAV LINKS */
+.nav-links li a,
+.header-nav a {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    padding: 0 !important;
+}
+
+.nav-links li a:hover,
+.header-nav a:hover {
+    color: #ffd703 !important;
+}
+
+/* ------------------------------------------------------ */
+/* MAKE SUPPORT LOOK LIKE NORMAL NAVBAR LINK              */
+/* ------------------------------------------------------ */
+
+#connectBtn {
+    all: unset !important;           /* remove all button styling */
+    display: inline-block !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+
+    /* Match navbar item spacing */
+    padding: 0 !important;
+    margin: 0 !important;
+
+    /* for alignment with other links */
+    line-height: 1 !important;
+}
+
+#connectBtn:hover {
+    color: #ffd703 !important;      /* same hover as other links */
+}
+
+/* ------------------------------------------------------ */
+/* MOBILE SPACING FIX                                     */
+/* ------------------------------------------------------ */
+
+@media (max-width: 768px) {
+    .navbar,
+    .main-header,
+    .header-nav {
+        height: auto !important;
+        padding: 12px 20px !important;
+        gap: 20px !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+    }
+
+    .nav-links li a,
+    .header-nav a {
+        font-size: 12px !important;
+    }
+
+    #connectBtn {
+        padding: 8px 20px !important;
+        font-size: 14px !important;
+    }
+}

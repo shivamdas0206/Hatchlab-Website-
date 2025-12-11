@@ -7,8 +7,45 @@
     <link rel="stylesheet" href="contactus.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <!-- ADD PARTICLES.JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <style>
+        /* Particle containers */
+        #particles-left, #particles-right {
+            position: absolute;
+            top: 0;
+            width: 25%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #particles-left {
+            left: 0;
+        }
+
+        #particles-right {
+            right: 0;
+        }
+
+        /* Ensure container stays centered above particles */
+        .container {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+
 </head>
 <body>
+
+    <!-- LEFT PARTICLES -->
+    <div id="particles-left"></div>
+
+    <!-- RIGHT PARTICLES -->
+    <div id="particles-right"></div>
+
+
+
     <header>
         <nav class="navbar">
            <div class="header-gradient">
@@ -23,29 +60,30 @@
             </ul>
         </nav>
     </header>
+
+    
     <div class="container">
         <h1>Contact Us</h1>
+
         <div class="section">
             <h2>Call</h2>
             <div class="contact-item">+91 8276057111</div>
         </div>
+
         <div class="section">
             <h2>Email</h2>
             <a href="mailto:info@hatchlabinnovations.com" class="email-item">info@hatchlabinnovations.com</a>
             <a href="mailto:admin@hatchlabinnovations.com" class="email-item">admin@hatchlabinnovations.com</a>
         </div>
     </div>
-   <footer class="footer-section">
-  <!-- Yellow gradient blobs -->
-    <div class="footer-gradient">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-        <!-- Main horizontal row -->
+
+
+    <footer class="footer-section">
+        <div class="footer-gradient">
+            <div></div><div></div><div></div><div></div>
+        </div>
+
         <div class="footer-content">
-            <!-- Column 1: Logo + Copyright -->
             <div class="footer-column">
                 <div class="footer-logo">
                     <img src="images/logo.png" alt="HatchLab Logo">
@@ -53,7 +91,6 @@
                 <p class="footer-meta">© 2025 HatchLab Innovations Pvt. Ltd.<br>All rights reserved.</p>
             </div>
 
-            <!-- Column 2: Links -->
             <div class="footer-column">
                 <nav class="footer-links">
                     <a href="https://www.hatchlabinnovations.com/career">Career</a>
@@ -61,7 +98,6 @@
                 </nav>
             </div>
 
-            <!-- Column 3: Contact Info -->
             <div class="footer-column">
                 <div class="footer-contact">
                     <a href="tel:+918276057111">+91 8276057111</a>
@@ -70,7 +106,6 @@
                 </div>
             </div>
 
-            <!-- Column 4: Email Form -->
             <div class="footer-column">
                 <form class="footer-form" action="#" onsubmit="return false;">
                     <input type="email" placeholder="Enter your email" required>
@@ -79,57 +114,35 @@
             </div>
         </div>
 
-        <!-- Social icons – vertical & centered below the text -->
         <div class="footer-social">
             <p>Connect with us through -</p>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/company/hatchlab-innovations/posts/?feedView=all" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://www.instagram.com/hatchlabinnovations.official/" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/people/Hatchlab-Innovations/61558095073459/" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
+                <a href="https://www.linkedin.com/company/hatchlab-innovations/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/hatchlabinnovations.official/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/people/Hatchlab-Innovations/61558095073459/" target="_blank"><i class="fab fa-facebook-f"></i></a>
             </div>
         </div>
     </footer>
 
 
-    
-  <!-- Left Sidebar -->
+
 <aside class="left-sidebar">
-    
-    <!-- Logo -->
     <div class="sidebar-logo">
-        <a href="index_sample_1_fixed.html"> 
-        <img src="images/logo.png" alt="HatchLab Logo">
-        </a>
+        <a href="index_sample_1_fixed.html"><img src="images/logo.png" alt="HatchLab Logo"></a>
     </div>
 
-    <!-- Vertical Text -->
     <div class="sidebar-text">Hatchlab Innovations</div>
 
-    <!-- Social Icons -->
     <div class="sidebar-social">
-       <a href="https://www.linkedin.com/company/hatchlab-innovations/posts/?feedView=all" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://www.instagram.com/hatchlabinnovations.official/" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/people/Hatchlab-Innovations/61558095073459/" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-            </div>
+        <a href="https://www.linkedin.com/company/hatchlab-innovations/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/hatchlabinnovations.official/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/people/Hatchlab-Innovations/61558095073459/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
 </aside>
 
 
 
-
-
-<!-- MODAL -->
+<!-- Modal -->
 <div id="connectModal" class="custom-modal">
   <div class="custom-modal-content">
     <span class="close-modal">&times;</span>
@@ -142,7 +155,7 @@
       <label>Email</label>
       <input type="email" required>
 
-       <label>Contact No</label>
+      <label>Contact No</label>
       <input type="number" required>
 
       <label>Need support for</label>
@@ -154,51 +167,49 @@
 </div>
 
 
+
 <script>
-    // Modal Logic
-    const modal = document.getElementById("connectModal");
-    const btn = document.getElementById("connectBtn");
-    const closeBtn = document.querySelector(".close-modal");
-
-    btn.onclick = () => modal.style.display = "flex";
-    closeBtn.onclick = () => modal.style.display = "none";
-    
-    window.onclick = (e) => { 
-        if (e.target === modal) modal.style.display = "none"; 
+/* PARTICLES LEFT */
+particlesJS("particles-left", {
+    particles: {
+        number: { value: 80 },   // more particles
+        size: { value: 3 },
+        color: { value: "#ffffff" },
+        line_linked: { enable: true, color: "#ffffff" },
+        move: { enable: true, speed: 1.2 }
     }
+});
 
-    document.getElementById("connectForm").onsubmit = (e) => {
-        e.preventDefault();
-        alert("Thank you! We will contact you soon.");
-        modal.style.display = "none";
-    };
+/* PARTICLES RIGHT */
+particlesJS("particles-right", {
+    particles: {
+        number: { value: 80 },   // more particles
+        size: { value: 3 },
+        color: { value: "#ffffff" },
+        line_linked: { enable: true, color: "#ffffff" },
+        move: { enable: true, speed: 1.2 }
+    }
+});
 
-    // Glowy Cursor Logic
-    const cursor = document.querySelector('.glow-cursor');
-    
-    document.addEventListener('mousemove', e => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
 
-    
-    const inputs = document.querySelectorAll('input, textarea, button, .close-modal');
-    inputs.forEach(input => {
-        input.addEventListener('mouseenter', () => {
-            cursor.style.width = '20px';
-            cursor.style.height = '20px';
-            cursor.style.backgroundColor = 'rgba(255, 215, 0, 0.1)';
-        });
-        input.addEventListener('mouseleave', () => {
-            cursor.style.width = '20px';
-            cursor.style.height = '20px';
-            cursor.style.backgroundColor = 'transparent';
-        });
-    });
+// Modal Logic
+const modal = document.getElementById("connectModal");
+const btn = document.getElementById("connectBtn");
+const closeBtn = document.querySelector(".close-modal");
+
+btn.onclick = () => modal.style.display = "flex";
+closeBtn.onclick = () => modal.style.display = "none";
+
+window.onclick = (e) => { 
+    if (e.target === modal) modal.style.display = "none"; 
+}
+
+document.getElementById("connectForm").onsubmit = (e) => {
+    e.preventDefault();
+    alert("Thank you! We will contact you soon.");
+    modal.style.display = "none";
+};
 </script>
-
-</body>
-</html>
 
 </body>
 </html>

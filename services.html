@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+
+<!-- Particle Background -->
+<div id="particles-js"></div>
+
     <!-- Header -->
     
         <header>
@@ -175,10 +179,6 @@
             </div>
 </aside>
 
-
-
-
-
 <!-- MODAL -->
 <div id="connectModal" class="custom-modal">
   <div class="custom-modal-content">
@@ -204,12 +204,19 @@
 </div>
 
 
+<script src="scriptservices.js"></script>
 
+<!-- Particle Script -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 60 },
+    "size": { "value": 3 },
+    "move": { "speed": 1 }
+  }
+});
+</script>
 
-
-
-
-
-    <script src="scriptservices.js"></script>
 </body>
 </html>

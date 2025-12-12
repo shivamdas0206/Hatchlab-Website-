@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Georgia', serif;
+    font-family: Arial, sans-serif;
     background: #0f0f16;
     min-height: 100vh;
     line-height: 1.6;
@@ -1307,4 +1307,40 @@ body {
     width: 100% !important;
     left: 0 !important;
   }
+}
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+/* -------------------------- */
+/* Gradient underline for headings outside cards */
+/* -------------------------- */
+.middle-text,
+.what-we-do h2,
+h1:not(.content h1),
+h2:not(.content h2) {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px; /* space for underline */
+}
+
+.middle-text::after,
+.what-we-do h2::after,
+h1:not(.content h1)::after,
+h2:not(.content h2)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 70%;           /* underline length */
+    height: 3px;          /* thickness */
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+    opacity: 0.9;
+    border-radius: 2px;
 }

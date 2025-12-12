@@ -60,6 +60,22 @@ animation: slideInBtn 0.6s ease-out forwards, pulse 2s infinite 0.6s, glow 2s ea
 
 
 
+<<<<<<< HEAD
+=======
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgba(17, 17, 24, 0.45);  /* transparent */
+    backdrop-filter: blur(10px);         /* glass effect */
+    padding: 10px 20px 10px 100px;
+    height: 60px;
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+}
+>>>>>>> 7d70141 (Other page header fix)
 
 
 

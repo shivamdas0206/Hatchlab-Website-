@@ -14,7 +14,7 @@ body {
 /* Header Styles */
 header {
     width: 100%;
-    padding: 1rem 2rem 1rem 0;
+    padding: 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -41,13 +41,16 @@ header {
 >>>>>>> cb87038 (mild change)
     background: rgba(17, 17, 24, 0.45);  /* transparent */
     backdrop-filter: blur(10px);         /* glass effect */
-    padding: 10px 20px 10px 100px;
+    padding: 10px 200px ;
     height: 60px;
     gap: 40px;
     position: relative;
     overflow: visible;
     z-index: 10;
     width: 100%;
+    margin-left: -90px !important;   /* FIX: Align with left sidebar */
+    width: calc(100% + 90px);        /* Prevent cutting on right side */;
+    
 }
 
 .navbar > * {
@@ -61,10 +64,10 @@ header {
     margin: 0;
     padding: 0;
     gap: 30px;
-    background: rgba(17, 17, 24, 0.8);
+    
     padding: 10px 20px;
-    border-radius: 10px;
-    backdrop-filter: blur(20px);
+   
+   
 }
 
 .nav-links li a {

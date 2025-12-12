@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  margin: 0;
+ 
   width: 100%;
   height: auto !important;
   min-height: 100vh;
@@ -35,16 +35,22 @@ body {
     align-items: center;
     background: rgba(17, 17, 24, 0.45);  /* transparent */
     backdrop-filter: blur(10px);         /* glass effect */
-    padding: 10px 20px 10px 100px;
+    padding: 10px 200px ;
     height: 60px;
     gap: 40px;
     position: relative;
     overflow: hidden;
+    z-index: 5;
+    margin-left: -90px !important;   /* FIX: Align with left sidebar */
+    width: calc(100% + 90px);        /* Prevent cutting on right side */;
+    
+
 }
 
 .navbar > * {
     position: relative;
     z-index: 10;
+   
 }
 
 
@@ -147,6 +153,7 @@ body {
     margin: 0;
     padding: 0;
     gap: 30px;
+    
 }
 
 .nav-links li a {

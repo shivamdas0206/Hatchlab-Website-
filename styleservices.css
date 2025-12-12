@@ -1296,3 +1296,19 @@ h2:not(.content h2)::after {
     opacity: 0.9;
     border-radius: 2px;
 }
+/* FORCE-HIDE slide buttons — put this at VERY END of styleservices.css */
+.slider-container .slide .btn,
+.slider-container .slide a.btn,
+.slider-container .slide .content .btn,
+.slide .btn,
+.slide a.btn {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}

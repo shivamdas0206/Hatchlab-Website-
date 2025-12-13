@@ -1,95 +1,79 @@
 let slideIndex = 0;
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
+let autoPlayInterval;
+
+function startAutoPlay() {
+    autoPlayInterval = setInterval(nextSlide, 3500);
+}
 
 function showSlide(n) {
     if (n === slideIndex) return;
 
-    let targetIndex = n;
-    if (targetIndex >= slides.length) targetIndex = 0;
-    if (targetIndex < 0) targetIndex = slides.length - 1;
-
+    let targetIndex = (n + slides.length) % slides.length;
     const prevSlide = slides[slideIndex];
     const newSlide = slides[targetIndex];
 
-    // Proper realistic upward page turn
-    prevSlide.classList.add('slide-out');
-    newSlide.classList.add('slide-in');
+    // Determine direction: forward if shortest path is +1, backward if -1 (for 3 slides, diff=2 means backward)
+    let diff = (targetIndex - slideIndex + slides.length) % slides.length;
+    let forward = diff <= slides.length / 2;
 
-    newSlide.style.zIndex = 2;
-    prevSlide.style.zIndex = 3;
+    // Make incoming slide visible immediately underneath
+    newSlide.classList.add('active');
+    newSlide.style.visibility = 'visible';
+    newSlide.style.opacity = '1';
+    newSlide.style.zIndex = '1';
 
+    // Prepare outgoing slide on top
+    prevSlide.style.zIndex = '2';
+
+    // Apply direction-specific turn-out animation to outgoing slide only
+    const directionClass = forward ? 'turn-out-forward' : 'turn-out-backward';
+    prevSlide.classList.add(directionClass);
+
+    // Cleanup after animation
     setTimeout(() => {
-        slides.forEach(s => {
-            s.classList.remove('slide-out', 'slide-in');
-            s.style.zIndex = '';
-            s.style.transform = '';
-        });
-
-        prevSlide.classList.remove('active');
-        newSlide.classList.add('active');
-
+        prevSlide.classList.remove('active', 'turn-out-forward', 'turn-out-backward');
+        prevSlide.style.visibility = 'hidden';
+        prevSlide.style.zIndex = '';
+        newSlide.style.zIndex = '1';
         slideIndex = targetIndex;
-
-        dots.forEach(dot => dot.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
         dots[slideIndex].classList.add('active');
-    }, 1000); // Matches 1s animation
+    }, 1800);
 }
 
 function nextSlide() {
-    
     showSlide(slideIndex + 1);
 }
-setInterval(nextSlide, 4000);
 
-// Manual navigation
 function currentSlide(n) {
     showSlide(n);
 }
 
-// Start
-showSlide(slideIndex);
-
-
-
-
-
- const modal = document.getElementById("connectModal");
-    const btn = document.getElementById("connectBtn");
-    const closeBtn = document.querySelector(".close-modal");
-
-    btn.onclick = () => modal.style.display = "flex";
-    closeBtn.onclick = () => modal.style.display = "none";
-    
-    window.onclick = (e) => { 
-        if (e.target === modal) modal.style.display = "none"; 
+// Pause on hover
+const sliderContainer = document.querySelector('.slider-container');
+sliderContainer.addEventListener('mouseenter', () => {
+    if (autoPlayInterval) {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = null;
     }
+});
 
-    document.getElementById("connectForm").onsubmit = (e) => {
-        e.preventDefault();
-        alert("Thank you! We will contact you soon.");
-        modal.style.display = "none";
-    };
+sliderContainer.addEventListener('mouseleave', () => {
+    if (!autoPlayInterval) {
+        startAutoPlay();
+    }
+});
 
-    // Glowy Cursor Logic
-    const cursor = document.querySelector('.glow-cursor');
-    
-    document.addEventListener('mousemove', e => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
+// Initialize
+slides.forEach((s, i) => {
+    s.style.visibility = i === 0 ? 'visible' : 'hidden';
+    if (i === 0) {
+        s.classList.add('active');
+        s.style.opacity = '1';
+    }
+});
+dots[0].classList.add('active');
 
-    
-    const inputs = document.querySelectorAll('input, textarea, button, .close-modal');
-    inputs.forEach(input => {
-        input.addEventListener('mouseenter', () => {
-            cursor.style.width = '20px';
-            cursor.style.height = '20px';
-            cursor.style.backgroundColor = 'rgba(255, 215, 0, 0.1)';
-        });
-        input.addEventListener('mouseleave', () => {
-            cursor.style.width = '20px';
-            cursor.style.height = '20px';
-            cursor.style.backgroundColor = 'transparent';
-        });
-    });
+startAutoPlay();

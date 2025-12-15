@@ -1010,46 +1010,48 @@ section.what-section h2.what-heading {
 .footer.footer-section {
   background: #0b0b0d;
   color: #ffffff;
-  padding: 48px 40px;
+  padding: 20px 40px;
   display: flex;
-  gap: 32px;
+  gap: 20px;
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
-  border-top: 1px solid rgba(255,255,255,0.03);
   box-sizing: border-box;
   width: 100%;
+  position: relative;
 }
 
 .footer-column {
-  flex: 1 1 220px;
-  min-width: 180px;
+  flex: 1 1 280px;
+  min-width: 200px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .footer-column .footer-logo img {
-  width: 58px;
-  height: 58px;
+  width: 45px;
+  height: 45px;
   object-fit: contain;
   display: block;
   border-radius: 6px;
   background: #ffffff;
   padding: 4px;
-  margin-bottom: 12px;
+  margin: 0 auto 8px;
 }
 
 .footer-column p {
   color: #dcdcdc;
-  margin: 8px 0 0 0;
-  line-height: 1.6;
+  margin: 4px 0 0 0;
+  line-height: 1.4;
   font-size: 14px;
+  text-align: center;
 }
 
 .footer-column a {
   display: inline-block;
   color: #dcdcdc;
   text-decoration: none;
-  margin: 8px 0;
+  margin: 4px 0;
   font-size: 15px;
 }
 
@@ -1058,10 +1060,9 @@ section.what-section h2.what-heading {
 .footer-column .footer-contact a {
   color: #ffffff;
   display: block;
-  margin: 8px 6px;
+  margin: 4px 0;
   text-decoration: none;
   font-size: 15px;
-
 }
 
 .footer-column .footer-contact a:hover { color: white; }
@@ -1076,7 +1077,7 @@ section.what-section h2.what-heading {
   display: flex;
   gap: 12px;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .footer-form input[type="email"] {
@@ -1137,9 +1138,9 @@ section.what-section h2.what-heading {
 
 /* Email input subtle radius */
 .footer-form input[type="email"] {
-  border-radius: 14px !important;  /* subtle rounded */
+  border-radius: 14px !important;
   padding: 12px 20px;
-  border: 1px solid rgba(255,255,255,0.18);
+  border: 2px solid #fff;
   background: transparent;
   color: #fff;
   transition: 0.2s ease;
@@ -1153,25 +1154,23 @@ section.what-section h2.what-heading {
 .footer-form input[type="email"]:focus {
   outline: none;
   border-color: #fcd703;
-  box-shadow: 0 0 10px rgba(252,215,3,0.25);
 }
 
 /* Contact Us button subtle radius */
 .footer-form button {
-  border-radius: 18px !important;
-  padding: 12px 28px;
-  background: #ffffff;
+  border-radius: 6px;
+  padding: 12px 24px;
+  background: #fff;
   color: #000;
-  font-weight: 700;
-  transition: 0.25s ease;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* Button hover effect */
 .footer-form button:hover {
-  background: white;
+  background: #fcd703;
   color: #000;
-  box-shadow: 0 0 14px rgba(252,215,3,0.45);
-  transform: translateY(-2px);
 }
 
 
@@ -1425,10 +1424,10 @@ section.what-section h2.what-heading {
 .footer-content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     gap: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    padding-bottom: 20px;
 }
 
 /* Columns */
@@ -1517,12 +1516,11 @@ section.what-section h2.what-heading {
 /* Social section */
 .footer-social {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .footer-social p {
-    color: #ccc;
-    margin-bottom: 15px;
+    display: none;
 }
 
 .social-icons a {
@@ -1546,11 +1544,7 @@ section.what-section h2.what-heading {
     color: #000;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
-.footer-social p{
-    color: #fcd703;
-    font-size: 20px;
-    text-decoration: underline;
-}
+
 
 
 
@@ -1841,12 +1835,7 @@ section.what-section h2.what-heading {
 }
 
 .footer-gradient > div:nth-child(3) {
-  width: 75%;
-  height: 75%;
-  background: #423f08;
-  bottom: -20%;
-  right: -15%;
-  animation-delay: -6s;
+  display: none;
 }
 
 .footer-gradient > div:nth-child(4) {

@@ -545,15 +545,8 @@
 
   <!-- TEAM GALLERY SECTION -->
   <section class="team-gallery">
+    <div id="gallery-particles"></div>
     <h2 class="team-gallery-title">Gallery</h2>
-    <div class="team-gallery-nav">
-      <button class="team-prev" aria-label="Previous">
-        <i class="bi bi-arrow-left-square"></i>
-      </button>
-      <button class="team-next" aria-label="Next">
-        <i class="bi bi-arrow-right-square"></i>
-      </button>
-    </div>
     <div class="team-gallery-track">
       <div class="team-member-card"><img src="images/gallery/gallery-1.jfif" alt="Team 1"></div>
       <div class="team-member-card"><img src="images/gallery/gallery-2.jfif" alt="Team 2"></div>
@@ -561,16 +554,12 @@
       <div class="team-member-card"><img src="images/gallery/gallery-4.jfif" alt="Team 4"></div>
       <div class="team-member-card"><img src="images/gallery/gallery-5.jfif" alt="Team 5"></div>
       <div class="team-member-card"><img src="images/gallery/gallery-6.jfif" alt="Team 6"></div>
-      <div class="team-member-card"><img src="images/gallery/gallery-1.jfif" alt="Team 1"></div>
-      <div class="team-member-card"><img src="images/gallery/gallery-2.jfif" alt="Team 2"></div>
-      <div class="team-member-card"><img src="images/gallery/gallery-3.jfif" alt="Team 3"></div>
-      <div class="team-member-card"><img src="images/gallery/gallery-4.jfif" alt="Team 4"></div>
-      <div class="team-member-card"><img src="images/gallery/gallery-5.jfif" alt="Team 5"></div>
-      <div class="team-member-card"><img src="images/gallery/gallery-6.jfif" alt="Team 6"></div>
     </div>
+    <div class="team-gallery-dots"></div>
   </section>
 
-  <footer class="footer-section">
+  <footer class="footer-section" style="border-top: 2px solid #fcd703;">
+    
     <!-- Main horizontal row -->
     <div class="footer-gradient">
       <div></div>
@@ -587,15 +576,7 @@
         <p class="footer-meta">© 2025 HatchLab Innovations Pvt. Ltd.<br>All rights reserved.</p>
       </div>
 
-      <!-- Column 2: Links -->
-      <div class="footer-column">
-        <nav class="footer-links">
-          <a href="https://www.hatchlabinnovations.com/career">Career</a>
-          <a href="https://www.hatchlabinnovations.com/contact">Contact</a>
-        </nav>
-      </div>
-
-      <!-- Column 3: Contact Info -->
+      <!-- Column 2: Contact Info -->
       <div class="footer-column">
         <div class="footer-contact">
           <a href="tel:+918276057111">+91 8276057111</a>
@@ -604,7 +585,7 @@
         </div>
       </div>
 
-      <!-- Column 4: Email Form -->
+      <!-- Column 3: Email Form -->
       <div class="footer-column">
         <form class="footer-form" action="#" onsubmit="return false;">
           <input type="email" placeholder="Enter your email" required>
@@ -1428,8 +1409,78 @@ document.addEventListener("DOMContentLoaded", () => {
     })();
   </script>
 
+  <!-- GALLERY FLIP ANIMATION -->
+  <script>
+    (function() {
+      const cards = Array.from(document.querySelectorAll('.team-member-card'));
+      const dotsContainer = document.querySelector('.team-gallery-dots');
+      if (!cards.length) return;
+      
+      let currentSet = 0;
+      const totalSets = Math.ceil(cards.length / 3);
+      
+      for (let i = 0; i < totalSets; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        dot.addEventListener('click', () => showSet(i));
+        dotsContainer.appendChild(dot);
+      }
+      
+      const dots = document.querySelectorAll('.dot');
+      
+      function showSet(setIndex) {
+        currentSet = setIndex;
+        const start = setIndex * 3;
+        const end = start + 3;
+        
+        cards.forEach((card, i) => {
+          if (i >= start && i < end) {
+            card.classList.add('active');
+          } else {
+            card.classList.remove('active');
+          }
+        });
+        
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === setIndex);
+        });
+      }
+      
+      function next() {
+        currentSet = (currentSet + 1) % totalSets;
+        showSet(currentSet);
+      }
+      
+      showSet(0);
+      setInterval(next, 6000);
+    })();
+  </script>
 
-  <!-- PARTICLES INIT -->
+  <!-- TEAM GALLERY PARALLAX -->
+  <script>
+    (function() {
+      const gallery = document.querySelector('.team-gallery');
+      if (!gallery) return;
+      
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const galleryTop = gallery.offsetTop;
+        const galleryHeight = gallery.offsetHeight;
+        const windowHeight = window.innerHeight;
+        
+        if (scrolled + windowHeight > galleryTop && scrolled < galleryTop + galleryHeight) {
+          const offset = (scrolled - galleryTop + windowHeight) / (galleryHeight + windowHeight);
+          gallery.style.setProperty('--parallax-before', `translateY(${offset * 100}px)`);
+          gallery.style.setProperty('--parallax-after', `translateY(${offset * -80}px)`);
+        }
+      });
+    })();
+  </script>
+
+
+
+
+  PARTICLES INIT
   <script>
     particlesJS("particles-js", {
       "particles": {
@@ -1438,6 +1489,17 @@ document.addEventListener("DOMContentLoaded", () => {
         "color": { "value": "#ffffff" },
         "line_linked": { "enable": true, "color": "#ffffff" },
         "move": { "enable": true, "speed": 2 }
+      }
+    });
+    
+    particlesJS("gallery-particles", {
+      "particles": {
+        "number": { "value": 120 },
+        "size": { "value": 3 },
+        "color": { "value": "#ffffff" },
+        "line_linked": { "enable": true, "color": "#ffffff", "opacity": 0.3 },
+        "move": { "enable": true, "speed": 1.5 },
+        "opacity": { "value": 0.5 }
       }
     });
   </script>

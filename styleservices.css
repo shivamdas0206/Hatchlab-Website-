@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Lora serif;
+    font-family: 'Lora', serif;
     background: #0f0f16;
     min-height: 100vh;
     line-height: 1.6;
@@ -264,19 +264,19 @@ header.main-header {
 
 /* Services Section */
 .middle-text {
-    margin: 3rem 0 1rem 5%;
+    margin: 3rem 0 1rem 0;
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
     color: #fcd703;
     text-align: left;
-    padding: 0 4rem;
+    padding: 0 2rem;
     max-width: 1200px;
 }
 
 .what-we-do {
-    padding: 2rem 4rem;
+    padding: 2rem 2rem;
     color: #fcd703;
-    margin-left: 5%;
+    margin-left: 0;
     max-width: 1200px;
 }
 
@@ -889,7 +889,7 @@ header.main-header {
 }
     /* Push the page content to the right so it is not hidden under the sidebar */
     main{
-      padding-left: 90px;            /* must match .left-sidebar width */
+      padding-left: 0;            /* must match .left-sidebar width */
       min-height:100vh;
       background:#121217;
       color:#fff;
@@ -1127,7 +1127,7 @@ body {
 
 /* Keep desktop offset for the fixed left sidebar */
 body {
-  padding-left: calc(var(--sidebar-width, 60px) + var(--sidebar-gap, 30px));
+  padding-left: 0;
 }
 
 /* Make full-width sections not exceed the viewport */

@@ -969,4 +969,13 @@ a.email:hover {
     transform: translate(0px, 0px) scale(1);
   }
 }
-
+.footer-form button {
+    white-space: nowrap;   /* prevents line break */
+    padding: 12px 28px;    /* increase width */
+    min-width: 140px;      /* optional but recommended */
+}
+.footer-form {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}

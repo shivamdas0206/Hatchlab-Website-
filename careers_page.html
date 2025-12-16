@@ -237,7 +237,13 @@
     <div class="glow-cursor"></div>
     <header class="main-header">
         <div class="header-logo">
+<<<<<<< HEAD
+          <a href="index_sample_1_fixed.html">
+            <img src="images/logo.png" alt="Hatchlab Logo">
+            </a>
+=======
             <a href="index_sample_1_fixed.html"><img src="images/logo.png" alt="Hatchlab Logo"></a>
+>>>>>>> 9cf10810dc1434fadbb97140facdfc4f976f3a02
             <span class="brand-name">Hatchlab Innovations</span>
         </div>
         <nav class="header-nav">
@@ -245,7 +251,10 @@
             <a href="services.html">Service</a>
             <a href="careers_page.html">Career</a>
             <a href="contactus.html">Contact</a>
-            <button class="get-in-touch-btn" id="getInTouchBtn">Get In Touch</button>
+            <button class="get-in-touch-btn" id="getInTouchBtn">
+  Get In Touch
+</button>
+
         </nav>
     </header>
 
@@ -431,6 +440,151 @@ document.addEventListener("DOMContentLoaded", function() {
   faders.forEach(fader => observer.observe(fader));
 });
 </script>
+
+<<<<<<< HEAD
+ <!-- Get In Touch Modal -->
+=======
+<!-- CONTACT MODAL -->
+>>>>>>> e97875669b5a91dded6e7e81f156b574a2bd7088
+<div id="contactModal" class="contact-modal">
+  <div class="contact-modal-content">
+    <span class="close-contact-modal">&times;</span>
+    <h3>Get In Touch</h3>
+<<<<<<< HEAD
+    <div class="contact-info-item">
+      <a href="tel:+918276057111">📞 +91 8276057111</a>
+    </div>
+    <div class="contact-info-item">
+      <a href="mailto:info@hatchlabinnovations.com">📧 info@hatchlabinnovations.com</a>
+=======
+
+    <div class="contact-info-item">
+      <a href="tel:+918276057111">📞 +91 8276057111</a>
+    </div>
+
+    <div class="contact-info-item">
+      <a href="mailto:info@hatchlabinnovations.com">
+        📧 info@hatchlabinnovations.com
+      </a>
+>>>>>>> e97875669b5a91dded6e7e81f156b574a2bd7088
+    </div>
+  </div>
+</div>
+
+<<<<<<< HEAD
+<style>
+  .get-in-touch-btn {
+  padding: 12px 24px;
+  background: #fff;
+  border: none;
+  color: #000;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(252, 215, 3, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.get-in-touch-btn:hover {
+  background: #fcd703;
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(252, 215, 3, 0.8), 0 0 60px rgba(252, 215, 3, 0.6);
+}
+
+.contact-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-modal-content {
+  background: rgba(23, 22, 31, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 10px;
+  border: 2px solid #fcd703;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.contact-modal-content h3 {
+  color: #fcd703;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.contact-info-item {
+  margin: 20px 0;
+}
+
+.contact-info-item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.contact-info-item a:hover {
+  color: #fcd703;
+}
+
+.close-contact-modal {
+  color: #fff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 20px;
+}
+
+.close-contact-modal:hover {
+  color: #fcd703;
+}
+</style>
+
+<script>
+  // Get In Touch Modal Logic
+  const contactModal = document.getElementById("contactModal");
+  const getInTouchBtn = document.getElementById("getInTouchBtn");
+  const closeContactBtn = document.querySelector(".close-contact-modal");
+
+  // Open modal
+  if (getInTouchBtn) {
+    getInTouchBtn.onclick = () => {
+      contactModal.style.display = "flex";
+    };
+  }
+
+  // Close with × button
+  if (closeContactBtn) {
+    closeContactBtn.onclick = () => {
+      contactModal.style.display = "none";
+    };
+  }
+
+  // Close when clicking outside the modal content
+  window.onclick = (e) => {
+    if (e.target === contactModal) {
+      contactModal.style.display = "none";
+    }
+  };
+</script>
+
+
+
+=======
+>>>>>>> e97875669b5a91dded6e7e81f156b574a2bd7088
 
 </body>
 </html>

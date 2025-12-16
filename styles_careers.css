@@ -23,7 +23,7 @@ body {
   position: static !important;
   cursor: none; /* Hide default cursor for yellow glow effect */
 
-  font-family: Arial, sans-serif;
+  font-family: 'Lora' serif;
   background-color: #0f0f16;
   color: #fff;
 }
@@ -106,7 +106,7 @@ h1 {
   font-weight: bold;
   letter-spacing: 1px;
   color: #fcd703;
-  margin-top: 70px;
+  margin-top: 80px;
   margin-bottom: 30px;
 }
 
@@ -146,14 +146,14 @@ ul li {
 }
 
 /* ✅ Email Link */
-email {
+.email {
   color: #fcd703;
   text-decoration: none; 
   font-weight: bold;
   word-break: break-word;
 }
 
-email:hover {
+.email:hover {
   text-decoration: underline;
   text-shadow: 0 0 14px rgba(255, 196, 107, 1);
 }
@@ -865,6 +865,12 @@ a.email:active {
   text-decoration: none;
 }
 
+<<<<<<< HEAD
+
+
+
+=======
 a.email:hover {
   color: #fcd703;      /* gold on hover */
 }
+>>>>>>> 9cf10810dc1434fadbb97140facdfc4f976f3a02

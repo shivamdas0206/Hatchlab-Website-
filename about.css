@@ -738,3 +738,110 @@ html, body {
   background: #fcd703;
    
 }
+/* ================= MODAL STYLES ================= */
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.8);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.contact-modal.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.contact-modal-content {
+  background: rgba(23, 22, 31, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 10px;
+  border: 2px solid #fcd703;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.contact-modal-content h3 {
+  color: #fcd703;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.contact-info-item {
+  margin: 20px 0;
+}
+
+.contact-info-item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.contact-info-item a:hover {
+  color: #fcd703;
+}
+
+.close-contact-modal {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-contact-modal:hover {
+  color: #fcd703;
+}
+
+/* Button (reuse your existing style if already defined) */
+.get-in-touch-btn {
+  padding: 12px 24px;
+  background: #fff;
+  border: none;
+  color: #000;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.get-in-touch-btn:hover {
+  background: #fcd703;
+}
+.contact-modal.active {
+  display: flex;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.contact-modal-content {
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.contact-modal.active .contact-modal-content {
+  transform: scale(1);
+  opacity: 1;
+}

@@ -2352,3 +2352,14 @@ body {
     font-size: 20px;
   }
 }
+.glow-cursor {
+    pointer-events: none;   
+    position: fixed;        
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffff00 0%, rgba(255, 255, 0, 0.3) 50%, transparent 70%);
+    transform: translate(-50%, -50%);
+    z-index: 999999;        
+    transition: transform 0.05s ease-out, width 0.2s, height 0.2s, background-color 0.2s;
+}

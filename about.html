@@ -702,9 +702,35 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   };
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("contactModal");
+  const openBtn = document.getElementById("getInTouchBtn");
+  const closeBtn = document.querySelector(".close-contact-modal");
 
+  // Open modal
+  openBtn.addEventListener("click", () => {
+    modal.classList.add("active");
+  });
 
+<<<<<<< HEAD
 =======
 >>>>>>> 6eb1d29 (UPDATE)
+=======
+  // Close modal on ×
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+
+  // Close modal when clicking outside content
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("active");
+    }
+  });
+});
+
+</script>
+>>>>>>> e4da4bd (change)
 </body>
 </html>

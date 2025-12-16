@@ -1634,4 +1634,27 @@ body {
 }
 
 
+.contact-item:hover,
+.email-item:hover {
+    transform: translateX(3px);
+    color: #ffd700;
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.8), 0 0 12px rgba(255, 215, 0, 0.5);
+    transition: 
+        transform 0.3s ease,
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.contact-item::before,
+.email-item::before {
+    font-size: 22px;
+    color: #ffd700;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+    0%,100% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+}
+
 

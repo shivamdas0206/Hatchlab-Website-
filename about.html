@@ -239,6 +239,19 @@
       .close-contact-modal:hover {
         color: #fcd703;
       }
+      .typewriter-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #fcd703; /* cursor effect */
+  animation: blink-caret 0.7s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #fcd703; }
+}
+
     </style>
 </head>
 
@@ -268,14 +281,22 @@
         </div>
     </div>
   <div class="about-section home-section">
+    <div class="about-content">
+    <div class="about-text">
     <h2>Executive Summary</h2>
     <p>
       The pace of economic change has accelerated dramatically. Digitalisation, geopolitics, and demographic shifts are reshaping industries, and both start-ups and mature corporations must innovate to survive. Hatchlab Innovations has been built as an integrated platform that addresses these needs through Enterprise Creation as a Service (ECaaS).<br><br>
       By combining a start-up incubation studio, a diversified investment arm, and a modern consultancy under one roof, Hatchlab enables entrepreneurs, chief executives, and investors to create, finance, and scale ventures with confidence.
     </p>
   </div>
-
+<div class="about-image">
+      <img src="images/about.jpg" alt="Executive Summary Image">
+    </div>
+    </div>
+    </div>
   <div class="about-section home-section">
+     <div class="about-content">
+    <div class="about-text">
     <h2>Vision and Mission</h2>
     <p>
       Hatchlab Innovations' vision is to become the premier platform for building the next generation of global enterprises.<br><br>
@@ -283,14 +304,24 @@
       We believe that the future of enterprise creation lies in the seamless integration of innovation, finance, and advisory services; our ECaaS model embodies this philosophy.
     </p>
   </div>
-
+<div class="about-image">
+      <img src="images/about.jpg" alt="Vision and Mission">
+    </div>
+    </div>
+    </div>
   <div class="about-section home-section">
+     <div class="about-content">
+    <div class="about-text">
     <h2>Strategic Context</h2>
     <p>
       Market Dynamics highlight disruption, capital complexity, and an advisory gap – together creating an opportunity for a unified platform like Hatchlab Innovations.
     </p>
   </div>
-
+<div class="about-image">
+      <img src="images/about.jpg" alt="Strategic Context">
+    </div>
+    </div>
+    </div>
 <footer class="footer-section">
   <!-- Yellow gradient blobs -->
     <div class="footer-gradient">
@@ -377,16 +408,18 @@ particlesJS("particles-js", {
 // Slide-in sections alternating left/right
 gsap.registerPlugin(ScrollTrigger);
 document.querySelectorAll(".about-section").forEach((section, index) => {
-  gsap.from(section, {
-    scrollTrigger: { 
-      trigger: section, 
-      start: "top 80%",
-      toggleActions: "play none none none"
-    },
-    opacity: 0,
-    x: index % 2 === 0 ? -100 : 100,
-    duration: 1
-  });
+ gsap.from(section, {
+  scrollTrigger: { 
+    trigger: section, 
+    start: "top 80%",
+    toggleActions: "play none none none",
+    onEnter: () => section.classList.add("mask-active")
+  },
+  opacity: 0,
+  x: index % 2 === 0 ? -100 : 100,
+  duration: 1
+});
+
 });
 </script>
 
@@ -419,36 +452,92 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 <!-- About text GSAP scrolling animation -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      gsap.registerPlugin(ScrollTrigger);
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".about-section p").forEach((p) => {
+    // Split text into words and wrap in span
+    const words = p.innerText.split(" ").map(word => `<span class="word">${word} </span>`);
+    p.innerHTML = words.join("");
 
-      const aboutText = document.querySelector(".about-section p");
-      if (aboutText) {
-        const rawHTML = aboutText.innerHTML;
-        const aTagMatch = rawHTML.match(/<a [^>]+>.*?<\/a>/);
-        const aTag = aTagMatch ? aTagMatch[0] : "";
-        const cleanedText = rawHTML.replace(aTag, "##LINK##");
-        const words = cleanedText.split(/(\s+|<br><br>)/).map(word => {
-          if (word === "<br><br>" || word.trim() === "") return word;
-          return `<span class="about-word">${word}</span>`;
-        });
-        aboutText.innerHTML = words.join("").replace("##LINK##", aTag);
-        gsap.set(".about-word", { opacity: 0.2 });
-        gsap.to(".about-word", {
-          scrollTrigger: {
-            trigger: ".about-section",
-            start: "top 80%",
-            toggleActions: "play none none reset",
-          },
-          opacity: 1,
-          duration: 0.6,
-          ease: "power2.out",
-          stagger: 0.05
-        });
-      }
+    const wordSpans = p.querySelectorAll(".word");
+
+    // Set all words to dim white initially
+    gsap.set(wordSpans, { color: "#888" }); // dim white
+
+    // Animate each word sequentially to white
+    gsap.to(wordSpans, {
+      color: "#fff",          // highlight to bright white
+      duration: 0.3,          // highlight duration per word
+      stagger: 0.08,          // delay between words
+      ease: "power1.inOut"
     });
-  </script>
+  });
+});
+</script>
+
+
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+document.querySelectorAll(".about-section").forEach((section, index) => {
+  const p = section.querySelector("p");       // paragraph
+  const img = section.querySelector(".about-image");
+
+  // Split paragraph into words and wrap in span
+  const words = p.innerText.split(" ");
+  p.innerHTML = words.map(word => `<span class="word">${word} </span>`).join("");
+
+  const wordSpans = p.querySelectorAll(".word");
+
+  // Hide words initially
+  gsap.set(wordSpans, { opacity: 0, color: "#888" });
+
+  // Scroll-triggered typewriter animation
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top 80%",
+    onEnter: () => {
+      gsap.to(wordSpans, {
+        opacity: 1,
+        color: "#fff",
+        duration: 0.3,
+        stagger: 0.08,
+        ease: "power1.inOut"
+      });
+    }
+  });
+
+  // Optional: slide-in for text container
+  const textContainer = section.querySelector(".about-text");
+  gsap.from(textContainer, {
+    scrollTrigger: {
+      trigger: section,
+      start: "top 80%",
+      toggleActions: "play none none reset"
+    },
+    opacity: 0,
+    x: index % 2 === 0 ? -50 : 50,
+    duration: 1,
+    ease: "power2.out"
+  });
+
+  // Slide-in image
+  if (img) {
+    gsap.from(img, {
+      scrollTrigger: {
+        trigger: section,
+        start: "top 80%",
+        toggleActions: "play none none reset"
+      },
+      opacity: 0,
+      x: index % 2 === 0 ? 50 : -50,
+      duration: 1.5,
+      ease: "power3.out"
+    });
+  }
+});
+</script>
 
 
 <div id="contactModal" class="contact-modal">
@@ -489,5 +578,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 </script>
+
+
+
 </body>
 </html>

@@ -100,16 +100,71 @@ body{
     box-shadow: 0 0 40px rgba(252, 215, 3, 0.8), 0 0 60px rgba(252, 215, 3, 0.6);
 }
  
-    #particles-js {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-    }
+   #particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;              /* background */
+  pointer-events: none;
+}
+.about-section * {
+  position: relative;
+  z-index: 3;
+}
 
- 
+
+/* Mask layer (initially invisible) */
+.about-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 0;
+}
+
+/* Text stays above mask */
+.about-section h2,
+.about-section p {
+  position: relative;
+  z-index: 1;
+}
+.about-section.mask-active::before {
+  opacity: 1;
+}
+.about-content {
+  display: flex;             /* arrange children in a row */
+  align-items: center;       /* vertically center text and image */
+  justify-content: space-between; 
+  gap: 30px;                 /* space between text and image */
+  max-width: 1000px;
+  margin: 50px auto;         /* center container */
+  flex-wrap: wrap;           /* allow wrapping on small screens */
+}
+
+.about-text {
+  flex: 1 1 60%;             /* allow text to shrink and grow, takes ~60% width */
+  min-width: 250px;          /* ensure it doesn’t vanish on small screens */
+}
+
+.about-image {
+  flex: 0 0 35%;             /* image takes 35% width */
+  min-width: 200px;          /* avoid collapsing */
+}
+
+.about-image img {
+  width: 100%;               /* image fits container */
+  height: auto;
+  border-radius: 10px;       /* optional styling */
+}
+.about-section:first-child p {
+  opacity: 1 !important;
+}
+
+
 /* ----------------------------------------------------------------- */
 /* --- Global & Mobile-First Styling (Default for small screens) --- */
 /* ----------------------------------------------------------------- */

@@ -8,25 +8,18 @@
     <link rel="stylesheet" href="contactus.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Particles -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Updated Particles.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <style>
-        /* ===================== CUSTOM GLOW CURSOR ===================== */
-        body {
-            cursor: none;
-        }
+        body { cursor: none; font-family: 'Lora', serif; }
+        * { font-family: 'Lora', serif; }
 
         .glow-cursor {
             position: fixed;
             width: 16px;
             height: 16px;
-            background: radial-gradient(
-                circle,
-                #ffff00 0%,
-                rgba(255, 255, 0, 0.35) 50%,
-                transparent 70%
-            );
+            background: radial-gradient(circle, #ffff00 0%, rgba(255, 255, 0, 0.35) 50%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
             z-index: 99999;
@@ -39,7 +32,6 @@
             .glow-cursor { display: none; }
         }
 
-        /* ===================== PARTICLES ===================== */
         #particles-left, #particles-right {
             position: absolute;
             top: 0;
@@ -51,12 +43,8 @@
         #particles-left { left: 0; }
         #particles-right { right: 0; }
 
-        .container {
-            position: relative;
-            z-index: 10;
-        }
+        .container { position: relative; z-index: 10; }
 
-        /* ===================== HEADER ===================== */
         .main-header {
             position: fixed;
             top: 0;
@@ -71,21 +59,9 @@
             border-bottom: 2px solid #fcd703;
         }
 
-        .header-logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .header-logo img {
-            width: 50px;
-        }
-
-        .brand-name {
-            color: #fff;
-            font-size: 20px;
-            font-weight: 600;
-        }
+        .header-logo { display: flex; align-items: center; gap: 15px; }
+        .header-logo img { width: 50px; }
+        .brand-name { color: #fff; font-size: 20px; font-weight: 600; }
 
         .header-nav {
             display: flex;
@@ -101,42 +77,269 @@
             transition: 0.3s;
         }
 
-        .header-nav a:hover {
-            color: #fcd703;
-        }
+        .header-nav a:hover { color: #fcd703; }
 
+        /* Get In Touch Button & Modal */
         .get-in-touch-btn {
             padding: 12px 24px;
             background: #fff;
             border: none;
+            color: #000;
             border-radius: 6px;
-            font-weight: bold;
             cursor: pointer;
-            transition: 0.3s;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
             box-shadow: 0 0 20px rgba(252, 215, 3, 0.3);
-            font-family: 'Lora', serif;
         }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fb6f72f (new changes)
+        .get-in-touch-btn:hover {
+            background: #fcd703;
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(252, 215, 3, 0.8), 0 0 60px rgba(252, 215, 3, 0.6);
+        }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      .word:nth-child(1) { animation-delay: 0s; }
+      .word:nth-child(2) { animation-delay: 0.1s; }
+      .word:nth-child(3) { animation-delay: 0.2s; }
+      .word:nth-child(4) { animation-delay: 0.3s; }
+      .word:nth-child(5) { animation-delay: 0.4s; }
+
+      .main-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 20px 80px;
+        background: rgba(23, 22, 31, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 2px solid #fcd703;
+      }
+
+      .header-logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-left:20px;
+      }
+
+      .header-logo img {
+        width: 50px;
+        height: auto;
+      }
+
+      .brand-name {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      .header-nav {
+        display: flex;
+        gap: 35px;
+        align-items: center;
+        margin-left: auto;
+      }
+
+      .header-nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.3s;
+        font-weight: 500;
+      }
+
+      .header-nav a:hover {
+        color: #fcd703;
+      }
+
+      .connect-button {
+        padding: 8px 20px;
+        background: transparent;
+        border: 2px solid #fcd703;
+        color: #fcd703;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .connect-button:hover {
+        background: #fcd703;
+        color: #000;
+      }
+
+      .get-in-touch-btn {
+        padding: 12px 24px;
+        background: #fff;
+        border: none;
+        color: #000;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 20px rgba(252, 215, 3, 0.3);
+        position: relative;
+        overflow: hidden;
+        font-family: 'Lora'serif ;
+      }
+
+      .get-in-touch-btn:hover {
+        background: #fcd703;
+        transform: scale(1.05);
+        box-shadow: 0 0 40px rgba(252, 215, 3, 0.8), 0 0 60px rgba(252, 215, 3, 0.6);
+      }
+
+      .contact-modal {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        align-items: center;
+        justify-content: center;
+      }
+
+      .contact-modal-content {
+        background: rgba(23, 22, 31, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        border-radius: 10px;
+        border: 2px solid #fcd703;
+        max-width: 400px;
+        width: 90%;
+        text-align: center;
+      }
+
+      .contact-modal-content h3 {
+        color: #fcd703;
+        margin-bottom: 30px;
+        font-size: 24px;
+      }
+
+      .contact-info-item {
+        margin: 20px 0;
+      }
+
+      .contact-info-item a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        transition: 0.3s;
+      }
+
+      .contact-info-item a:hover {
+        color: #fcd703;
+      }
+
+      .close-contact-modal {
+        color: #fff;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        line-height: 20px;
+      }
+
+      .close-contact-modal:hover {
+        color: #fcd703;
+      }
+      body{
+        font-family: 'Lora' serif;
+      }
+>>>>>>> 1e99e06 (get in touch in all pages)
+=======
+>>>>>>> fb6f72f (new changes)
+=======
+=======
+>>>>>>> b885567 (added get in touch modal2)
+
+        .contact-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-modal-content {
+            background: rgba(23, 22, 31, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 10px;
+            border: 2px solid #fcd703;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .contact-modal-content h3 {
+            color: #fcd703;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .contact-info-item { margin: 20px 0; }
+        .contact-info-item a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .contact-info-item a:hover { color: #fcd703; }
+
+        .close-contact-modal {
+            color: #fff;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-contact-modal:hover { color: #fcd703; }
+<<<<<<< HEAD
+>>>>>>> 7a0321c (added get in touch modal)
+=======
         .get-in-touch-btn:hover {
             background: #fcd703;
             transform: scale(1.05);
         }
+>>>>>>> 878382b (change)
+=======
+>>>>>>> b885567 (added get in touch modal2)
     </style>
 </head>
 
 <body>
-
-    <!-- PARTICLES -->
     <div id="particles-left"></div>
     <div id="particles-right"></div>
 
-    <!-- GLOW CURSOR -->
     <div class="glow-cursor"></div>
 
-    <!-- HEADER -->
     <header class="main-header">
         <div class="header-logo">
-            <img src="images/logo.png" alt="Hatchlab Logo">
+            <a href="index_sample_1_fixed.html">
+                <img src="images/logo.png" alt="Hatchlab Logo">
+            </a>
             <span class="brand-name">Hatchlab Innovations</span>
         </div>
         <nav class="header-nav">
@@ -144,69 +347,101 @@
             <a href="services.html">Service</a>
             <a href="careers_page.html">Career</a>
             <a href="contactus.html">Contact</a>
-            <button class="get-in-touch-btn">Get In Touch</button>
+            <!-- FIXED: Added missing id -->
+            <button class="get-in-touch-btn" id="getInTouchBtn">Get In Touch</button>
         </nav>
     </header>
 
     <br><br><br><br>
 
-    <!-- CONTENT -->
     <div class="container">
         <h1>Contact Us</h1>
-
         <div class="section">
             <h2>Call</h2>
             <div class="contact-item">+91 8276057111</div>
         </div>
-
         <div class="section">
             <h2>Email</h2>
-            <a href="mailto:info@hatchlabinnovations.com" class="email-item">
-                info@hatchlabinnovations.com
-            </a>
-            <a href="mailto:admin@hatchlabinnovations.com" class="email-item">
-                admin@hatchlabinnovations.com
-            </a>
+            <a href="mailto:info@hatchlabinnovations.com" class="email-item">info@hatchlabinnovations.com</a>
+            <a href="mailto:admin@hatchlabinnovations.com" class="email-item">admin@hatchlabinnovations.com</a>
         </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- Footer (unchanged) -->
     <footer class="footer-section">
+        <div class="footer-gradient"><div></div><div></div><div></div><div></div></div>
         <div class="footer-content">
-            <p>© 2025 HatchLab Innovations Pvt. Ltd.</p>
+            <div class="footer-column">
+                <div class="footer-logo"><img src="images/logo.png" alt="HatchLab Logo"></div>
+                <p class="footer-meta">© 2025 HatchLab Innovations Pvt. Ltd.<br>All rights reserved.</p>
+            </div>
+            <div class="footer-column">
+                <div class="footer-contact">
+                    <a href="tel:+918276057111">+91 8276057111</a>
+                    <a href="mailto:info@hatchlabinnovations.com">info@hatchlabinnovations.com</a>
+                    <a href="mailto:admin@hatchlabinnovations.com">admin@hatchlabinnovations.com</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <form class="footer-form" onsubmit="return false;">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Contact Us</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-social">
+            <p>Connect with us through -</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/hatchlab-innovations/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/hatchlabinnovations.official/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/people/Hatchlab-Innovations/61558095073459/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
         </div>
     </footer>
 
-    <!-- ===================== SCRIPTS ===================== -->
+    <!-- Get In Touch Modal (only once) -->
+    <div id="contactModal" class="contact-modal">
+        <div class="contact-modal-content">
+            <span class="close-contact-modal">&times;</span>
+            <h3>Get In Touch</h3>
+            <div class="contact-info-item">
+                <a href="tel:+918276057111">📞 +91 8276057111</a>
+            </div>
+            <div class="contact-info-item">
+                <a href="mailto:info@hatchlabinnovations.com">📧 info@hatchlabinnovations.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script>
-        /* GLOW CURSOR */
+        // Glow Cursor
         const cursor = document.querySelector(".glow-cursor");
         document.addEventListener("mousemove", e => {
             cursor.style.left = e.clientX + "px";
             cursor.style.top = e.clientY + "px";
         });
 
-        /* PARTICLES */
-        particlesJS("particles-left", {
-            particles: {
-                number: { value: 80 },
-                size: { value: 3 },
-                color: { value: "#ffffff" },
-                line_linked: { enable: true, color: "#ffffff" },
-                move: { enable: true, speed: 1.2 }
-            }
-        });
+        // Particles
+        particlesJS("particles-left", { particles: { number: { value: 80 }, size: { value: 3 }, color: { value: "#ffffff" }, line_linked: { enable: true, color: "#ffffff" }, move: { enable: true, speed: 1.2 } } });
+        particlesJS("particles-right", { particles: { number: { value: 80 }, size: { value: 3 }, color: { value: "#ffffff" }, line_linked: { enable: true, color: "#ffffff" }, move: { enable: true, speed: 1.2 } } });
 
-        particlesJS("particles-right", {
-            particles: {
-                number: { value: 80 },
-                size: { value: 3 },
-                color: { value: "#ffffff" },
-                line_linked: { enable: true, color: "#ffffff" },
-                move: { enable: true, speed: 1.2 }
-            }
-        });
+        // Modal Logic
+        const contactModal = document.getElementById("contactModal");
+        const getInTouchBtn = document.getElementById("getInTouchBtn");
+        const closeContactBtn = document.querySelector(".close-contact-modal");
+
+        if (getInTouchBtn) {
+            getInTouchBtn.onclick = () => contactModal.style.display = "flex";
+        }
+
+        if (closeContactBtn) {
+            closeContactBtn.onclick = () => contactModal.style.display = "none";
+        }
+
+        window.onclick = (e) => {
+            if (e.target === contactModal) contactModal.style.display = "none";
+        };
     </script>
-
 </body>
 </html>

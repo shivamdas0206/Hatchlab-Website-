@@ -236,6 +236,9 @@
     <div class="glow-cursor"></div>
     <header class="main-header">
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
         <nav class="navbar">
 <<<<<<< HEAD
            <div class="header-gradient">
@@ -280,6 +283,19 @@
 =======
         <div class="header-logo">
             <a href="index_sample_1_fixed.html"><img src="images/logo.png" alt="Hatchlab Logo"></a>
+=======
+       <a href="index_sample_1_fixed.html">
+            <img src="images/logo.png" alt="Hatchlab Logo">
+            </a>
+>>>>>>> 09f96ec (about us fixed others pages connected to home page)
+=======
+        <div class="header-logo">
+            <a href="index_sample_1_fixed.html"><img src="images/logo.png" alt="Hatchlab Logo"></a>
+>>>>>>> fb6f72f (new changes)
+=======
+        <div class="header-logo">
+            <a href="index_sample_1_fixed.html"><img src="images/logo.png" alt="Hatchlab Logo"></a>
+>>>>>>> 19b4f78 (change)
             <span class="brand-name">Hatchlab Innovations</span>
         </div>
         <nav class="header-nav">
@@ -527,6 +543,52 @@ document.addEventListener("DOMContentLoaded", function() {
   faders.forEach(fader => observer.observe(fader));
 });
 </script>
+
+
+ <!-- Get In Touch Modal -->
+<div id="contactModal" class="contact-modal">
+  <div class="contact-modal-content">
+    <span class="close-contact-modal">&times;</span>
+    <h3>Get In Touch</h3>
+    <div class="contact-info-item">
+      <a href="tel:+918276057111">📞 +91 8276057111</a>
+    </div>
+    <div class="contact-info-item">
+      <a href="mailto:info@hatchlabinnovations.com">📧 info@hatchlabinnovations.com</a>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  // Get In Touch Modal Logic
+  const contactModal = document.getElementById("contactModal");
+  const getInTouchBtn = document.getElementById("getInTouchBtn");
+  const closeContactBtn = document.querySelector(".close-contact-modal");
+
+  // Open modal
+  if (getInTouchBtn) {
+    getInTouchBtn.onclick = () => {
+      contactModal.style.display = "flex";
+    };
+  }
+
+  // Close with × button
+  if (closeContactBtn) {
+    closeContactBtn.onclick = () => {
+      contactModal.style.display = "none";
+    };
+  }
+
+  // Close when clicking outside the modal content
+  window.onclick = (e) => {
+    if (e.target === contactModal) {
+      contactModal.style.display = "none";
+    }
+  };
+</script>
+
 
 </body>
 </html>

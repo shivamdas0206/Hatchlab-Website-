@@ -29,6 +29,18 @@
     <link rel="stylesheet" href="about.css">
    
     <style>
+      .about-section {
+        margin-bottom: 0px;
+        max-width: 70%;
+      }
+      .about-section:nth-child(odd) {
+        margin-left: auto;
+        margin-right: 0;
+      }
+      .about-section:nth-child(even) {
+        margin-left: 0;
+        margin-right: auto;
+      }
       body {
         cursor: none;
         font-family: 'Lora', serif;
@@ -256,17 +268,26 @@
         </div>
     </div>
   <div class="about-section home-section">
-    <h2>About Us</h2>
+    <h2>Executive Summary</h2>
     <p>
-      The pace of economic change has accelerated dramatically. Digitalisation, geopolitics, and demographic shifts are
-      reshaping industries, and both start-ups and established corporations must innovate to survive. Yet innovation
-      requires more than bright ideas; it demands structured execution, access to capital, strategic guidance, and
-      operational excellence.<br><br>
-      Hatchlab Innovations has been built as an integrated platform to address these needs through Enterprise Creation
-      as a Service (ECaaS). By combining a start-up studio, a diversified investment arm, and a modern consultancy under
-      one roof, Hatchlab enables entrepreneurs, executives, and investors to create, finance, and scale ventures with
-      confidence.
-     
+      The pace of economic change has accelerated dramatically. Digitalisation, geopolitics, and demographic shifts are reshaping industries, and both start-ups and mature corporations must innovate to survive. Hatchlab Innovations has been built as an integrated platform that addresses these needs through Enterprise Creation as a Service (ECaaS).<br><br>
+      By combining a start-up incubation studio, a diversified investment arm, and a modern consultancy under one roof, Hatchlab enables entrepreneurs, chief executives, and investors to create, finance, and scale ventures with confidence.
+    </p>
+  </div>
+
+  <div class="about-section home-section">
+    <h2>Vision and Mission</h2>
+    <p>
+      Hatchlab Innovations' vision is to become the premier platform for building the next generation of global enterprises.<br><br>
+      Our mission is to empower innovators and institutions by providing the resources, capital, and expertise required to transform ideas into successful businesses.<br><br>
+      We believe that the future of enterprise creation lies in the seamless integration of innovation, finance, and advisory services; our ECaaS model embodies this philosophy.
+    </p>
+  </div>
+
+  <div class="about-section home-section">
+    <h2>Strategic Context</h2>
+    <p>
+      Market Dynamics highlight disruption, capital complexity, and an advisory gap – together creating an opportunity for a unified platform like Hatchlab Innovations.
     </p>
   </div>
 
@@ -345,24 +366,27 @@
 <script>
 particlesJS("particles-js", {
   "particles": {
-    "number": { "value": 30 },
-    "size": { "value": 3 },
-    "color": { "value": "#ffffff" },
-    "line_linked": { "enable": true, "color": "#ffffff" },
-    "move": { "enable": true, "speed": 2 }
-  }
-});
-particlesJS.load('particles-footer', 'particles.json', function() {
-  console.log('Footer particles loaded');
-});
-particlesJS("particles-footer", {
-  "particles": {
     "number": { "value": 80 },
     "size": { "value": 3 },
-    "color": { "value": "#ffff00" },
-    "line_linked": { "enable": true, "color": "#ffff00" },
+    "color": { "value": "#ffffff" },
+    "line_linked": { "enable": true, "color": "#ffffff", "opacity": 0.3 },
     "move": { "enable": true, "speed": 2 }
   }
+});
+
+// Slide-in sections alternating left/right
+gsap.registerPlugin(ScrollTrigger);
+document.querySelectorAll(".about-section").forEach((section, index) => {
+  gsap.from(section, {
+    scrollTrigger: { 
+      trigger: section, 
+      start: "top 80%",
+      toggleActions: "play none none none"
+    },
+    opacity: 0,
+    x: index % 2 === 0 ? -100 : 100,
+    duration: 1
+  });
 });
 </script>
 
@@ -427,18 +451,27 @@ document.addEventListener("DOMContentLoaded", function() {
   </script>
 
 
-<div id="contactModal" class="contact-modal">
-  <div class="contact-modal-content">
-    <span class="close-contact-modal">&times;</span>
-    <h3>Get In Touch</h3>
-    <div class="contact-info-item">
-      <a href="tel:+918276057111">📞 +91 8276057111</a>
-    </div>
-    <div class="contact-info-item">
-      <a href="mailto:info@hatchlabinnovations.com">📧 info@hatchlabinnovations.com</a>
+  <!-- Get In Touch Modal -->
+  <div id="contactModal" class="contact-modal">
+    <div class="contact-modal-content">
+      <span class="close-contact-modal">&times;</span>
+      <h3>Get In Touch</h3>
+      <div class="contact-info-item">
+        <a href="tel:+918276057111"><img src="images/yellow phone icon.png"> +91 8276057111</a>
+      </div>
+      <div class="contact-info-item">
+        <a href="mailto:info@hatchlabinnovations.com">📧 info@hatchlabinnovations.com</a>
+      </div>
     </div>
   </div>
-</div>
+  <style>
+    .contact-info-item img {
+  width: 30px;          /* adjust size as needed */
+  height: auto;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+  </style>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {

@@ -857,3 +857,14 @@ html, body {
     z-index: -1;
     pointer-events: none;
 }
+/* Email link styling */
+a.email,
+a.email:visited,
+a.email:active {
+  color: #ffffff;      /* normal white */
+  text-decoration: none;
+}
+
+a.email:hover {
+  color: #fcd703;      /* gold on hover */
+}

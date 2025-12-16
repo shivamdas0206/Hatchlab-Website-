@@ -608,6 +608,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <script>
     // Modal Logic
+    (function () {
     const modal = document.getElementById("connectModal");
     const btn = document.getElementById("connectBtn");
     const closeBtn = document.querySelector(".close-modal");
@@ -663,6 +664,7 @@ document.addEventListener("DOMContentLoaded", function() {
             cursor.style.height = '20px';
             cursor.style.backgroundColor = 'transparent';
         });
+        })();
     });
 </script>
 

@@ -453,26 +453,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <!-- About text GSAP scrolling animation -->
  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".about-section p").forEach((p) => {
-    // Split text into words and wrap in span
-    const words = p.innerText.split(" ").map(word => `<span class="word">${word} </span>`);
-    p.innerHTML = words.join("");
-
-    const wordSpans = p.querySelectorAll(".word");
-
-    // Set all words to dim white initially
-    gsap.set(wordSpans, { color: "#888" }); // dim white
-
-    // Animate each word sequentially to white
+ScrollTrigger.create({
+  trigger: section,
+  start: "top 80%",
+  once: true, 
+  onEnter: () => {
     gsap.to(wordSpans, {
-      color: "#fff",          // highlight to bright white
-      duration: 0.3,          // highlight duration per word
-      stagger: 0.08,          // delay between words
+      opacity: 1,
+      color: "#fff",
+      duration: 0.3,
+      stagger: 0.08,
       ease: "power1.inOut"
     });
-  });
+  }
 });
+
 </script>
 
 
@@ -481,19 +476,19 @@ document.addEventListener("DOMContentLoaded", () => {
 gsap.registerPlugin(ScrollTrigger);
 
 document.querySelectorAll(".about-section").forEach((section, index) => {
-  const p = section.querySelector("p");       // paragraph
+  const p = section.querySelector("p");      
   const img = section.querySelector(".about-image");
 
-  // Split paragraph into words and wrap in span
+  
   const words = p.innerText.split(" ");
   p.innerHTML = words.map(word => `<span class="word">${word} </span>`).join("");
 
   const wordSpans = p.querySelectorAll(".word");
 
-  // Hide words initially
+
   gsap.set(wordSpans, { opacity: 0, color: "#888" });
 
-  // Scroll-triggered typewriter animation
+
   ScrollTrigger.create({
     trigger: section,
     start: "top 80%",
@@ -503,24 +498,13 @@ document.querySelectorAll(".about-section").forEach((section, index) => {
         color: "#fff",
         duration: 0.3,
         stagger: 0.08,
-        ease: "power1.inOut"
+        ease: "power1.inOut",
+        
       });
     }
   });
 
-  // Optional: slide-in for text container
-  const textContainer = section.querySelector(".about-text");
-  gsap.from(textContainer, {
-    scrollTrigger: {
-      trigger: section,
-      start: "top 80%",
-      toggleActions: "play none none reset"
-    },
-    opacity: 0,
-    x: index % 2 === 0 ? -50 : 50,
-    duration: 1,
-    ease: "power2.out"
-  });
+  
 
   // Slide-in image
   if (img) {
@@ -533,7 +517,8 @@ document.querySelectorAll(".about-section").forEach((section, index) => {
       opacity: 0,
       x: index % 2 === 0 ? 50 : -50,
       duration: 1.5,
-      ease: "power3.out"
+      ease: "power3.out",
+      immediateRender: false  
     });
   }
 });

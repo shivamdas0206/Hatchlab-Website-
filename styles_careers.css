@@ -21,10 +21,25 @@ body {
   overflow-y: scroll !important;
   -webkit-overflow-scrolling: touch;
   position: static !important;
+  cursor: none; /* Hide default cursor for yellow glow effect */
 
   font-family: Arial, sans-serif;
   background-color: #0f0f16;
   color: #fff;
+}
+
+/* Yellow Glow Cursor */
+.glow-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ffff00 0%, rgba(255, 255, 0, 0.3) 50%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, width 0.2s, height 0.2s;
+    box-shadow: 0 0 10px #ffd700; /* Adds subtle yellow glow */
 }
 
 

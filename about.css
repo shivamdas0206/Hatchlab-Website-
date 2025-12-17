@@ -811,9 +811,179 @@ html, body {
   }
 }
 
+.glow-cursor {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  background: radial-gradient(circle, #ffff00 0%, rgba(255, 255, 0, 0.3) 50%, transparent 70%);
+  box-shadow: 0 0 10px #ffd700;
+
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+}
+
+
+    @media (max-width: 500px) {
+        .custom-modal-content { width: 90%; }
+    }
+
+
+
+
+
+/* ================= GLOW CURSOR (DESKTOP + MOBILE + CLICKABLE) ================= */
+.glow-cursor {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+ 
+  background: radial-gradient(
+    circle,
+    #ffd700 0%,
+    rgba(255, 215, 0, 0.45) 45%,
+    transparent 70%
+  );
+
+  transform: translate(-50%, -50%);
+  transition: 
+    transform 0.08s ease,
+    width 0.15s ease,
+    height 0.15s ease,
+    box-shadow 0.15s ease;
+}
 
 
 
 
 
 
+
+
+/* ================= GET IN TOUCH BUTTON ================= */
+.get-in-touch-btn {
+  padding: 12px 24px;
+  background: #fff;
+  color: #000;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.get-in-touch-btn:hover {
+  background: #fcd703;
+  transform: scale(1.05);
+}
+
+/* ================= MOBILE HEADER (FIXED AS REQUESTED) ================= */
+@media (max-width: 768px) {
+
+  .main-header {
+    padding: 12px 16px 8px !important; 
+    display: block !important;
+    text-align: center !important;
+  }
+
+  .header-logo {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  .header-logo img {
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 36px !important; 
+  }
+
+  .brand-name {
+    font-size: 15px !important; 
+    font-weight: 600 !important;
+  }
+
+  .header-logo::after {
+    content: none !important;
+  }
+
+  .header-nav {
+    margin-top: 6px !important; 
+    display: flex !important;
+    justify-content: center !important;
+    gap: 10px !important; 
+  }
+
+  .header-nav a {
+    font-size: 13px !important;
+    white-space: nowrap !important;
+  }
+
+  .get-in-touch-btn {
+    display: inline-block !important;
+    margin: 10px auto 0 !important; 
+    padding: 10px 12px !important; 
+    font-size: 13px !important; 
+    border-radius: 6px !important;
+  }
+
+  .main {
+    padding-top: 70px !important;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .footer-section {
+    padding: 15px 10px;
+  }
+
+  .footer-column {
+    margin-bottom: 10px; 
+  }
+
+  .footer-column p,
+  .footer-column a,
+  .footer-form input,
+  .footer-form button {
+    font-size: 13px; 
+  }
+
+  .footer-form input,
+  .footer-form button {
+    padding: 6px 10px; 
+  }
+
+  .footer-social p {
+    font-size: 11px; 
+  }
+
+  .social-icons a {
+    font-size: 16px; 
+    margin: 0 3px;  
+  }
+
+  .footer-gradient div {
+    width: 40px;  
+    height: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .glow-cursor {
+    display: none !important;
+  }
+  body {
+    cursor: auto; 
+  }
+}

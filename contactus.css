@@ -422,95 +422,9 @@ email-item::before {
     }
 
 }
-/* === STOP HORIZONTAL SCROLL ON MOBILE ONLY === */
-@media (max-width: 768px) {
 
-    html, body {
-        overflow-x: hidden;
-    }
 
-    .container,
-    .container * {
-        max-width: 100vw;
-        box-sizing: border-box;
-    }
-}
-/* === MOBILE NAVBAR FIX – NO DESKTOP CHANGE === */
-@media (max-width: 768px) {
 
-    .navbar {
-        padding: 10px 16px;
-        height: auto;              /* allow height to grow */
-        flex-wrap: wrap;           /* allow items to move to next line */
-        gap: 16px;
-    }
-
-    .nav-links {
-        width: 100%;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-
-    .logo img {
-        margin-left: 0;            /* remove negative offset on mobile */
-    }
-}
-/* === MOBILE: FORCE NAVBAR INTO ONE LINE === */
-@media (max-width: 768px) {
-
-    .navbar {
-        padding: 10px 12px;
-        gap: 12px;
-        flex-wrap: nowrap;          /* force single line */
-    }
-
-    .logo img {
-        height: 32px;               /* slightly smaller logo */
-        margin-left: 0;
-    }
-
-    .nav-links {
-        gap: 14px;                  /* reduce spacing between links */
-        flex-wrap: nowrap;
-    }
-
-    .nav-links li a {
-        font-size: 14px;            /* slight reduction to fit */
-        white-space: nowrap;        /* prevent breaking */
-    }
-}
-/* === MOBILE NAVBAR SPACING TUNE (ONE LINE) === */
-@media (max-width: 768px) {
-
-    .navbar {
-        padding: 10px 18px;     /* more space at page edges */
-        gap: 18px;              /* controls logo → menu gap */
-        flex-wrap: nowrap;
-    }
-
-    .logo {
-        margin-right: 6px;      /* slight extra space after logo */
-    }
-
-    .logo img {
-        height: 32px;
-        margin-left: 0;
-    }
-
-    .nav-links {
-        gap: 10px;              /* LESS gap between menu items */
-        flex-wrap: nowrap;
-    }
-
-    .nav-links li:last-child {
-        margin-right: 6px;      /* extra space before page end */
-    }
-
-    .nav-links li a {
-        font-size: 14px;
-        white-space: nowrap;
-    }
-}
 /* ===============================
    ✅ PREMIUM HEADING UNDERLINE
    (FROM PREVIOUS CSS)
@@ -937,56 +851,7 @@ html, body {
   max-width: 100% !important;
 }
 
-/* Mobile header: use normal 100% width instead of 100vw */
-@media (max-width: 768px) {
-  .main-header {
-    width: 100% !important;
-    left: 0 !important;
-  }
-}
-/* 1️⃣ Stop sideways scrolling globally */
-html,
-body {
-  margin: 0 !important;
-  padding: 0;
-  max-width: 100%;
-  overflow-x: hidden; /* no left-right scroll */
-}
 
-/* Keep desktop offset for the fixed left sidebar */
-body {
-  padding-left: calc(var(--sidebar-width, 60px) + var(--sidebar-gap, 30px));
-}
-
-/* Make full-width sections not exceed the viewport */
-.hero-sec,
-.founder,
-.footer-section,
-.main-header {
-  max-width: 100% !important;
-}
-
-/* 2️⃣ MOBILE: let hamburger menu use full width + fix left cut */
-@media (max-width: 768px) {
-
-  /* Hide the vertical sidebar on mobile (prevents it from being cut/overlapped) */
-  .left-sidebar {
-    display: none !important;
-  }
-
-  /* Remove sidebar padding on mobile */
-  body {
-    padding-left: 0 !important;
-  }
-
-  /* Make header / hamburger bar fit perfectly */
-  .main-header {
-    padding-left: 0 !important;
-    padding-right: 16px !important;
-    width: 100% !important;
-    left: 0 !important;
-  }
-}
 /* ===============================
    ✅ NAVBAR SUPPORT BUTTON ALIGN FIX
    =============================== */
@@ -1721,133 +1586,118 @@ h2, h2::after,
 
 
 
-/* ================= MOBILE HEADER – FULLY CENTRALIZED ================= */
+
+
+/* ================= MOBILE HEADER (FIXED AS REQUESTED) ================= */
 @media (max-width: 768px) {
 
-  /* Header wrapper */
   .main-header {
-    padding: 12px 16px 10px !important;
+    padding: 14px 10px 1px !important; /* slightly smaller overall header */
     display: block !important;
     text-align: center !important;
   }
 
-  /* ===== TOP ROW ===== */
   .header-logo {
-    position: relative !important;
     display: flex !important;
-    align-items: center !important;
     justify-content: center !important;
+    align-items: center !important;
     width: 100% !important;
+    position: relative !important;
   }
 
-  /* Logo slightly left but visually balanced */
   .header-logo img {
     position: absolute !important;
-    left: 0 !important;
-    width: 36px !important;
+    left: 10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 36px !important; /* unchanged */
   }
 
-  /* Brand name dead center */
   .brand-name {
-    position: relative !important;
-    font-size: 15px !important;
+    font-size: 15px !important; /* unchanged */
     font-weight: 600 !important;
-    white-space: nowrap !important;
-    text-align: center !important;
   }
 
-  /* Social icons centered as a group */
   .header-logo::after {
-    content: "\f0e1  \f16d  \f0e1"; /* LinkedIn – Instagram – LinkedIn */
-    font-family: "Font Awesome 6 Brands";
-    font-size: 13px;
-    color: #fff;
-
-    position: absolute !important;
-    right: 0 !important;
-    display: inline-flex;
-    align-items: center;
-    letter-spacing: 12px;
+    content: none !important;
   }
 
-  /* ===== SECOND ROW ===== */
-  .header-nav {
-    margin-top: 12px !important;
-    padding-top: 10px !important;
-    border-top: 1px solid rgba(255,255,255,0.35) !important;
-
+   .header-nav {
+    margin-top: 6px !important;
     display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 22px !important;
+    justify-content: space-between !important; /* distribute links evenly */
+    gap: 10px !important;
+    max-width: 400px !important; /* adjust as needed */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: -10px;
   }
 
   .header-nav a {
     font-size: 14px !important;
     white-space: nowrap !important;
-    text-align: center !important;
+    margin-bottom: 18px;
+    margin-right: 4px;
   }
 
-  /* Hide CTA on mobile */
   .get-in-touch-btn {
+    display: inline-block !important;
+    margin: 10px 10px 1px !important; 
+    padding: 4px 11px !important; 
+    font-size: 13px !important; 
+    border-radius: 4px !important;
+   
+  
+   
+  }
+
+
+  .main {
+    padding-top: 50px !important;
+  }
+}/* ================= FOOTER (UNCHANGED) ================= */
+
+@media (max-width: 767px) {
+  .footer-section {
+    padding: 15px 10px; 
+  }
+
+  .footer-column {
+    margin-bottom: 10px; 
+  }
+
+  .footer-column p,
+  .footer-column a,
+  .footer-form input,
+  .footer-form button {
+    font-size: 13px;
+  }
+
+  .footer-form input,
+  .footer-form button {
+    padding: 6px 10px;
+  }
+
+  .footer-social p {
+    font-size: 11px;
+  }
+
+  .social-icons a {
+    font-size: 16px; 
+    margin: 0 3px;   
+  }
+
+  .footer-gradient div {
+    width: 40px;  
+    height: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .glow-cursor {
     display: none !important;
   }
-
-  /* Push hero down */
-  .main {
-    padding-top: 145px !important;
+  body {
+    cursor: auto;
   }
 }
-/* ===== REMOVE LINE BELOW "Hatchlab Innovations" ===== */
-@media (max-width: 768px) {
-  .header-nav {
-    border-top: none !important;
-    padding-top: 0 !important;
-    margin-top: 10px !important; /* keeps spacing without line */
-  }
-}
-/* ===== CENTER ABOUT / SERVICE / CAREER / CONTACT (MOBILE) ===== */
-@media (max-width: 768px) {
-
-  .header-nav {
-    display: flex !important;
-    justify-content: center !important;   /* 👈 centers the whole group */
-    align-items: center !important;
-    gap: 22px !important;                 /* spacing between items */
-    width: 100% !important;
-    margin-top: 10px !important;
-    padding: 0 !important;
-  }
-
-  .header-nav a {
-    text-align: center !important;
-    white-space: nowrap !important;
-    font-size: 14px !important;
-  }
-}
-/* ===== MOBILE HEADER: FIX SOCIAL ICONS (in, ig, fb) ===== */
-@media (max-width: 768px) {
-
-  .header-logo::after {
-    content: "\f0e1  \f16d  \f39e"; 
-    /* LinkedIn | Instagram | Facebook */
-    
-    font-family: "Font Awesome 6 Brands";
-    font-weight: 400;
-    font-size: 13px;
-    color: #ffffff;
-
-    display: inline-flex;
-    align-items: center;
-    letter-spacing: 12px; /* spacing between icons */
-  }
-}
-
-
-
-.header-logo::after {
-  content: none !important;
-}
-
-
-

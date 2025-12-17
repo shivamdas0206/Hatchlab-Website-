@@ -282,7 +282,7 @@ body{
 }
 
 .about-section {
-    margin: 20px 40px; 
+    margin: 80px 40px 20px 40px; 
     padding: 15px 5%;
     color: white; 
     font-family: 'Arial', sans-serif;
@@ -318,7 +318,7 @@ body{
         max-width: 1000px;
         width: auto; 
         /* Maintain flush left alignment */
-        margin: 40px auto 40px 0; 
+        margin: 100px auto 40px 0; 
         padding: 40px;
         border-radius: 12px;
         

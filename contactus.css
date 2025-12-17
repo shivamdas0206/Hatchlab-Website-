@@ -189,7 +189,7 @@ h1 {
 }
 
 .contact-item::before {
-    content: "📞";
+
     margin-right: 10px;
 }
 
@@ -387,7 +387,7 @@ h1 {
 
 
 .contact-item::before {
-    content: "☎"; /* simple monochrome phone icon */
+
     color: #f0c900;
     margin-right: 10px;
 }

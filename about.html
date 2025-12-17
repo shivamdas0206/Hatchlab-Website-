@@ -31,16 +31,45 @@
     <style>
       .about-section {
         margin-bottom: 0px;
-        max-width: 70%;
+        max-width: 100%;
+        padding: 0;
+        width: 100%;
       }
       .about-section:nth-child(odd) {
-        margin-left: auto;
+        margin-left: -5px;
         margin-right: 0;
+        padding-right: 0;
       }
       .about-section:nth-child(even) {
         margin-left: 0;
         margin-right: auto;
+        padding-left: 0;
       }
+      .about-content {
+        max-width: none !important;
+        margin: 50px 0 !important;
+        width: 100% !important;
+        padding: 0 5% !important;
+        box-sizing: border-box;
+        justify-content: flex-start;  /* Aligns items to left instead of space-between */
+    gap: 40px;  /* Increased gap for better spacing between text and image */
+      }
+      .about-text {
+        flex: 1 1 60%;             
+        min-width: 250px;          
+      }
+
+      .about-image {
+        flex: 0 0 35%;             
+        min-width: 200px;          
+      }
+
+.about-image img {
+    width: 500px;  /* Fixed width; adjust down (e.g., 200px) */
+    height: 300px;  /* Fixed height; or use 'auto' to avoid cropping */
+    object-fit: cover;  /* Optional: Crops to fill without distortion if height is fixed */
+    border-radius: 10px;
+}
       body {
         cursor: none;
         font-family: 'Lora', serif;
@@ -299,7 +328,7 @@
   <div class="about-section home-section">
      <div class="about-content">
 <div class="about-image">
-      <img src="images/about.jpg" alt="Vision and Mission">
+      <img src="images/stock-vector-mission-vision-values-of-company-doodle-icon-set-success-symbol-isolated-background-organization-2559107571.jpg" alt="Vision and Mission">
     </div>
     <div class="about-text">
     <h2>Vision and Mission</h2>
@@ -320,7 +349,7 @@
     </p>
   </div>
 <div class="about-image">
-      <img src="images/about.jpg" alt="Strategic Context">
+      <img src="images/Screenshot 2025-12-17 192917.png" alt="Strategic Context">
     </div>
     </div>
     </div>
@@ -332,6 +361,9 @@
         <div></div>
         <div></div>
     </div>
+
+
+    
         <!-- Main horizontal row -->
         <div class="footer-content">
             <!-- Column 1: Logo + Copyright -->
@@ -768,18 +800,27 @@ document.querySelectorAll(".about-section").forEach((section, index) => {
 >>>>>>> b475ad1 (about us particle pic)
 
 
-<div id="contactModal" class="contact-modal">
-  <div class="contact-modal-content">
-    <span class="close-contact-modal">&times;</span>
-    <h3>Get In Touch</h3>
-    <div class="contact-info-item">
-      <a href="tel:+918276057111">📞 +91 8276057111</a>
-    </div>
-    <div class="contact-info-item">
-      <a href="mailto:info@hatchlabinnovations.com">📧 info@hatchlabinnovations.com</a>
+  <!-- Get In Touch Modal -->
+  <div id="contactModal" class="contact-modal">
+    <div class="contact-modal-content">
+      <span class="close-contact-modal">&times;</span>
+      <h3>Get In Touch</h3>
+      <div class="contact-info-item">
+        <a href="tel:+918276057111"><img src="images/yellow phone icon.png"> +91 8276057111</a>
+      </div>
+      <div class="contact-info-item">
+        <a href="mailto:info@hatchlabinnovations.com">📧 info@hatchlabinnovations.com</a>
+      </div>
     </div>
   </div>
-</div>
+  <style>
+    .contact-info-item img {
+  width: 30px;          /* adjust size as needed */
+  height: auto;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+  </style>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {

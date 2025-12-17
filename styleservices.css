@@ -88,7 +88,7 @@ header.main-header {
 }
 
 .nav-links li a:hover {
-    color: #fcd703;
+    color: yellow;
 }
 
 .connect-button {
@@ -104,7 +104,7 @@ header.main-header {
 }
 
 .connect-button:hover {
-    color: #fcd703;
+    color: yellow;
 }
 
 
@@ -120,7 +120,7 @@ header.main-header {
     margin: 6rem auto 2rem auto;          /* More top margin for breathing room */
     font-size: 4.5rem;   /* Much larger */
     font-weight: 700;
-    color: #fcd703;
+    color: yellow;
     text-align: center;                   /* Centered on desktop */
     padding: 0 11rem;
     max-width: 1400px;
@@ -129,7 +129,7 @@ header.main-header {
 
 .what-we-do {
     padding: 3rem 11rem;
-    color: #fcd703;
+    color: yellow;
     margin-left: 0;
     max-width: 1200px;
 }
@@ -684,7 +684,7 @@ html, body {
 /* On focus */
 .footer-form input[type="email"]:focus {
   outline: none;
-  border-color: #fcd703;
+  border-color: yellow;
 }
 
 /* Contact Us button subtle radius */
@@ -700,7 +700,7 @@ html, body {
 }
 
 .footer-form button:hover {
-  background: #fcd703;
+  background: yellow;
   color: #000;
 }
 

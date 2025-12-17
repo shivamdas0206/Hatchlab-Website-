@@ -105,14 +105,14 @@ h1 {
   font-size: 52px;
   font-weight: bold;
   letter-spacing: 1px;
-  color: #fcd703;
+  color: yellow;
   margin-top: 80px;
   margin-bottom: 30px;
 }
 
 /* ✅ Sub Headings */
 h2 {
-  color: #fcd703;
+  color: yellow;
   
   margin-top: 40px;
   font-size: 28px;
@@ -320,28 +320,35 @@ h2::after {
   opacity: 0.8;
 }
 /* EMAIL LINK LOOK*/
-email {
-  display: inline-block;
+.email {
+  display: inline-flex;          /* instead of inline-block */
+  align-items: center;
+  width: fit-content;            /* key line */
+  white-space: nowrap;           /* prevent wrapping */
+
   margin-top: 14px;
-  padding: 10px 22px;
+  padding: 8px 18px;             /* slightly smaller padding */
   border-radius: 30px;
-  border: 1px solid rgba(255, 215, 0, 0.6);
+  border: 1px solid yellow;
   color: #fcd703;
+
   background: linear-gradient(
     145deg,
     rgba(255, 215, 0, 0.08),
     rgba(0, 0, 0, 0.6)
   );
+
   font-weight: 600;
   letter-spacing: 0.3px;
   text-decoration: none;
-  transition: 
-    background 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+
+  transition: background 0.3s ease,
+              transform 0.3s ease,
+              box-shadow 0.3s ease;
 }
 
-email:hover {
+
+.email:hover {
   background: #ffd700;
   color: #000;
   transform: translateY(-2px);

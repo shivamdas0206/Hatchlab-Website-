@@ -2498,3 +2498,373 @@ body {
 }
 
 
+
+
+
+
+/* ================= NAVBAR CONTACT BUTTON (MOBILE ONLY) ================= */
+.nav-contact-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .nav-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 2px solid #fcd703;
+
+    background: transparent;
+    color: #fcd703;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .nav-contact-btn:hover {
+    background: #fcd703;
+    color: #000;
+  }
+}
+
+
+/* =========================================================
+   🔒 FINAL MOBILE NAVBAR CLICK FIX – DO NOT EDIT
+   ========================================================= */
+
+/* 1️⃣ Ensure header is always on top */
+.main-header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100000 !important;
+  pointer-events: auto !important;
+}
+
+/* 2️⃣ Navbar must accept pointer events */
+.header-nav {
+  position: relative !important;
+  pointer-events: auto !important;
+  z-index: 100001 !important;
+}
+
+/* 3️⃣ Force navbar children to be clickable */
+.header-nav * {
+  pointer-events: auto !important;
+}
+
+/* 4️⃣ Mobile navbar "Get In Touch" button */
+.nav-contact-btn {
+  position: relative !important;
+  z-index: 100002 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+
+  background: transparent;
+  color: #fcd703;
+  border: 2px solid #fcd703;
+  border-radius: 999px;
+
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 18px;
+  white-space: nowrap;
+  user-select: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hover / tap feedback */
+.nav-contact-btn:hover,
+.nav-contact-btn:active {
+  background: #fcd703;
+  color: #000;
+}
+
+/* 5️⃣ Mobile-only visibility */
+@media (min-width: 769px) {
+  .nav-contact-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-contact-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* 6️⃣ Glow cursor MUST NOT block clicks */
+.glow-cursor {
+  pointer-events: none !important;
+  z-index: 99999 !important;
+}
+
+/* 7️⃣ Remove invisible overlays that steal clicks */
+.hero-sec,
+#particles-js,
+canvas,
+.particles-js-canvas-el {
+  pointer-events: none !important;
+}
+
+/* 8️⃣ Restore pointer events for header only */
+.main-header,
+.main-header * {
+  pointer-events: auto !important;
+}
+
+/* 9️⃣ Modal must be above everything */
+.contact-modal {
+  z-index: 200000 !important;
+  pointer-events: auto !important;
+}
+
+/* 🔟 Prevent mobile Safari click-through bugs */
+@media (max-width: 768px) {
+  body {
+    touch-action: manipulation;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   HOMEPAGE HEADING UNDERLINE — ABSOLUTE FINAL FIX
+   Uses border-image (cannot be overridden accidentally)
+   ========================================================= */
+
+/* About Us */
+.about-section h2,
+.what-heading,
+.initiative-title,
+.team-gallery-title {
+
+  /* underline space */
+  padding-bottom: 18px !important;
+
+  /* base border */
+  border-bottom: 2px solid transparent !important;
+
+  /* gradient fade underline */
+  border-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    yellow 25%,
+    yellow 75%,
+    transparent 100%
+  ) 1 !important;
+
+  /* visual safety */
+  display: inline-block !important;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .about-section h2,
+  .what-heading,
+  .initiative-title,
+  .team-gallery-title {
+    padding-bottom: 14px !important;
+  }
+}
+
+
+
+/* ================================
+   TUNE UNDERLINE ONLY FOR
+   "WHAT WE DO"
+   ================================ */
+
+.what-heading {
+  border-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    yellow 35%,
+    yellow 65%,
+    transparent 100%
+  ) 1 !important;
+}
+
+
+
+/* =========================================
+   FIX: SHORTER UNDERLINE FOR "WHAT WE DO"
+   ========================================= */
+
+/* Remove border underline ONLY for this heading */
+.what-heading {
+  border-bottom: none !important;
+  border-image: none !important;
+
+  /* custom shorter underline */
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    yellow 30%,
+    yellow 70%,
+    transparent 100%
+  ) !important;
+
+  background-repeat: no-repeat !important;
+  background-size: 180px 2px !important;   /* 👈 SHORTER */
+  background-position: center bottom !important;
+  padding-bottom: 18px !important;
+}
+
+
+
+/* =================================================
+   FORCE UNDERLINE FOR "WHAT WE DO"
+   (same technique as Our Initiatives)
+   ================================================= */
+
+/* Heading itself */
+.what-heading {
+  display: inline-block !important;
+  position: relative !important;
+  padding-bottom: 18px !important;
+
+  /* REMOVE conflicting underline styles */
+  border: none !important;
+  border-image: none !important;
+  background: none !important;
+}
+
+/* Actual underline */
+.what-heading::after {
+  content: "" !important;
+  display: block !important;
+
+  width: 180px !important;     /* controlled length */
+  height: 2px !important;
+  margin: 10px auto 0 !important;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    yellow 25%,
+    yellow 75%,
+    transparent 100%
+  ) !important;
+}
+
+
+/* =================================================
+   HOMEPAGE SECTION HEADING UNDERLINE (FADED SIDES)
+   ================================================= */
+
+/* Target ONLY homepage section headings */
+.home-section h2,
+.what-heading,
+.initiative-title,
+.team-gallery-title {
+  position: relative !important;
+  display: inline-block !important;
+  padding-bottom: 18px !important;
+}
+
+/* Underline directly UNDER the text */
+.home-section h2::after,
+.what-heading::after,
+.initiative-title::after,
+.team-gallery-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;                /* 👈 guarantees UNDER the heading */
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    yellow 20%,
+    yellow 80%,
+    transparent 100%
+  );
+}
+
+
+
+
+/* ==================================================
+   GALLERY HEADING — ABSOLUTE FINAL ALIGNMENT FIX
+   ================================================== */
+
+/* Lock heading to text width only */
+.team-gallery-title {
+  display: inline-block !important;
+  position: relative !important;
+  width: fit-content !important;   /* 🔑 critical */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+/* Perfectly centered underline */
+.team-gallery-title::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: 0 !important;
+
+  width: 100% !important;
+  height: 2px !important;
+
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    yellow 20%,
+    yellow 80%,
+    transparent 100%
+  ) !important;
+}
+
+
+
+/* =========================================
+   GALLERY HEADING – FORCE UNDERLINE UNDER TEXT
+   ========================================= */
+
+.team-gallery-title {
+  text-align: center !important;
+  position: relative !important;
+}
+
+/* underline */
+.team-gallery-title::after {
+  content: "" !important;
+  display: block !important;
+
+  height: 2px;
+  width: 160px;                 /* underline length */
+  margin: 12px auto 0 auto;     /* 🔑 centers underline under text */
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    yellow 25%,
+    yellow 75%,
+    transparent 100%
+  );
+}

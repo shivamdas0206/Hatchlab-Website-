@@ -8,21 +8,6 @@ body{
     color: #fff;
 }
 
-/* ----------------------------------------------------------------- */
-/* --- Glow Cursor (No Change) --- */
-/* ----------------------------------------------------------------- */
-.glow-cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background: radial-gradient(circle, #ffff00 0%, rgba(255, 255, 0, 0.3) 50%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
- 
-    transition: transform 0.1s ease;
-}
 
 
 /* ----------- FIXED RESPONSIVE HEADER ----------- */
@@ -227,54 +212,7 @@ body{
         text-align: left; 
     }
  } 
-@media (max-width: 768px) {
 
-  .navbar {
-    padding: 12px 16px !important;
-    height: auto !important;
-
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 20px !important;
-
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    white-space: nowrap !important;
-
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 9999 !important;
-  }
-
-  .navbar::-webkit-scrollbar {
-    display: none !important;
-  }
-
-  /* ✅ LOGO FIX */
-  .logo {
-    flex-shrink: 0 !important;
-  }
-
-  .logo img {
-    height: 38px !important;
-    margin-left: 0 !important;
-    margin-right: 8px !important;
-  }
-
-  /* ✅ NAV LINKS SCROLLABLE */
-  .nav-links {
-    flex-shrink: 0 !important;
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 20px !important;
-  }
-
-  .nav-links li a {
-    font-size: 10px !important;
-    white-space: nowrap !important;
-  }
-}
 
 
 .about-section h2 {
@@ -307,41 +245,8 @@ body{
 }
 
 
-
-
-
-    
-    /* --- Glow Cursor --- */
-    .glow-cursor {
-        position: fixed;
-        width: 15px;
-        height: 15px;
-        
-        border-radius: 50%;
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-        z-index: 999999;
-        transition: width 0.2s, height 0.2s;
-        box-shadow: 0 0 10px #ffd700;
-    }
-    
-    @media (max-width: 500px) {
-        .custom-modal-content { width: 90%; }
-    }
-
-
-
-
     /* ====== HORIZONTAL SCROLL FIX (ADD AT VERY BOTTOM) ====== */
 
-/* Never allow sideways scrolling */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
 
 /* Avoid 100vw + shifts from causing overflow */
 .founder {
@@ -359,69 +264,6 @@ html, body {
   width: 100% !important;
   max-width: 100% !important;
 }
-
-/* Mobile header: use normal 100% width instead of 100vw */
-@media (max-width: 768px) {
-  .main-header {
-    width: 100% !important;
-    left: 0 !important;
-  }
-}
-/* 1️⃣ Stop sideways scrolling globally */
-html,
-body {
-  margin: 0 !important;
-  padding: 0;
-  max-width: 100%;
-  overflow-x: hidden; /* no left-right scroll */
-}
-
-/* Keep desktop offset for the fixed left sidebar */
-body {
-  padding-left: calc(var(--sidebar-width, 60px) + var(--sidebar-gap, 30px));
-}
-
-/* Make full-width sections not exceed the viewport */
-.hero-sec,
-.founder,
-.footer-section,
-.main-header {
-  max-width: 100% !important;
-}
-
-/* 2️⃣ MOBILE: let hamburger menu use full width + fix left cut */
-@media (max-width: 768px) {
-
-  /* Hide the vertical sidebar on mobile (prevents it from being cut/overlapped) */
-  .left-sidebar {
-    display: none !important;
-  }
-
-  /* Remove sidebar padding on mobile */
-  body {
-    padding-left: 0 !important;
-  }
-
-  /* Make header / hamburger bar fit perfectly */
-  .main-header {
-    padding-left: 0 !important;
-    padding-right: 16px !important;
-    width: 100% !important;
-    left: 0 !important;
-    
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -521,15 +363,18 @@ html, body {
   text-align: left;
 }
 
+
 .footer-form button {
   background: #ffffff;
   color: #000;
   border: 0;
-  padding: 10px 18px;
   font-weight: 600;
   border-radius: 6px;
   cursor: pointer;
   box-shadow: none;
+  white-space: nowrap;   /* prevents line break */
+  padding: 12px 28px;    /* increase width */
+  min-width: 140px;
 }
 
 .footer-form button:hover { transform: translateY(-1px); }
@@ -664,12 +509,11 @@ html, body {
     color: #ffd700;
 }
 
-/* Email form */
 .footer-form {
     display: flex;
-    gap: 12px;
+    gap: 15px;
+    align-items: center;
 }
-
 .footer-form input {
     padding: 14px 18px;
     border-radius: 30px;
@@ -967,13 +811,178 @@ html, body {
   }
 }
 
-.footer-form button {
-    white-space: nowrap;   /* prevents line break */
-    padding: 12px 28px;    /* increase width */
-    min-width: 140px;      /* optional but recommended */
+
+
+
+
+
+
+
+
+
+
+
+.glow-cursor {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  background: radial-gradient(circle, #ffff00 0%, rgba(255, 255, 0, 0.3) 50%, transparent 70%);
+  box-shadow: 0 0 10px #ffd700;
+
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
 }
-.footer-form {
-    display: flex;
-    gap: 15px;
-    align-items: center;
+
+
+    @media (max-width: 500px) {
+        .custom-modal-content { width: 90%; }
+    }
+
+
+.glow-cursor {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+ 
+  background: radial-gradient(
+    circle,
+    #ffd700 0%,
+    rgba(255, 215, 0, 0.45) 45%,
+    transparent 70%
+  );
+
+  transform: translate(-50%, -50%);
+  transition: 
+    transform 0.08s ease,
+    width 0.15s ease,
+    height 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.get-in-touch-btn {
+  padding: 12px 24px;
+  background: #fff;
+  color: #000;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.get-in-touch-btn:hover {
+  background: #fcd703;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+
+  .main-header {
+    padding: 12px 16px 14px !important;
+    display: block !important;
+    text-align: center !important;
+  }
+
+  .header-logo {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  .header-logo img {
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 36px !important;
+  }
+  .brand-name {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+  }
+
+ 
+  .header-logo::after {
+    content: none !important;
+  }
+
+  .header-nav {
+    margin-top: 10px !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+  }
+
+  .header-nav a {
+    font-size: 14px !important;
+    white-space: nowrap !important;
+  }
+
+  
+  .get-in-touch-btn {
+    display: inline-block !important;
+    margin: 12px auto 0 !important;
+    padding: 10px 18px !important;
+    font-size: 14px !important;
+    border-radius: 5px !important;
+  }
+
+  .main {
+    padding-top: 155px !important;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .footer-section {
+    padding: 15px 10px; 
+  }
+
+  .footer-column {
+    margin-bottom: 10px; 
+  }
+
+  .footer-column p,
+  .footer-column a,
+  .footer-form input,
+  .footer-form button {
+    font-size: 13px; 
+  }
+
+  .footer-form input,
+  .footer-form button {
+    padding: 6px 10px; 
+  }
+
+  .footer-social p {
+    font-size: 11px; 
+  }
+
+  .social-icons a {
+    font-size: 16px; 
+    margin: 0 3px;   
+  }
+
+  .footer-gradient div {
+    width: 40px;  
+    height: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .glow-cursor {
+    display: none !important;
+  }
+  body {
+    cursor: auto; 
+  }
 }

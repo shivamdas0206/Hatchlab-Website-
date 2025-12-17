@@ -1077,83 +1077,111 @@ email, a.email:hover {
 
 
 
-/* ================= MOBILE HEADER – FULLY CENTRALIZED ================= */
+/* ================= MOBILE HEADER (FIXED AS REQUESTED) ================= */
 @media (max-width: 768px) {
 
-  /* Header wrapper */
   .main-header {
-    padding: 12px 16px 10px !important;
+    padding: 12px 16px 8px !important; 
     display: block !important;
     text-align: center !important;
   }
 
-  /* ===== TOP ROW ===== */
   .header-logo {
-    position: relative !important;
     display: flex !important;
-    align-items: center !important;
     justify-content: center !important;
+    align-items: center !important;
     width: 100% !important;
+    position: relative !important;
   }
 
-  /* Logo slightly left but visually balanced */
   .header-logo img {
     position: absolute !important;
     left: 0 !important;
-    width: 36px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 36px !important; 
   }
 
-  /* Brand name dead center */
   .brand-name {
-    position: relative !important;
-    font-size: 15px !important;
+    font-size: 15px !important; 
     font-weight: 600 !important;
-    white-space: nowrap !important;
-    text-align: center !important;
   }
 
-  /* Social icons centered as a group */
   .header-logo::after {
-    content: "\f0e1  \f16d  \f0e1"; /* LinkedIn – Instagram – LinkedIn */
-    font-family: "Font Awesome 6 Brands";
-    font-size: 13px;
-    color: #fff;
-
-    position: absolute !important;
-    right: 0 !important;
-    display: inline-flex;
-    align-items: center;
-    letter-spacing: 12px;
+    content: none !important;
   }
 
-  /* ===== SECOND ROW ===== */
   .header-nav {
-    margin-top: 12px !important;
-    padding-top: 10px !important;
-    border-top: 1px solid rgba(255,255,255,0.35) !important;
-
+    margin-top: 6px !important; 
     display: flex !important;
     justify-content: center !important;
-    align-items: center !important;
-    gap: 22px !important;
+    gap: 10px !important; 
   }
 
   .header-nav a {
-    font-size: 14px !important;
+    font-size: 13px !important;
     white-space: nowrap !important;
-    text-align: center !important;
   }
 
-  /* Hide CTA on mobile */
   .get-in-touch-btn {
-    display: none !important;
+    display: inline-block !important;
+    margin: 10px auto 0 !important; 
+    padding: 10px 12px !important; 
+    font-size: 13px !important; 
+    border-radius: 6px !important;
   }
 
-  /* Push hero down */
   .main {
-    padding-top: 145px !important;
+    padding-top: 70px !important;
   }
 }
+
+
+@media (max-width: 767px) {
+  .footer-section {
+    padding: 15px 10px;
+  }
+
+  .footer-column {
+    margin-bottom: 10px; 
+  }
+
+  .footer-column p,
+  .footer-column a,
+  .footer-form input,
+  .footer-form button {
+    font-size: 13px; 
+  }
+
+  .footer-form input,
+  .footer-form button {
+    padding: 6px 10px; 
+  }
+
+  .footer-social p {
+    font-size: 11px; 
+  }
+
+  .social-icons a {
+    font-size: 16px; 
+    margin: 0 3px;  
+  }
+
+  .footer-gradient div {
+    width: 40px;  
+    height: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .glow-cursor {
+    display: none !important;
+  }
+  body {
+    cursor: auto; 
+  }
+}
+<<<<<<< HEAD
 /* ===== REMOVE LINE BELOW "Hatchlab Innovations" ===== */
 @media (max-width: 768px) {
   .header-nav {
@@ -1207,3 +1235,5 @@ email, a.email:hover {
 
 
 >>>>>>> 8150009 (FIXED MOBILE VIEW NAVBAR)
+=======
+>>>>>>> 6f5a89c (mobile fix)

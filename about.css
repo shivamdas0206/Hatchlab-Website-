@@ -934,17 +934,6 @@ html, body {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .glow-cursor {
   position: fixed;
   width: 18px;
@@ -965,6 +954,10 @@ html, body {
     }
 
 
+
+
+
+/* ================= GLOW CURSOR (DESKTOP + MOBILE + CLICKABLE) ================= */
 .glow-cursor {
   position: fixed;
   width: 18px;
@@ -988,6 +981,14 @@ html, body {
     box-shadow 0.15s ease;
 }
 
+
+
+
+
+
+
+
+/* ================= GET IN TOUCH BUTTON ================= */
 .get-in-touch-btn {
   padding: 12px 24px;
   background: #fff;
@@ -1005,10 +1006,11 @@ html, body {
   transform: scale(1.05);
 }
 
+/* ================= MOBILE HEADER (FIXED AS REQUESTED) ================= */
 @media (max-width: 768px) {
 
   .main-header {
-    padding: 12px 16px 14px !important;
+    padding: 12px 16px 8px !important; 
     display: block !important;
     text-align: center !important;
   }
@@ -1026,48 +1028,47 @@ html, body {
     left: 0 !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    width: 36px !important;
+    width: 36px !important; 
   }
+
   .brand-name {
-    font-size: 15px !important;
+    font-size: 15px !important; 
     font-weight: 600 !important;
   }
 
- 
   .header-logo::after {
     content: none !important;
   }
 
   .header-nav {
-    margin-top: 10px !important;
+    margin-top: 6px !important; 
     display: flex !important;
     justify-content: center !important;
-    gap: 20px !important;
+    gap: 10px !important; 
   }
 
   .header-nav a {
-    font-size: 14px !important;
+    font-size: 13px !important;
     white-space: nowrap !important;
   }
 
-  
   .get-in-touch-btn {
     display: inline-block !important;
-    margin: 12px auto 0 !important;
-    padding: 10px 18px !important;
-    font-size: 14px !important;
-    border-radius: 5px !important;
+    margin: 10px auto 0 !important; 
+    padding: 10px 12px !important; 
+    font-size: 13px !important; 
+    border-radius: 6px !important;
   }
 
   .main {
-    padding-top: 155px !important;
+    padding-top: 70px !important;
   }
 }
 
 
 @media (max-width: 767px) {
   .footer-section {
-    padding: 15px 10px; 
+    padding: 15px 10px;
   }
 
   .footer-column {
@@ -1092,7 +1093,7 @@ html, body {
 
   .social-icons a {
     font-size: 16px; 
-    margin: 0 3px;   
+    margin: 0 3px;  
   }
 
   .footer-gradient div {

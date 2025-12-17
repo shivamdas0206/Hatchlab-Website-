@@ -1362,7 +1362,7 @@ html, body {
 .what-we-do h2::after,
 h1:not(.content h1)::after,
 h2:not(.content h2)::after {
-    background: linear-gradient(90deg, transparent, #ffc107, transparent);
+    background: linear-gradient(90deg, transparent, #ffda0c, transparent);
 }
 
 /* Navbar / Connect Button Hover */

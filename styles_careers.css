@@ -1136,35 +1136,45 @@ email, a.email:hover {
   }
 }
 
-
 @media (max-width: 767px) {
+
   .footer-section {
-    padding: 15px 10px;
+    padding: 8px 10px !important;
   }
 
   .footer-column {
-    margin-bottom: 10px; 
+    margin-bottom: 6px !important;
   }
 
   .footer-column p,
-  .footer-column a,
-  .footer-form input,
-  .footer-form button {
-    font-size: 13px; 
+  .footer-column a {
+    margin-bottom: 4px !important;
+    line-height: 1.3 !important;
+  }
+
+  .footer-form {
+    margin-top: 4px !important;
   }
 
   .footer-form input,
   .footer-form button {
-    padding: 6px 10px; 
+    padding: 5px 8px !important;
+    margin-bottom: 4px !important;
+  }
+
+
+  .footer-social {
+    margin-top: 6px !important;
   }
 
   .footer-social p {
-    font-size: 11px; 
+    margin-bottom: 4px !important;
+    line-height: 1.2 !important;
   }
 
   .social-icons a {
-    font-size: 16px; 
-    margin: 0 3px;  
+    margin: 0 2px !important;
+    font-size: 15px !important;
   }
 
   .footer-gradient div {
@@ -1172,6 +1182,7 @@ email, a.email:hover {
     height: 40px;
   }
 }
+
 
 @media (max-width: 767px) {
   .glow-cursor {

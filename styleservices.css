@@ -12,19 +12,7 @@ body {
     cursor: none; /* Hide default cursor for yellow glow effect */
 }
 
-/* Yellow Glow Cursor */
-.glow-cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background: radial-gradient(circle, #ffff00 0%, rgba(255, 255, 0, 0.3) 50%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s ease, width 0.2s, height 0.2s;
-    box-shadow: 0 0 10px #ffd700; /* Adds subtle yellow glow */
-}
+
 
 /* Header Styles (Updated for Better Alignment) */
 header.main-header {
@@ -899,18 +887,6 @@ html, body {
 
 
 
-.glow-cursor {
-    position: fixed;
-    width: 15px;
-    height: 15px;
-    background: radial-gradient(circle, #ffff00 0%, rgba(255, 255, 0, 0.3) 50%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
- 
-    transition: transform 0.1s ease;
-}
 
 
 /* FOOTER GRADIENT BLOBS (FIXED + SMOOTH + NON-GLITCHY) */
@@ -1009,17 +985,7 @@ html, body {
     transform: translate(0px, 0px) scale(1);
   }
 }
-.glow-cursor {
-    pointer-events: none;   
-    position: fixed;        
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #ffff00 0%, rgba(255, 255, 0, 0.3) 50%, transparent 70%);
-    transform: translate(-50%, -50%);
-    z-index: 999999;        
-    transition: transform 0.05s ease-out, width 0.2s, height 0.2s, background-color 0.2s;
-}
+
 .footer-form button {
     white-space: nowrap;   /* prevents line break */
     padding: 12px 28px;    /* increase width */
@@ -1407,7 +1373,7 @@ h2:not(.content h2)::after {
 @media (max-width: 768px) {
 
   .main-header {
-    padding: 12px 16px 8px !important; 
+    padding: 12px 8px 2px !important; 
     display: block !important;
     text-align: center !important;
   }
@@ -1418,36 +1384,45 @@ h2:not(.content h2)::after {
     align-items: center !important;
     width: 100% !important;
     position: relative !important;
+    margin-bottom: 2px !important; /* ⬅ reduce gap */
   }
 
+  
   .header-logo img {
     position: absolute !important;
     left: 0 !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    width: 36px !important; 
+    width: 32px !important;
   }
 
-  .brand-name {
-    font-size: 15px !important; 
-    font-weight: 600 !important;
-  }
+ 
 
   .header-logo::after {
     content: none !important;
   }
 
-  .header-nav {
-    margin-top: 6px !important; 
-    display: flex !important;
-    justify-content: center !important;
-    gap: 10px !important; 
+    .brand-name {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    margin: 0 !important; 
   }
 
-  .header-nav a {
-    font-size: 13px !important;
+  /* Nav links tighter */
+  .header-nav {
+    margin-top: 1px !important;  
+    display: flex !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+   .header-nav a {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important; 
     white-space: nowrap !important;
   }
+
 
   .get-in-touch-btn {
     display: inline-block !important;
@@ -1458,46 +1433,70 @@ h2:not(.content h2)::after {
   }
 
   .main {
-    padding-top: 70px !important;
+    padding-top: 48px !important;
   }
 }
-
-
 @media (max-width: 767px) {
+
+  
   .footer-section {
-    padding: 15px 10px;
+    padding: 8px 8px !important;
+    overflow: hidden !important;
   }
+
 
   .footer-column {
-    margin-bottom: 10px; 
+    margin-bottom: -121px !important;
   }
+
 
   .footer-column p,
-  .footer-column a,
-  .footer-form input,
-  .footer-form button {
-    font-size: 13px; 
+  .footer-column a {
+    font-size: 12px !important;
+  
+    margin-bottom: 2px !important;
+  }
+
+  .footer-form {
+    margin-top: 4px !important;
   }
 
   .footer-form input,
   .footer-form button {
-    padding: 6px 10px; 
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+    margin-bottom: 3px !important;
+  }
+
+  
+  .footer-social {
+    margin-top: 4px !important;
   }
 
   .footer-social p {
-    font-size: 11px; 
+    font-size: 11px !important;
+    margin-bottom: 2px !important;
   }
 
   .social-icons a {
-    font-size: 16px; 
-    margin: 0 3px;  
+    font-size: 14px !important;
+    margin: 2px 2px !important;
   }
 
-  .footer-gradient div {
+
+  .footer-gradient {
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none;
+  }
+
+ .footer-gradient div {
     width: 40px;  
     height: 40px;
   }
+
 }
+
 
 @media (max-width: 767px) {
   .glow-cursor {

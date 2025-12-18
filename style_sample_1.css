@@ -2468,188 +2468,65 @@ body {
 /* ===== CENTER ABOUT / SERVICE / CAREER / CONTACT (MOBILE) ===== */
 @media (max-width: 768px) {
 
-  .header-nav {
+ 
+  .main-header {
+    padding: 12px 16px 8px !important; 
+    display: block !important;
+    text-align: center !important;
+  }
+
+  .header-logo {
     display: flex !important;
-    justify-content: center !important;   /* 👈 centers the whole group */
+    justify-content: center !important;
     align-items: center !important;
-    gap: 22px !important;                 /* spacing between items */
     width: 100% !important;
-    margin-top: 10px !important;
-    padding: 0 !important;
+    position: relative !important;
+  }
+
+  .header-logo img {
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 36px !important; 
+  }
+
+  .brand-name {
+    font-size: 15px !important; 
+    font-weight: 600 !important;
+  }
+
+  .header-logo::after {
+    content: none !important;
+  }
+
+  .header-nav {
+    margin-top: 6px !important; 
+    display: flex !important;
+    justify-content: center !important;
+    gap: 10px !important; 
   }
 
   .header-nav a {
-    text-align: center !important;
+    font-size: 13px !important;
     white-space: nowrap !important;
-    font-size: 14px !important;
   }
+
 }
-/* ===== MOBILE HEADER: FIX SOCIAL ICONS (in, ig, fb) ===== */
-@media (max-width: 768px) {
 
-  .header-logo::after {
-    content: "\f0e1  \f16d  \f39e"; 
-    /* LinkedIn | Instagram | Facebook */
-    
-    font-family: "Font Awesome 6 Brands";
-    font-weight: 400;
-    font-size: 13px;
-    color: #ffffff;
-
-    display: inline-flex;
-    align-items: center;
-    letter-spacing: 12px; /* spacing between icons */
+  .get-in-touch-btn {
+    display: inline-block !important;
+    margin: 10px auto 0 !important; 
+    padding: 10px 12px !important; 
+    font-size: 13px !important; 
+    border-radius: 6px !important;
   }
-}
 
 
 
 .header-logo::after {
   content: none !important;
 }
-
-
-
-
-
-
-/* ================= NAVBAR CONTACT BUTTON (MOBILE ONLY) ================= */
-.nav-contact-btn {
-  display: none;
-}
-
-@media (max-width: 768px) {
-
-  .nav-contact-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 8px 18px;
-    border-radius: 999px;
-    border: 2px solid #fcd703;
-
-    background: transparent;
-    color: #fcd703;
-    font-size: 13px;
-    font-weight: 700;
-
-    cursor: pointer;
-    white-space: nowrap;
-  }
-
-  .nav-contact-btn:hover {
-    background: #fcd703;
-    color: #000;
-  }
-}
-
-
-/* =========================================================
-   🔒 FINAL MOBILE NAVBAR CLICK FIX – DO NOT EDIT
-   ========================================================= */
-
-/* 1️⃣ Ensure header is always on top */
-.main-header {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100000 !important;
-  pointer-events: auto !important;
-}
-
-/* 2️⃣ Navbar must accept pointer events */
-.header-nav {
-  position: relative !important;
-  pointer-events: auto !important;
-  z-index: 100001 !important;
-}
-
-/* 3️⃣ Force navbar children to be clickable */
-.header-nav * {
-  pointer-events: auto !important;
-}
-
-/* 4️⃣ Mobile navbar "Get In Touch" button */
-.nav-contact-btn {
-  position: relative !important;
-  z-index: 100002 !important;
-  pointer-events: auto !important;
-  cursor: pointer !important;
-
-  background: transparent;
-  color: #fcd703;
-  border: 2px solid #fcd703;
-  border-radius: 999px;
-
-  font-weight: 700;
-  font-size: 13px;
-  padding: 8px 18px;
-  white-space: nowrap;
-  user-select: none;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Hover / tap feedback */
-.nav-contact-btn:hover,
-.nav-contact-btn:active {
-  background: #fcd703;
-  color: #000;
-}
-
-/* 5️⃣ Mobile-only visibility */
-@media (min-width: 769px) {
-  .nav-contact-btn {
-    display: none !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-contact-btn {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-/* 6️⃣ Glow cursor MUST NOT block clicks */
-.glow-cursor {
-  pointer-events: none !important;
-  z-index: 99999 !important;
-}
-
-/* 7️⃣ Remove invisible overlays that steal clicks */
-.hero-sec,
-#particles-js,
-canvas,
-.particles-js-canvas-el {
-  pointer-events: none !important;
-}
-
-/* 8️⃣ Restore pointer events for header only */
-.main-header,
-.main-header * {
-  pointer-events: auto !important;
-}
-
-/* 9️⃣ Modal must be above everything */
-.contact-modal {
-  z-index: 200000 !important;
-  pointer-events: auto !important;
-}
-
-/* 🔟 Prevent mobile Safari click-through bugs */
-@media (max-width: 768px) {
-  body {
-    touch-action: manipulation;
-  }
-}
-
-
-
-
 
 
 

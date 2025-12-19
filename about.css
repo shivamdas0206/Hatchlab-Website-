@@ -987,3 +987,43 @@ html, body {
     cursor: auto; 
   }
 }
+
+/* ================= MACBOOK VIEW FIX ================= */
+/* Targets laptop widths only */
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+
+  /* Center each about section */
+  .about-section {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Keep image + text centered as one unit */
+  .about-content {
+    justify-content: center !important;
+    align-items: center !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 40px !important;
+  }
+
+  /* Fix image sizing (remove fixed width problem) */
+  .about-image img {
+    width: 100% !important;
+    max-width: 420px !important;
+    height: auto !important;
+  }
+
+  /* Balance text width */
+  .about-text {
+    flex: 1 1 55% !important;
+    max-width: 55% !important;
+  }
+
+  .about-image {
+    flex: 1 1 40% !important;
+    max-width: 40% !important;
+  }
+}

@@ -2882,3 +2882,28 @@ body {
     transparent 100%
   );
 }
+
+
+@media screen and (max-width: 768px) {
+  .team-gallery .team-gallery-track {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow-x: hidden !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    width: 100% !important; /* make track full width */
+  }
+
+  .team-gallery .team-member-card {
+    flex: 0 0 auto !important;       /* prevent stretching */
+    width: 90% !important;           /* almost full width */
+    max-width: 350px !important;     /* optional */
+    margin: 0 auto !important;       /* center card */
+  }
+
+  /* Remove extra dots if causing shift */
+  .team-gallery .team-gallery-dots {
+    display: none !important;
+  }
+}

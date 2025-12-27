@@ -391,7 +391,7 @@ h1 {
     color: #f0c900;
     margin-right: 10px;
 }
-.email-item::before {
+email-item::before {
     content: "✉"; /* simple envelope icon */
     color: #f0c900;
     margin-right: 10px;
@@ -1511,7 +1511,7 @@ body {
 }
 
 .contact-item::before,
-.email-item::before {
+email-item::before {
     font-size: 22px;
     color: #ffd700;
     animation: floatIcon 3s ease-in-out infinite;
@@ -1551,11 +1551,11 @@ h2, h2::after,
 
 /* Contact / Email icons */
 .contact-item::before,
-.email-item::before {
+email-item::before {
     color: yellow !important;
 }
 .contact-item:hover,
-.email-item:hover {
+email-item:hover {
     color: yellow!important;
     text-shadow: 0 0 6px yellow, 0 0 12px yellow !important;
 }
@@ -1592,7 +1592,7 @@ h2, h2::after,
 @media (max-width: 768px) {
 
   .main-header {
-    padding: 14px 10px 1px !important; /* slightly smaller overall header */
+    padding: 10px 10px !important; /* increased bottom padding for better spacing */
     display: block !important;
     text-align: center !important;
   }
@@ -1623,37 +1623,38 @@ h2, h2::after,
   }
 
    .header-nav {
-    margin-top: 6px !important;
+    margin-top: 8px !important; /* slight increase for breathing room */
     display: flex !important;
-    justify-content: space-between !important; /* distribute links evenly */
-    gap: 10px !important;
-    max-width: 400px !important; /* adjust as needed */
+    justify-content: space-around !important; /* changed to space-around for even distribution without stretching */
+    gap: 5px !important; /* reduced gap for tighter fit */
+    max-width: 100% !important; /* full width to use space */
     margin-left: auto !important;
     margin-right: auto !important;
-    margin-bottom: -10px;
+    margin-bottom: 0 !important; /* removed negative margin to avoid overlap */
+    flex-wrap: wrap !important; /* allow wrapping if needed on very small screens */
+    padding: 0 10px !important; /* add side padding to prevent edge clipping */
   }
 
   .header-nav a {
     font-size: 14px !important;
     white-space: nowrap !important;
-    margin-bottom: 18px;
-    margin-right: 4px;
+    margin: 0 !important; /* removed excessive bottom/right margins for clean alignment */
+    flex: 1 !important; /* allow links to share space evenly */
+    text-align: center !important; /* center text in each link */
   }
 
   .get-in-touch-btn {
     display: inline-block !important;
-    margin: 10px 10px 1px !important; 
-    padding: 4px 11px !important; 
-    font-size: 13px !important; 
-    border-radius: 4px !important;
-   
-  
-   
+    margin: 0 0 0 5px !important; /* reduced margins, no bottom margin to pull upward */
+    padding: 8px 16px !important; /* increased padding for better proportions and visibility */
+    font-size: 14px !important; /* slight increase for readability */
+    border-radius: 6px !important; /* matched desktop radius */
+    flex-shrink: 0 !important; /* prevent button from shrinking */
+    white-space: nowrap !important; /* prevent text wrap */
   }
 
-
   .main {
-    padding-top: 50px !important;
+    padding-top: 60px !important; /* adjusted to account for taller header */
   }
 }/* ================= FOOTER (UNCHANGED) ================= */
 

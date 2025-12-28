@@ -1504,3 +1504,50 @@ h2:not(.content h2)::after {
     cursor: auto; 
   }
 }
+
+
+/* ================= MOBILE NAVBAR – FINAL COMPACT VERSION ================= */
+
+@media (max-width: 768px) {
+
+  .main-header {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 10px 12px !important;
+    gap: 8px !important;
+  }
+
+  .header-logo {
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+
+  .header-logo img {
+    width: 40px !important;
+  }
+
+  .brand-name {
+    font-size: 14px !important;
+  }
+
+  .header-nav {
+    margin: 0 !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    gap: 14px !important;
+  }
+
+  .header-nav a {
+    font-size: 13.5px !important;
+    padding: 4px 4px !important;
+  }
+
+  /* Button stays centered but NOT full width */
+  .get-in-touch-btn {
+    margin: 6px auto 0 !important;
+    padding: 7px 20px !important;
+    font-size: 14px !important;
+    display: block !important;
+  }
+}

@@ -1,0 +1,61 @@
+/* ROTATION POSITIONS — NON-DESTRUCTIVE */
+.team-member-card {
+  will-change: transform, opacity;
+}
+
+.team-gallery-rotating .team-member-card {
+  transition: transform 1.2s ease, opacity .6s;
+}
+
+/* LEFT card */
+.gallery-rotate-left {
+  transform:
+    translate(-50%, -50%)
+    translateX(-420px)
+    scale(.88)
+    rotate(-8deg);
+  opacity: .7;
+  z-index: 1;
+}
+
+/* CENTER card */
+.gallery-rotate-center {
+  transform:
+    translate(-50%, -50%)
+    translateX(0)
+    scale(1.05)
+    rotate(0deg);
+  opacity: 1;
+  z-index: 5;
+}
+
+/* RIGHT card */
+.gallery-rotate-right {
+  transform:
+    translate(-50%, -50%)
+    translateX(420px)
+    scale(.88)
+    rotate(8deg);
+  opacity: .7;
+  z-index: 1;
+}
+
+
+/* Make sure center card keeps your flip animation */
+.gallery-rotate-center.active {
+  opacity: 1;
+}
+.team-gallery-rotating .team-member-card {
+  opacity: 1 !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform-origin: center;
+  translate: -50% -50%;
+}
+
+/* prevent old layout from pushing cards left/right */
+.team-gallery-rotating .team-member-card:nth-child(3n+1),
+.team-gallery-rotating .team-member-card:nth-child(3n+2),
+.team-gallery-rotating .team-member-card:nth-child(3n) {
+  left: 50% !important;
+}

@@ -64,11 +64,16 @@
         min-width: 200px;          
       }
 
+
 .about-image img {
-    width: 500px;  /* Fixed width; adjust down (e.g., 200px) */
-    height: 300px;  /* Fixed height; or use 'auto' to avoid cropping */
-    object-fit: cover;  /* Optional: Crops to fill without distortion if height is fixed */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
     border-radius: 10px;
+    display: block;
+    max-width: 340px;  /* Reduced from 500px → smaller, better proportion */
+    margin: 0 auto;    /* Centers the image if it's narrower than container */
+
 }
       body {
         cursor: none;
@@ -276,6 +281,69 @@
 * {
       font-family: 'Lora', serif;
     }
+
+    /* Responsive styles for about sections only - desktop unchanged */
+    @media (max-width: 768px) {
+        .about-content {
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            gap: 30px !important;
+        }
+
+        .about-text,
+        .about-image {
+            flex: 1 1 100% !important;
+            min-width: 100% !important;
+            width: 100% !important;
+        }
+
+        .about-section:nth-child(odd) .about-image {
+            order: -1; /* Image first on odd sections for alternating feel */
+        }
+
+        .about-image img {
+            max-width: 100% !important;
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        body {
+            cursor: auto !important;
+        }
+
+        .glow-cursor {
+            display: none !important;
+        }
+
+        .about-section h2 {
+            font-size: 1.8em !important;
+            margin-bottom: 30px !important;
+        }
+
+        .about-section p {
+            font-size: 1em !important;
+            line-height: 1.6 !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .about-content {
+            padding: 0 3% !important;
+            gap: 20px !important;
+        }
+
+        .about-section h2 {
+            font-size: 1.6em !important;
+        }
+    }
+
+    .contact-info-item img {
+      width: 30px;          /* adjust size as needed */
+      height: auto;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
     </style>
 </head>
 
@@ -314,7 +382,7 @@
     </p>
   </div>
 <div class="about-image">
-      <img src="images/about.jpg" alt="Executive Summary Image">
+      <img src="images/Aboutusimg.jpg" alt="Executive Summary Image">
     </div>
     </div>
     </div>
@@ -567,14 +635,6 @@ document.querySelectorAll(".about-section").forEach((section, index) => {
       </div>
     </div>
   </div>
-  <style>
-    .contact-info-item img {
-  width: 30px;          /* adjust size as needed */
-  height: auto;
-  vertical-align: middle;
-  margin-right: 8px;
-}
-  </style>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -584,18 +644,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Open modal
   openBtn.addEventListener("click", () => {
+    modal.style.display = "flex";
     modal.classList.add("active");
   });
 
   // Close modal on ×
   closeBtn.addEventListener("click", () => {
     modal.classList.remove("active");
+    setTimeout(() => { modal.style.display = "none"; }, 300);
   });
 
   // Close modal when clicking outside content
   window.addEventListener("click", (e) => {
     if (e.target === modal) {
       modal.classList.remove("active");
+      setTimeout(() => { modal.style.display = "none"; }, 300);
     }
   });
 });

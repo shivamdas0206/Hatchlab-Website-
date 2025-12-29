@@ -92,14 +92,11 @@ header.main-header {
 }
 
 .connect-button:hover {
-    color: yellow;
+    color: #fcd703;
 }
 
 
-/* Mobile Menu (Enhanced) */
-#menu-toggle {
-    display: none;
-}
+
 
 
 
@@ -688,7 +685,7 @@ html, body {
 }
 
 .footer-form button:hover {
-  background: yellow;
+  background: #fcd703;
   color: #000;
 }
 
@@ -1320,7 +1317,7 @@ html, body {
 
 .footer-form button,
 .footer-form button:hover {
-    background: linear-gradient(135deg, #ffc107, #ffd700);
+    background: linear-gradient(135deg, #fcd703, #ffd700);
     box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
 }
 

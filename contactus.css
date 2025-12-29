@@ -1702,11 +1702,3 @@ email-item:hover {
   }
 }
 
-/* Fix email overflow on all devices */
-.email-item {
-  display: block;                 /* IMPORTANT */
-  max-width: 100%;
-  word-break: break-all;          /* force break */
-  overflow-wrap: anywhere;
-  white-space: normal;
-}

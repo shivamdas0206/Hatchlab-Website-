@@ -1702,16 +1702,11 @@ email-item:hover {
   }
 }
 
-/* FIX: Email text overflow on all devices (Samsung-safe) */
+/* Fix email overflow on all devices */
 .email-item {
-    display: block;
-    max-width: 100%;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    white-space: normal;
-}
-
-/* Flexbox safety for mobile browsers */
-.section {
-    min-width: 0;
+  display: block;                 /* IMPORTANT */
+  max-width: 100%;
+  word-break: break-all;          /* force break */
+  overflow-wrap: anywhere;
+  white-space: normal;
 }

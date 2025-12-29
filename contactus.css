@@ -1785,23 +1785,15 @@ email-item:hover {
   margin-top: 6px !important;
 }
 
-/* ===== FORCE EMAIL TO STAY ONE LINE INSIDE BOX ===== */
-
-/* allow flex children to shrink */
-.contact-info-item,
-.contact-info-item div,
-.contact-info-item p,
-.contact-info-item a,
-.contact-info-item span {
-  min-width: 0;
+/* Force email to be fully visible inside the card */
+.email-item {
+    font-size: 16px !important;          
+    white-space: normal !important;      
+    overflow: visible !important;        
+    word-break: break-word !important;   
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
 }
 
-/* email text control */
-.contact-info-item p,
-.contact-info-item a,
-.contact-info-item span {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 

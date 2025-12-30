@@ -1,9 +1,11 @@
-/* ================= UNIFIED HEADER STYLES FOR ALL PAGES ================= */
-/* Higher specificity to override page-specific CSS */
+/* ================= DEPLOYMENT HEADER OVERRIDE ================= */
+/* Maximum specificity to override all page-specific CSS on Netlify */
 
-/* Base header styles - consistent across all pages */
+/* Desktop Header - Force Consistency */
+html body .main-header,
+html body header.main-header,
 body .main-header,
-html .main-header {
+.main-header {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
@@ -17,55 +19,85 @@ html .main-header {
   border-bottom: 2px solid #fcd703 !important;
   box-sizing: border-box !important;
   height: auto !important;
+  min-height: auto !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
 }
 
+html body .header-logo,
 body .header-logo,
-html .header-logo {
+.header-logo {
   display: flex !important;
   align-items: center !important;
   gap: 15px !important;
   min-width: auto !important;
+  position: relative !important;
+  margin: 0 !important;
+  order: 0 !important;
 }
 
+html body .header-logo img,
 body .header-logo img,
-html .header-logo img {
+.header-logo img {
   width: 50px !important;
   height: auto !important;
+  position: static !important;
+  transform: none !important;
+  left: auto !important;
+  top: auto !important;
 }
 
+html body .brand-name,
 body .brand-name,
-html .brand-name {
+.brand-name {
   color: #fff !important;
   font-size: 20px !important;
   font-weight: 600 !important;
   letter-spacing: 0.5px !important;
+  position: static !important;
+  text-align: left !important;
+  margin: 0 !important;
 }
 
+html body .header-nav,
 body .header-nav,
-html .header-nav {
+.header-nav {
   display: flex !important;
   gap: 30px !important;
   align-items: center !important;
   margin-left: auto !important;
   margin-right: 60px !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  order: 1 !important;
 }
 
+html body .header-nav a,
 body .header-nav a,
-html .header-nav a {
+.header-nav a {
   color: #fff !important;
   text-decoration: none !important;
   font-size: 16px !important;
   transition: 0.3s !important;
   font-weight: 500 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
 }
 
+html body .header-nav a:hover,
 body .header-nav a:hover,
-html .header-nav a:hover {
+.header-nav a:hover {
   color: #fcd703 !important;
 }
 
+html body .get-in-touch-btn,
 body .get-in-touch-btn,
-html .get-in-touch-btn {
+.get-in-touch-btn {
   padding: 11px 23px !important;
   background: #fff !important;
   border: none !important;
@@ -79,45 +111,37 @@ html .get-in-touch-btn {
   position: relative !important;
   overflow: hidden !important;
   height: auto !important;
+  min-height: auto !important;
+  display: inline-block !important;
+  margin: 0 !important;
+  order: 2 !important;
 }
 
+html body .get-in-touch-btn:hover,
 body .get-in-touch-btn:hover,
-html .get-in-touch-btn:hover {
+.get-in-touch-btn:hover {
   background: #fcd703 !important;
   transform: scale(1.05) !important;
   box-shadow: 0 0 40px rgba(252, 215, 3, 0.8), 0 0 60px rgba(252, 215, 3, 0.6) !important;
 }
 
-/* ================= TABLET RESPONSIVE (768px - 1024px) ================= */
-@media (max-width: 1024px) {
-  .main-header {
-    padding: 15px 30px;
-  }
-  
-  .header-nav {
-    gap: 25px;
-    margin-right: 40px;
-  }
-  
-  .header-nav a {
-    font-size: 15px;
-  }
-}
-
-/* ================= MOBILE RESPONSIVE (768px and below) ================= */
+/* Mobile Header - Force Consistency */
 @media (max-width: 768px) {
+  html body .main-header,
+  html body header.main-header,
   body .main-header,
-  html .main-header {
+  .main-header {
     padding: 12px 16px 15px !important;
     display: block !important;
     text-align: center !important;
     min-height: auto !important;
     height: auto !important;
+    flex-direction: column !important;
   }
 
-  /* Logo row - centered with logo on left */
+  html body .header-logo,
   body .header-logo,
-  html .header-logo {
+  .header-logo {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -125,10 +149,12 @@ html .get-in-touch-btn:hover {
     position: relative !important;
     margin-bottom: 8px !important;
     min-width: auto !important;
+    gap: 0 !important;
   }
 
+  html body .header-logo img,
   body .header-logo img,
-  html .header-logo img {
+  .header-logo img {
     position: absolute !important;
     left: 0 !important;
     top: 50% !important;
@@ -137,47 +163,55 @@ html .get-in-touch-btn:hover {
     height: auto !important;
   }
 
+  html body .brand-name,
   body .brand-name,
-  html .brand-name {
+  .brand-name {
     font-size: 15px !important;
     font-weight: 600 !important;
     text-align: center !important;
+    position: static !important;
+    margin: 0 !important;
   }
 
-  /* Navigation row - centered */
+  html body .header-nav,
   body .header-nav,
-  html .header-nav {
+  .header-nav {
     margin: 0 !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     gap: 15px !important;
     flex-wrap: wrap !important;
+    padding: 0 !important;
+    border: none !important;
+    margin-top: 0 !important;
+    width: 100% !important;
   }
 
+  html body .header-nav a,
   body .header-nav a,
-  html .header-nav a {
+  .header-nav a {
     font-size: 13px !important;
     white-space: nowrap !important;
     padding: 2px 4px !important;
+    margin: 0 !important;
   }
 
+  html body .get-in-touch-btn,
   body .get-in-touch-btn,
-  html .get-in-touch-btn {
+  .get-in-touch-btn {
     display: inline-block !important;
     margin: 8px auto 0 !important;
     padding: 8px 16px !important;
     font-size: 12px !important;
     border-radius: 4px !important;
     height: auto !important;
+    min-height: auto !important;
+    width: auto !important;
   }
 
-  /* Adjust main content padding for mobile header height */
-  .main {
-    padding-top: 120px !important;
-  }
-  
-  /* For pages without .main class */
+  /* Content padding adjustment */
+  .main,
   .content,
   .hero-sec,
   body > div:first-of-type {
@@ -185,117 +219,24 @@ html .get-in-touch-btn:hover {
   }
 }
 
-/* ================= SMALL MOBILE (480px and below) ================= */
-@media (max-width: 480px) {
-  .main-header {
-    padding: 10px 12px 12px !important;
-  }
-
-  .header-logo img {
-    width: 32px !important;
-  }
-
-  .brand-name {
-    font-size: 14px !important;
-  }
-
-  .header-nav {
-    gap: 12px !important;
-  }
-
-  .header-nav a {
-    font-size: 12px !important;
-  }
-
-  .get-in-touch-btn {
-    padding: 6px 12px !important;
-    font-size: 11px !important;
-  }
-
-  .main {
-    padding-top: 110px !important;
-  }
-  
-  .content,
-  .hero-sec,
-  body > div:first-of-type {
-    padding-top: 110px !important;
-  }
+/* Remove any conflicting pseudo-elements */
+html body .header-logo::after,
+body .header-logo::after,
+.header-logo::after {
+  content: none !important;
+  display: none !important;
 }
 
-/* ================= CONTACT MODAL STYLES ================= */
-.contact-modal {
-  display: none;
-  position: fixed;
-  z-index: 10000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  align-items: center;
-  justify-content: center;
+/* Ensure no navbar conflicts */
+html body .navbar,
+body .navbar,
+.navbar {
+  display: none !important;
 }
 
-.contact-modal-content {
-  background: rgba(23, 22, 31, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 40px;
-  border-radius: 10px;
-  border: 2px solid #fcd703;
-  max-width: 400px;
-  width: 90%;
-  text-align: center;
-}
-
-.contact-modal-content h3 {
-  color: #fcd703;
-  margin-bottom: 30px;
-  font-size: 24px;
-}
-
-.contact-info-item {
-  margin: 20px 0;
-}
-
-.contact-info-item a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-.contact-info-item a:hover {
-  color: #fcd703;
-}
-
-.close-contact-modal {
-  color: #fff;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  line-height: 20px;
-}
-
-.close-contact-modal:hover {
-  color: #fcd703;
-}
-
-.contact-info-item img {
-  width: 30px;
-  height: auto;
-  vertical-align: middle;
-  margin-right: 8px;
-}
-
-/* ================= MOBILE CURSOR FIX ================= */
-@media (max-width: 768px) {
-  body {
-    cursor: default !important;
-  }
-  
-  .glow-cursor {
-    display: none !important;
-  }
+/* Force header to show above navbar if present */
+html body .main-header,
+body .main-header,
+.main-header {
+  z-index: 10000 !important;
 }

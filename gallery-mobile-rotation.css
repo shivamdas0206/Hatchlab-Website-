@@ -1,0 +1,59 @@
+/* gallery-mobile-rotation.css */
+
+/* Only active on mobile rotation mode */
+.gallery-mobile-rotating .team-member-card {
+  transition: all 1.2s ease !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+/* LEFT */
+.gallery-mobile-rotating .mobile-left {
+  transform:
+    translate(-50%, -50%)
+    translateX(-280px)
+    scale(0.85)
+    rotate(-6deg);
+  opacity: 0.65;
+  z-index: 1;
+}
+
+/* CENTER */
+.gallery-mobile-rotating .mobile-center {
+  transform:
+    translate(-50%, -50%)
+    translateX(0)
+    scale(1.08)
+    rotate(0deg);
+  opacity: 1;
+  z-index: 10;
+}
+
+/* RIGHT */
+.gallery-mobile-rotating .mobile-right {
+  transform:
+    translate(-50%, -50%)
+    translateX(280px)
+    scale(0.85)
+    rotate(6deg);
+  opacity: 0.65;
+  z-index: 1;
+}
+
+/* Extra safety for desktop */
+@media (min-width: 769px) {
+  .gallery-mobile-rotating .team-member-card,
+  .mobile-left,
+  .mobile-center,
+  .mobile-right {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+  }
+}

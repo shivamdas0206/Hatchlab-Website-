@@ -1722,10 +1722,11 @@ h2:not(.content h2)::after {
   }
 
   .header-nav {
-    margin-top: 6px !important; 
+    margin-top: 8.5px !important; 
     display: flex !important;
     justify-content: center !important;
-    gap: 10px !important; 
+    gap: 10px !important;
+    transform: scale(1.092) !important;   
   }
 
   .header-nav a {
@@ -1742,7 +1743,10 @@ h2:not(.content h2)::after {
     font-size: 13px !important; 
     border-radius: 6px !important;
   }
-
+.header-nav,
+  .get-in-touch-btn {
+    align-self: center !important;
+  }
 
 
 .header-logo::after {

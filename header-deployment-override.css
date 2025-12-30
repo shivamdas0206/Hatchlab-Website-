@@ -1,0 +1,242 @@
+/* ================= DEPLOYMENT HEADER OVERRIDE ================= */
+/* Maximum specificity to override all page-specific CSS on Netlify */
+
+/* Desktop Header - Force Consistency */
+html body .main-header,
+html body header.main-header,
+body .main-header,
+.main-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 20px 40px !important;
+  background: rgba(23, 22, 31, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  z-index: 1000 !important;
+  border-bottom: 2px solid #fcd703 !important;
+  box-sizing: border-box !important;
+  height: auto !important;
+  min-height: auto !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+html body .header-logo,
+body .header-logo,
+.header-logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+  min-width: auto !important;
+  position: relative !important;
+  margin: 0 !important;
+  order: 0 !important;
+}
+
+html body .header-logo img,
+body .header-logo img,
+.header-logo img {
+  width: 50px !important;
+  height: auto !important;
+  position: static !important;
+  transform: none !important;
+  left: auto !important;
+  top: auto !important;
+}
+
+html body .brand-name,
+body .brand-name,
+.brand-name {
+  color: #fff !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  position: static !important;
+  text-align: left !important;
+  margin: 0 !important;
+}
+
+html body .header-nav,
+body .header-nav,
+.header-nav {
+  display: flex !important;
+  gap: 30px !important;
+  align-items: center !important;
+  margin-left: auto !important;
+  margin-right: 60px !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  order: 1 !important;
+}
+
+html body .header-nav a,
+body .header-nav a,
+.header-nav a {
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  transition: 0.3s !important;
+  font-weight: 500 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+}
+
+html body .header-nav a:hover,
+body .header-nav a:hover,
+.header-nav a:hover {
+  color: #fcd703 !important;
+}
+
+html body .get-in-touch-btn,
+body .get-in-touch-btn,
+.get-in-touch-btn {
+  padding: 11px 23px !important;
+  background: #fff !important;
+  border: none !important;
+  color: #000 !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 0 20px rgba(252, 215, 3, 0.3) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  height: auto !important;
+  min-height: auto !important;
+  display: inline-block !important;
+  margin: 0 !important;
+  order: 2 !important;
+}
+
+html body .get-in-touch-btn:hover,
+body .get-in-touch-btn:hover,
+.get-in-touch-btn:hover {
+  background: #fcd703 !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0 0 40px rgba(252, 215, 3, 0.8), 0 0 60px rgba(252, 215, 3, 0.6) !important;
+}
+
+/* Mobile Header - Force Consistency */
+@media (max-width: 768px) {
+  html body .main-header,
+  html body header.main-header,
+  body .main-header,
+  .main-header {
+    padding: 12px 16px 15px !important;
+    display: block !important;
+    text-align: center !important;
+    min-height: auto !important;
+    height: auto !important;
+    flex-direction: column !important;
+  }
+
+  html body .header-logo,
+  body .header-logo,
+  .header-logo {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    position: relative !important;
+    margin-bottom: 8px !important;
+    min-width: auto !important;
+    gap: 0 !important;
+  }
+
+  html body .header-logo img,
+  body .header-logo img,
+  .header-logo img {
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 36px !important;
+    height: auto !important;
+  }
+
+  html body .brand-name,
+  body .brand-name,
+  .brand-name {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    position: static !important;
+    margin: 0 !important;
+  }
+
+  html body .header-nav,
+  body .header-nav,
+  .header-nav {
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 15px !important;
+    flex-wrap: wrap !important;
+    padding: 0 !important;
+    border: none !important;
+    margin-top: 0 !important;
+    width: 100% !important;
+  }
+
+  html body .header-nav a,
+  body .header-nav a,
+  .header-nav a {
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    padding: 2px 4px !important;
+    margin: 0 !important;
+  }
+
+  html body .get-in-touch-btn,
+  body .get-in-touch-btn,
+  .get-in-touch-btn {
+    display: inline-block !important;
+    margin: 8px auto 0 !important;
+    padding: 8px 16px !important;
+    font-size: 12px !important;
+    border-radius: 4px !important;
+    height: auto !important;
+    min-height: auto !important;
+    width: auto !important;
+  }
+
+  /* Content padding adjustment */
+  .main,
+  .content,
+  .hero-sec,
+  body > div:first-of-type {
+    padding-top: 120px !important;
+  }
+}
+
+/* Remove any conflicting pseudo-elements */
+html body .header-logo::after,
+body .header-logo::after,
+.header-logo::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Ensure no navbar conflicts */
+html body .navbar,
+body .navbar,
+.navbar {
+  display: none !important;
+}
+
+/* Force header to show above navbar if present */
+html body .main-header,
+body .main-header,
+.main-header {
+  z-index: 10000 !important;
+}

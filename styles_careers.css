@@ -1398,8 +1398,22 @@ a.email:hover {
   content: none !important;
 }
 
+@media (max-width: 768px) {
+  .main-header {
+    padding-bottom:  24px !important; 
+  }
+}
 
 
+@media (max-width: 768px) {
 
+  .header-nav {
+    transform: scale(1.07);          /* ⬅ zoom out slightly */
+    transform-origin: center top;    /* keeps it centered */
+    margin-top: 9px !important;      /* keeps it close to brand */
+    gap: 18px !important;            /* spacing stays clean */
+  }
+
+}
 
 

@@ -2949,3 +2949,8 @@ body {
     height: 0 !important;
   }
 }
+@media (max-width: 768px) {
+  .main-header {
+    padding-bottom:  23px !important; 
+  }
+}
